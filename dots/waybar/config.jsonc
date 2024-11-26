@@ -1,0 +1,163 @@
+// -*- mode: jsonc -*-
+//--------------------------------------------------------------------------------
+//                                                                                                   
+//  ,-----.                         
+//  |  |) /_  ,--,--.,--.--. ,---.  
+//  |  .-.  \' ,-.  ||  .--'(  .-'  
+//  |  '--' /\ '-'  ||  |   .-'  `) 
+//  `------'  `--`--'`--'   `----'  
+//                      
+//             
+//      , _ ,        RESUME: 
+//     ( o o )              
+//    /'` ' `'\
+//    |'''''''|      AUTHOR:  Andr3xDev
+//    |\\'''//|      URL: 
+//       """                                              
+//--------------------------------------------------------------------------------
+
+{
+
+
+    //--------------------------------------------------------------------------------
+    //    General
+    //--------------------------------------------------------------------------------
+
+    "layer": "top", 
+    "position": "top",
+    "height": 34,
+    "spacing": 0,
+    "margin-top": 0,
+    "margin-left": 100,
+    "margin-bottom": 0,
+    "margin-right": 100,
+
+
+    //--------------------------------------------------------------------------------
+    //    Left Modules
+    //--------------------------------------------------------------------------------
+
+    "modules-left": [
+	"clock",
+        "hyprland/workspaces"
+    ],
+
+
+
+    //--------------------------------------------------------------------------------
+    //    Center Modules
+
+    //--------------------------------------------------------------------------------
+
+    "modules-center": [
+    ],
+
+
+
+    //--------------------------------------------------------------------------------
+    //    Right Modules
+    //--------------------------------------------------------------------------------
+
+    "modules-right": [
+	"custom/spotify",
+        "pulseaudio",
+        "network",
+        "cpu",
+        "memory",
+	"custom/notification"
+    ],
+     
+    
+
+    //--------------------------------------------------------------------------------
+    //    Left Configuration
+    //--------------------------------------------------------------------------------
+     
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+	"disable-select-unfocused": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "計",     //calculate
+            "2": "二",
+            "3": "三", 
+            "4": "四", 
+            "5": "五",
+	    "6": "六",
+            "7": "七",
+	    "8": "八",
+	    "9": "九"
+        }
+    },
+
+    "clock": {
+        "format": "{:%d-%m-%Y  | %I:%M}"
+    },
+
+
+
+
+
+
+    //--------------------------------------------------------------------------------
+    //    Right Configuration
+    //--------------------------------------------------------------------------------
+
+    "memory": {
+        "interval": 1,
+        "format": "{}% "
+    },
+        
+    "cpu": {
+        "format": "{usage}% ",
+        "interval": 1
+    },
+    "network": {
+        "format": "",
+        "format-disconnected": "⚠"
+    },
+    "custom/spotify": {  
+	"exec": "/sbin/python3 ~/.config/waybar/mediaplayer.py --player spotify",  
+	"format": " {}   ",  
+	"return-type": "json",  
+	"on-click": "playerctl --player=spotify play-pause",  
+	"on-scroll-up": "playerctl --player=spotify next",  
+	"on-scroll-down": "playerctl --player=spotify previous"  
+    },
+    "pulseaudio": {
+        "format": "{volume}   {icon}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "default": ["", "", ""]
+        },
+        "on-click-right": "pavucontrol",
+	"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+    "custom/notification": {
+    	"tooltip": false,
+    	"format": "{icon}",
+    	"format-icons": {
+      	    "notification": "<span foreground='red'><sup></sup></span>",
+      	    "none": "",
+      	    "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      	    "dnd-none": "",
+      	    "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      	    "inhibited-none": "",
+      	    "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      	    "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+  }
+}

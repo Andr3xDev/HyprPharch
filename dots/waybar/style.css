@@ -1,0 +1,143 @@
+/*
+ *                                                                    
+ *     ,---.   ,--.           ,--.           ,-----.                  
+ *    '   .-',-'  '-.,--. ,--.|  | ,---.     |  |) /_  ,--,--.,--.--. 
+ *    `.  `-.'-.  .-' \  '  / |  || .-. :    |  .-.  \' ,-.  ||  .--' 
+ *    .-'    | |  |    \   '  |  |\   --.    |  '--' /\ '-'  ||  |    
+ *    `-----'  `--'  .-'  /   `--' `----'    `------'  `--`--'`--'    
+ *                   `---'                                            
+ */
+
+
+
+
+
+/*-------------------------------------------------------------------------------/
+ *    General 
+ *-------------------------------------------------------------------------------*/
+
+*{
+    font-family: FontAwesome, Jetbrains Mono Nert;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 0px;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0);
+    color: #F5F5F5;
+}
+
+
+
+
+/*-------------------------------------------------------------------------------/
+ *    Modules
+ *-------------------------------------------------------------------------------*/
+
+
+
+
+/*-------------------------------------------------------------------------------/
+ *    Sections 
+ *-------------------------------------------------------------------------------*/
+
+.modules-right {
+    background-color: #404040;
+    border-radius: 0px 0px 15px 15px;
+    border-bottom-width: 2px;
+    border-bottom-color: #37D5D6;
+    border-bottom-style: solid;
+}
+
+.modules-left {
+    background-color: #404040;
+    border-radius: 0px 0px 15px 15px;
+    border-bottom-width: 2px;
+    border-bottom-color: #37D5D6;
+    border-bottom-style: solid;
+}
+
+
+
+
+/*-------------------------------------------------------------------------------/
+ *    Left Modules 
+ *-------------------------------------------------------------------------------*/
+
+#workspaces {
+    background-color: #404040;
+    border-radius: 0px 0px 15px 0px;
+    color: white;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+#workspaces button {
+    color: white;
+}
+#workspaces button:hover {
+    color: black;
+    background-color: #404040;
+    border-radius: 15px 15px 15px 15px;
+}
+
+#clock {
+    background-color: #262626;
+    border-right: 3px;
+    padding-right: 1em; 
+    border-right-style: solid;
+    border-right-color: #37D5D6;
+    border-radius: 0px 0px 15px 15px;
+    border-bottom-width: 0px;
+    padding-left: 1em;
+}
+
+
+
+/*-------------------------------------------------------------------------------/
+ *    Right Modules 
+ *-------------------------------------------------------------------------------*/
+
+#custom-spotify {
+    padding-right: 1em;
+    padding-left: 1em;
+    background-color: #404040;
+    border-radius: 0px 0px 0px 15px;
+    color: #ffffff;
+}
+
+#pulseaudio{
+    background-color: #262626;
+    border-radius: 0px 0px 0px 16px;
+    padding-right: 1em;
+    padding-left: 1em;
+    border-left: 3.8px;
+    margin-left: -1px;
+    border-left-style: solid;
+    border-left-color: #37D5D6;
+}
+
+#network {
+    background-color: #262626;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+#cpu {
+    background-color: #262626;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+#memory {
+    background-color: #262626;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+#custom-notification {
+    background-color: #262626;
+    padding-left: 0.7em;
+    padding-right: 1.5em;
+    border-radius: 0px 0px 15px 0px;
+}
