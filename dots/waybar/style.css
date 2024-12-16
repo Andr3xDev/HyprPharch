@@ -6,13 +6,39 @@
  *    .-'    | |  |    \   '  |  |\   --.    |  '--' /\ '-'  ||  |    
  *    `-----'  `--'  .-'  /   `--' `----'    `------'  `--`--'`--'    
  *                   `---'                                            
+ *
+ *
+ *       , _ ,        RESUME: Minimal style config to have basic info
+ *      ( o o )              
+ *     /'` ' `'\
+ *     |'''''''|      AUTHOR:  Andr3xDev
+ *     |\\'''//|      URL:  https://github.com/Andr3xDev/Dotfiles-MainArch 
+ *        """
  */
 
 
 
+/*--------------------------------------------------------------------------------
+ *    Colors 
+ *-------------------------------------------------------------------------------*/
+
+@define-color background            #282828;
+@define-color second_background     #45403D;
+@define-color foreground            #EBDBB2;
+@define-color selection_foreground  #D8A657;
+@define-color selection_background  #3c3836;
+@define-color color_blue            #7DAEA3;
+@define-color color_green           #A9B665;
+@define-color color_yellow          #D8A657;
+@define-color color_red 	    #EA6962;
+@define-color color_purple          #d3869B;
+@define-color color_aqua            #89B482;
+@define-color color_grey            #7C6F64;
+@define-color color_white           #A89984;
 
 
-/*-------------------------------------------------------------------------------/
+
+/*--------------------------------------------------------------------------------
  *    General 
  *-------------------------------------------------------------------------------*/
 
@@ -25,68 +51,65 @@
 
 window#waybar {
     background-color: rgba(0, 0, 0, 0);
-    color: #F5F5F5;
+    color: @foreground;
 }
 
 
 
-
-/*-------------------------------------------------------------------------------/
+/*--------------------------------------------------------------------------------
  *    Modules
  *-------------------------------------------------------------------------------*/
 
 
 
 
-/*-------------------------------------------------------------------------------/
+/*--------------------------------------------------------------------------------
  *    Sections 
  *-------------------------------------------------------------------------------*/
 
 .modules-right {
-    background-color: #404040;
+    background-color: @second_background;
     border-radius: 0px 0px 15px 15px;
-    border-bottom-width: 2px;
-    border-bottom-color: #37D5D6;
+    border-bottom-width: 3px;
+    border-bottom-color: @color_blue;
     border-bottom-style: solid;
 }
 
 .modules-left {
-    background-color: #404040;
+    background-color: @second_background;
     border-radius: 0px 0px 15px 15px;
-    border-bottom-width: 2px;
-    border-bottom-color: #37D5D6;
+    border-bottom-width: 3px;
+    border-bottom-color: @color_blue;
     border-bottom-style: solid;
 }
 
 
 
-
-/*-------------------------------------------------------------------------------/
+/*--------------------------------------------------------------------------------
  *    Left Modules 
  *-------------------------------------------------------------------------------*/
 
 #workspaces {
-    background-color: #404040;
+    background-color: @second_background;
     border-radius: 0px 0px 15px 0px;
-    color: white;
+    color: @foreground;
     padding-right: 1em;
     padding-left: 1em;
 }
 #workspaces button {
-    color: white;
+    color: @foreground;
 }
 #workspaces button:hover {
-    color: black;
-    background-color: #404040;
+    background-color: #D79921;
     border-radius: 15px 15px 15px 15px;
 }
 
 #clock {
-    background-color: #262626;
+    background-color: @background;
     border-right: 3px;
     padding-right: 1em; 
     border-right-style: solid;
-    border-right-color: #37D5D6;
+    border-right-color: @color_blue;
     border-radius: 0px 0px 15px 15px;
     border-bottom-width: 0px;
     padding-left: 1em;
@@ -94,49 +117,43 @@ window#waybar {
 
 
 
-/*-------------------------------------------------------------------------------/
+/*--------------------------------------------------------------------------------
  *    Right Modules 
  *-------------------------------------------------------------------------------*/
 
 #custom-spotify {
     padding-right: 1em;
     padding-left: 1em;
-    background-color: #404040;
+    background-color: @second_background;
     border-radius: 0px 0px 0px 15px;
-    color: #ffffff;
+    color: @foreground;
 }
 
 #pulseaudio{
-    background-color: #262626;
+    background-color: @background;
     border-radius: 0px 0px 0px 16px;
     padding-right: 1em;
     padding-left: 1em;
     border-left: 3.8px;
     margin-left: -1px;
     border-left-style: solid;
-    border-left-color: #37D5D6;
+    border-left-color: @color_blue;
 }
 
 #network {
-    background-color: #262626;
+    background-color: @background;
     padding-right: 1em;
     padding-left: 1em;
 }
 
 #cpu {
-    background-color: #262626;
+    background-color: @background;
     padding-right: 1em;
     padding-left: 1em;
 }
 
 #memory {
-    background-color: #262626;
-    padding-right: 1em;
-    padding-left: 1em;
-}
-
-#custom-notification {
-    background-color: #262626;
+     background-color: @background;
     padding-left: 0.7em;
     padding-right: 1.5em;
     border-radius: 0px 0px 15px 0px;
