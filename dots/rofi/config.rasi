@@ -1,0 +1,226 @@
+/*-------------------------------------------------------------------------------
+ *                                                                                
+ *       ,--.   ,--.                        
+ *       |   `.'   | ,---. ,--,--, ,--.,--. 
+ *       |  |'.'|  || .-. :|      \|  ||  | 
+ *       |  |   |  |\   --.|  ||  |'  ''  ' 
+ *       `--'   `--' `----'`--''--' `----'  
+ *
+ *
+ *      , _ ,        RESUME:  Menu to run apps and see which are open
+ *     ( o o )              
+ *    /'` ' `'\
+ *    |'''''''|      AUTHOR:  Andr3xDev
+ *    |\\'''//|      URL: https://github.com/Andr3xDev/Dotfiles
+ *       """                                              
+-------------------------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------------------------
+ *    Import Elements
+-------------------------------------------------------------------------------*/
+
+@import 			"/colors.rasi"
+
+
+
+/*------------------------------------------------------------------------------
+ *    Configuration
+-------------------------------------------------------------------------------*/
+
+configuration {
+    modi:                       "drun,window";
+    show-icons:                 true;
+    drun-display-format:        "{name}";
+    window-format:              "{w} · {t}";
+}
+
+
+
+/*------------------------------------------------------------------------------
+ *    Window conf
+-------------------------------------------------------------------------------*/
+
+window {
+    /* properties for window widget */
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       400px;
+    height:                      500px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    /* properties for all widgets */
+    enabled:                     true;
+    border: 			 1px;
+    border-radius:               20px;
+    border-color:                @orange;
+    cursor:                      "default";
+    background-color:            @background;
+}
+
+
+                                       
+/*------------------------------------------------------------------------------
+ *    Main Box
+-------------------------------------------------------------------------------*/
+
+mainbox {
+    enabled:                     true;
+    background-color:            transparent;
+    orientation:                 vertical;
+    children:                    [ "inputbar", "listbox" ];
+}
+
+listbox {
+    spacing:                     0px;
+    padding:                     15px;
+    background-color:            transparent;
+    orientation:                 vertical;
+    children:                    [ "message", "listview" ];
+}
+
+
+
+/*------------------------------------------------------------------------------
+ *    Info // Inputbar
+-------------------------------------------------------------------------------*/
+
+inputbar {
+    enabled:                     true;
+    spacing:                     12px;
+    padding:                     30px 20px;
+    background-color:            transparent;
+    location:                    center;
+    background-image:            url("~/.config/wallpapers/wall_hn2.jpg", width);
+    text-color:                  @foreground;
+    orientation:                 horizontal;
+    children:                    [ "textbox-prompt-colon", "entry", "dummy"];
+}
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "";
+    padding:                     12px 17px;
+    border-radius:               100%;
+    background-color:            @aqua;
+    text-color:                  #000000;
+}
+entry {
+    enabled:                     true;
+    expand:                      false;
+    width:                       300px;
+    padding:                     12px 18px;
+    border-radius:               100%;
+    background-color:            @green;
+    text-color:                  #000000;
+    cursor:                      text;
+    placeholder:                 " Input("Search... ")";
+    placeholder-color:           inherit;
+}
+dummy {
+    expand:                      true;
+    background-color:            transparent;
+}
+
+
+
+/*------------------------------------------------------------------------------
+ *    Elements box // Listview
+-------------------------------------------------------------------------------*/
+
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       7;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     10px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      "default";
+}
+
+
+
+/*------------------------------------------------------------------------------
+ *    Elements
+-------------------------------------------------------------------------------*/
+
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     4px;
+    border-radius:               100%;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+}
+element normal.normal {
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+element normal.urgent {
+    background-color:            @red;
+    text-color:                  @foreground;
+}
+element normal.active {
+    background-color:            @green;
+    text-color:                  @foreground;
+}
+element selected.normal {
+    background-color:            @blue;
+    text-color:                  #000000;
+}
+element selected.urgent {
+    background-color:            @red;
+    text-color:                  @foreground;
+}
+element selected.active {
+    background-color:            @red;
+    text-color:                  @foreground;
+}
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        32px;
+    cursor:                      inherit;
+}
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+/*------------------------------------------------------------------------------
+ *    Mesagge
+-------------------------------------------------------------------------------*/
+
+message {
+    background-color:            transparent;
+}
+textbox {
+    padding:                     12px;
+    border-radius:               100%;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+error-message {
+    padding:                     12px;
+    border-radius:               20px;
+    background-color:            @background;
+    text-color:                  @foreground;
+}
