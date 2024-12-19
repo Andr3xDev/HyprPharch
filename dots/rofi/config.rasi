@@ -1,0 +1,201 @@
+/*-------------------------------------------------------------------------------
+ *                                                                                
+ *       ,--.   ,--.                        
+ *       |   `.'   | ,---. ,--,--, ,--.,--. 
+ *       |  |'.'|  || .-. :|      \|  ||  | 
+ *       |  |   |  |\   --.|  ||  |'  ''  ' 
+ *       `--'   `--' `----'`--''--' `----'  
+ *
+ *
+ *      , _ ,        RESUME:  Menu to run apps and see which are open
+ *     ( o o )              
+ *    /'` ' `'\
+ *    |'''''''|      AUTHOR:  Andr3xDev
+ *    |\\'''//|      URL: https://github.com/Andr3xDev/Dotfiles
+ *       """                                              
+-------------------------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------------------------
+ *    Import Elements
+-------------------------------------------------------------------------------*/
+
+@import 			"/colors.rasi"
+
+
+
+/*------------------------------------------------------------------------------
+ *    Configuration
+-------------------------------------------------------------------------------*/
+
+configuration {
+    modi:                       "drun,window";
+    show-icons:                 true;
+    drun-display-format:        "{name}";
+    window-format:              "{w} · {t}";
+    font-size: 10px;
+}
+
+
+
+/*------------------------------------------------------------------------------
+ *    Window conf
+-------------------------------------------------------------------------------*/
+
+window {
+    /* properties for window widget */
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       300px;
+    height:                      400px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    /* properties for all widgets */
+    enabled:                     true;
+    border:                      3px;
+    border-color:                @background-alt;
+    cursor:                      "default";
+    background-color:            @background;
+}
+
+
+
+/*------------------------------------------------------------------------------
+ *    Main Box
+-------------------------------------------------------------------------------*/
+
+mainbox {
+    enabled:                     true;
+    background-color:            transparent;
+    orientation:                 vertical;
+    children:                    [ "inputbar", "listbox" ];
+}
+listbox {
+    spacing:                     0px;
+    padding:                     15px;
+    background-color:            transparent;
+    orientation:                 vertical;
+    children:                    [ "message", "listview" ];
+}
+
+
+
+/*------------------------------------------------------------------------------
+ *    Info // Inputbar
+-------------------------------------------------------------------------------*/
+
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     15px 20px 5px 20px;
+    background-color:            transparent;
+    location:                    center;
+    text-color:                  @foreground;
+    orientation:                 horizontal;
+    children:                    ["entry", "dummy"];
+}
+entry {
+    enabled:                     true;
+    expand:                      false;
+    width:                       252px;
+    padding:                     10px 5px;
+    border: 			 2px solid;
+    border-radius: 		 10px;
+    border-color:                @green; 
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      text;
+    placeholder:                 " Input("Search... ")";
+    placeholder-color:           inherit;
+}
+dummy {
+    expand:                      true;
+    background-color:            transparent;
+}
+
+
+
+/*------------------------------------------------------------------------------
+ *    Elements box // Listview
+-------------------------------------------------------------------------------*/
+
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       7;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     10px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      "default";
+}
+
+
+
+/*------------------------------------------------------------------------------
+ *    Elements
+-------------------------------------------------------------------------------*/
+
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     4px;
+    border-radius:               100%;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+}
+element selected.normal {
+    background-color:            transparent;
+    border: 2px solid;
+    border-color:                @blue;
+    border-radius: 10px; 
+}
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        30px;
+    cursor:                      inherit;
+}
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+
+
+/*------------------------------------------------------------------------------
+ *    Mesagge
+-------------------------------------------------------------------------------*/
+
+message {
+    background-color:            transparent;
+}
+textbox {
+    padding:                     12px;
+    border-radius:               100%;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+error-message {
+    padding:                     12px;
+    border-radius:               20px;
+    background-color:            @background;
+    text-color:                  @foreground;
+}
