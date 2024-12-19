@@ -1,11 +1,11 @@
 // -*- mode: jsonc -*-
-//--------------------------------------------------------------------------------
-//                                                                                                   
-// 	 ,-----.                         
-//	 |  |) /_  ,--,--.,--.--. ,---.  
-// 	 |  .-.  \' ,-.  ||  .--'(  .-'  
-// 	 |  '--' /\ '-'  ||  |   .-'  `) 
-// 	 `------'  `--`--'`--'   `----'  
+//-----------------------------------------------------------------------------------
+//                                                                           
+// 	,-----.                         
+//	|  |) /_  ,--,--.,--.--. ,---.  
+// 	|  .-.  \' ,-.  ||  .--'(  .-'  
+// 	|  '--' /\ '-'  ||  |   .-'  `) 
+// 	`------'  `--`--'`--'   `----'  
 //                      
 //             
 //      , _ ,        RESUME: Waybar config to my main PC
@@ -14,22 +14,25 @@
 //    |'''''''|      AUTHOR:  Andr3xDev
 //    |\\'''//|      URL:  https://github.com/Andr3xDev/Dotfiles-MainArch 
 //       """                                              
-//--------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------
 
 
 {
+
+
     //--------------------------------------------------------------------------------
     //    General
     //--------------------------------------------------------------------------------
 
     "layer": "top", 
     "position": "top",
-    "height": 34,
+    "height": 30,
     "spacing": 0,
-    "margin-top": 0,
-    "margin-left": 100,
-    "margin-bottom": 0,
-    "margin-right": 100,
+    "margin-top": 5,
+    "margin-left": 50,
+    "margin-bottom": 5,
+    "margin-right": 50,
+
 
 
     //--------------------------------------------------------------------------------
@@ -38,7 +41,7 @@
 
     "modules-left": [
 	"clock",
-        "hyprland/workspaces"
+        "sway/workspaces"
     ],
 
 
@@ -59,10 +62,11 @@
     "modules-right": [
 	"custom/spotify",
         "pulseaudio",
+        "bluetooth",
         "network",
         "cpu",
         "memory",
-	"custom/dusnt"
+        "battery"
     ],
      
     
@@ -71,7 +75,7 @@
     //    Left Configuration
     //--------------------------------------------------------------------------------
      
-    "hyprland/workspaces": {
+    "sway/workspaces": {
         "disable-scroll": true,
 	"disable-select-unfocused": true,
         "all-outputs": true,
@@ -84,7 +88,7 @@
             "4": "四", 
             "5": "五",
 	    "6": "六",
-            "7": "七",
+	    "7": "七",
 	    "8": "八",
 	    "9": "九"
         }
@@ -96,13 +100,21 @@
 
 
 
-
-
-
     //--------------------------------------------------------------------------------
     //    Right Configuration
     //--------------------------------------------------------------------------------
 
+    "bluetooth": {
+	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+	"format": "",
+	"format-disabled": "󰂲",
+	"format-connected": " {num_connections}",
+	"tooltip-format": "{status}",
+	"tooltip-format-connected": "{device_alias}",
+	"on-click": "blueman-manager",
+	"interval": 1
+    },
+        
     "memory": {
         "interval": 1,
         "format": "{}% "
@@ -112,10 +124,38 @@
         "format": "{usage}% ",
         "interval": 1
     },
-    "network": {
-        "format": "",
-        "format-disconnected": "⚠"
+
+    "battery": {
+        "states": {
+            "good": 90,
+            "warning": 15,
+            "critical": 5
+        },
+        "format": "{capacity}  {icon}",
+        "format-full": "{capacity} {icon}",
+        "format-charging": "{capacity}  ",
+        "format-plugged": "{capacity}  ",
+        "format-icons": ["", "", "", "", ""]
     },
+
+    "network": {
+        "format-wifi": "",
+        "format-disconnected": "⚠",
+        "on-click-right": "kitty nmtui"
+    },
+
+    "pulseaudio": {
+        "format": "{volume} {icon}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-icons": {
+            "default": [" ", " ", " "]
+        },
+        "on-click-right": "pavucontrol",
+	"on-click-left": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+    },
+
     "custom/spotify": {  
 	"exec": "/sbin/python3 ~/.config/waybar/mediaplayer.py --player spotify",  
 	"format": " {}   ",  
@@ -123,17 +163,5 @@
 	"on-click": "playerctl --player=spotify play-pause",  
 	"on-scroll-up": "playerctl --player=spotify next",  
 	"on-scroll-down": "playerctl --player=spotify previous"  
-    },
-    "pulseaudio": {
-        "format": "{volume}   {icon}",
-        "format-muted": " ",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "default": ["", "", ""]
-        },
-        "on-click-right": "pavucontrol",
-	"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     }
 }

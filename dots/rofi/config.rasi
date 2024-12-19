@@ -34,6 +34,7 @@ configuration {
     show-icons:                 true;
     drun-display-format:        "{name}";
     window-format:              "{w} · {t}";
+    font-size: 10px;
 }
 
 
@@ -48,22 +49,21 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       400px;
-    height:                      500px;
+    width:                       300px;
+    height:                      400px;
     x-offset:                    0px;
     y-offset:                    0px;
 
     /* properties for all widgets */
     enabled:                     true;
-    border: 			 1px;
-    border-radius:               20px;
-    border-color:                @orange;
+    border:                      3px;
+    border-color:                @background-alt;
     cursor:                      "default";
     background-color:            @background;
 }
 
 
-                                       
+
 /*------------------------------------------------------------------------------
  *    Main Box
 -------------------------------------------------------------------------------*/
@@ -74,7 +74,6 @@ mainbox {
     orientation:                 vertical;
     children:                    [ "inputbar", "listbox" ];
 }
-
 listbox {
     spacing:                     0px;
     padding:                     15px;
@@ -91,32 +90,24 @@ listbox {
 
 inputbar {
     enabled:                     true;
-    spacing:                     12px;
-    padding:                     30px 20px;
+    spacing:                     10px;
+    padding:                     15px 20px 5px 20px;
     background-color:            transparent;
     location:                    center;
-    background-image:            url("~/.config/wallpapers/wall_hn2.jpg", width);
     text-color:                  @foreground;
     orientation:                 horizontal;
-    children:                    [ "textbox-prompt-colon", "entry", "dummy"];
-}
-textbox-prompt-colon {
-    enabled:                     true;
-    expand:                      false;
-    str:                         "";
-    padding:                     12px 17px;
-    border-radius:               100%;
-    background-color:            @aqua;
-    text-color:                  #000000;
+    children:                    ["entry", "dummy"];
 }
 entry {
     enabled:                     true;
     expand:                      false;
-    width:                       300px;
-    padding:                     12px 18px;
-    border-radius:               100%;
-    background-color:            @green;
-    text-color:                  #000000;
+    width:                       252px;
+    padding:                     10px 5px;
+    border: 			 2px solid;
+    border-radius: 		 10px;
+    border-color:                @green; 
+    background-color:            transparent;
+    text-color:                  @foreground;
     cursor:                      text;
     placeholder:                 " Input("Search... ")";
     placeholder-color:           inherit;
@@ -165,34 +156,16 @@ element {
     text-color:                  @foreground;
     cursor:                      pointer;
 }
-element normal.normal {
-    background-color:            inherit;
-    text-color:                  inherit;
-}
-element normal.urgent {
-    background-color:            @red;
-    text-color:                  @foreground;
-}
-element normal.active {
-    background-color:            @green;
-    text-color:                  @foreground;
-}
 element selected.normal {
-    background-color:            @blue;
-    text-color:                  #000000;
-}
-element selected.urgent {
-    background-color:            @red;
-    text-color:                  @foreground;
-}
-element selected.active {
-    background-color:            @red;
-    text-color:                  @foreground;
+    background-color:            transparent;
+    border: 2px solid;
+    border-color:                @blue;
+    border-radius: 10px; 
 }
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        32px;
+    size:                        30px;
     cursor:                      inherit;
 }
 element-text {
@@ -202,6 +175,8 @@ element-text {
     vertical-align:              0.5;
     horizontal-align:            0.0;
 }
+
+
 
 /*------------------------------------------------------------------------------
  *    Mesagge

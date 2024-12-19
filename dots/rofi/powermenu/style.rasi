@@ -46,13 +46,12 @@ window {
     transparency:                "real";
     location:                    center;
     fullscreen:                  false;
-    width:                       380px;
+    width:                       390px;
 
     /* properties for all widgets */
     enabled:                     true;
-    border: 			 1px;
-    border-radius:               20px;
-    border-color:                @orange;
+    border: 			 3px;
+    border-color:                @background-alt;
     cursor:                      "default";
     background-color:            @background;
 }
@@ -80,16 +79,18 @@ mainbox {
 inputbar {
     location:			 center;
     padding:                     8px;
-    border-radius:               100%;
-    background-color:            @blue;
+    border-radius:               10px;
+    border: 2px solid;
+    border-color: @blue;
+    background-color:            transparent;
     children:                    ["prompt"];
 }
 
 prompt {
-    padding: 			 5px;
+    padding: 			 6px;
     border-radius:               100%;
-    background-color:            @blue;
-    text-color:                  @background;
+    background-color:            transparent;
+    text-color:                  @foreground;
 }
 
 
@@ -100,8 +101,10 @@ prompt {
 
 message {
     padding:                     10px;
-    border-radius:               100%;
-    background-color:            @red;
+    border-radius:               10px;
+    border: 2px solid;
+    border-color: @red;
+    background-color:            transparent;
     text-color:                  @foreground;
 }
 
@@ -148,7 +151,9 @@ element {
     margin:                      0px;
     padding:                     14px 10px;
     border-radius:               100%;
-    border-color:                @blue;
+    border-radius:               10px;
+    border:                      2px solid;
+    border-color: 		 @green;
     background-color:            @background-alt;
     text-color:                  @foreground;
     cursor:                      pointer;
@@ -164,6 +169,6 @@ element-text {
 }
 
 element selected.normal {
-    background-color:            @green;
-    text-color:                  @background;
+    border-color: 		 @red;
+    text-color:                  @red;
 }

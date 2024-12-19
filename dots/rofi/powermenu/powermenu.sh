@@ -25,10 +25,11 @@
 #--------------------------------------------------------------------------------
 
 # Current Theme
-dir="$HOME/.config/rofi/powermenu"
+dir="$HOME/.config/rofi/powermenu/"
 theme='style'
 
 # CMDs
+lastlogin="`last $USER | head -n1 | tr -s ' ' | cut -d' ' -f5,6,7`"
 uptime="`uptime -p | sed -e 's/up //g'`"
 host=`hostname`
 
@@ -56,7 +57,7 @@ rofi_cmd() {
 
 # Confirmation CMD
 confirm_cmd() {
-	rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 220px;}' \
+	rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 215px;}' \
 		-theme-str 'mainbox {children: [ "message", "listview" ];}' \
 		-theme-str 'listview {columns: 2; lines: 1;}' \
 		-theme-str 'element-text {horizontal-align: 0.5;}' \
@@ -117,11 +118,15 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-		if [[ -x '/usr/bin/betterlockscreen' ]]; then
-			betterlockscreen -l
-		elif [[ -x '/usr/bin/i3lock' ]]; then
-			i3lock
-		fi
+	        swaylock --screenshots \
+		--ignore-empty-password \
+		--daemonize \
+		--indicator-caps-lock \
+		--indicator \
+		--clock \
+		--timestr "󰥔 %I:%M"\
+		--datestr "󰃭 %d-%m-%Y" \
+		--indicator-idle-visible
         ;;
     $suspend)
 		run_cmd --suspend
