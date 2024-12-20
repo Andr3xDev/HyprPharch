@@ -1,0 +1,157 @@
+// -*- mode: jsonc -*-
+//-----------------------------------------------------------------------------------
+//                                                                           
+// 	,-----.                         
+//	|  |) /_  ,--,--.,--.--. ,---.  
+// 	|  .-.  \' ,-.  ||  .--'(  .-'  
+// 	|  '--' /\ '-'  ||  |   .-'  `) 
+// 	`------'  `--`--'`--'   `----'  
+//                      
+//             
+//      , _ ,        RESUME: Waybar config to my main PC, just necesary staff to 
+//     ( o o )               work, play, daily use & more.
+//    /'` ' `'\
+//    |'''''''|      AUTHOR:  Andr3xDev
+//    |\\'''//|      URL:  https://github.com/Andr3xDev/Dotfiles-MainArch 
+//       """                                              
+//------------------------------------------------------------------------------------
+
+
+
+
+//------------------------------------------------------------------------------------
+//    Main bar
+//------------------------------------------------------------------------------------
+
+{
+
+    //--------------------------------------------------------------------------------
+    //    General
+    //--------------------------------------------------------------------------------
+
+    "height": 42,
+    "layer": "top", 
+    "position": "top",
+    "spacing": 0,
+    "margin-top": 8,
+    "margin-left": 200,
+    "margin-bottom": 0,
+    "margin-right": 200,
+    //"output": "HDMI-A-1",
+
+
+
+    //--------------------------------------------------------------------------------
+    //    Left Modules
+    //--------------------------------------------------------------------------------
+
+    "modules-left": [
+	"clock",
+        "hyprland/workspaces"
+    ],
+
+
+
+    //--------------------------------------------------------------------------------
+    //    Center Modules
+    //--------------------------------------------------------------------------------
+
+    "modules-center": [
+    ],
+
+
+
+    //--------------------------------------------------------------------------------
+    //    Right Modules
+    //--------------------------------------------------------------------------------
+
+    "modules-right": [
+	"custom/spotify",
+        "pulseaudio",
+        "network",
+        "cpu",
+        "memory",
+	"custom/gpu-usage"
+    ],
+     
+    
+
+    //--------------------------------------------------------------------------------
+    //    Left Configuration
+    //--------------------------------------------------------------------------------
+     
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+	"disable-select-unfocused": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "計",     //calculate
+            "2": "二",
+            "3": "三", 
+            "4": "四", 
+            "5": "五",
+	    "6": "六",
+	    "7": "七",
+	    "8": "八",
+	    "9": "九"
+        }
+    },
+
+    "clock": {
+        "format": "{:%d-%m-%Y  | %I:%M}"
+    },
+
+
+
+    //--------------------------------------------------------------------------------
+    //    Right Configuration
+    //--------------------------------------------------------------------------------
+
+
+
+    "custom/gpu-usage": {
+  	"exec": "cat /sys/class/hwmon/hwmon1/device/gpu_busy_percent",
+  	"format": "{}% ",
+  	"return-type": "",
+  	"interval": 1,
+	"tooltip": "GPU"
+    },
+
+    "memory": {
+        "interval": 1,
+        "format": "{}% "
+    },
+        
+    "cpu": {
+        "format": "{usage}% ",
+        "interval": 1
+    },
+
+    "network": {
+        "format-ethernet": "",
+        "format-disconnected": "⚠",
+	"tooltip-format-ethernet": "{ifname}",
+        "tooltip-format-disconnected": "Disconnected"
+    },
+
+    "pulseaudio": {
+        "format": "{volume} {icon}",
+        "format-muted": "   ",
+        "format-icons": {
+            "default": [" ", " ", " "]
+        },
+        "on-click-right": "pavucontrol",
+	"on-click-left": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+    },
+
+    "custom/spotify": {  
+	"exec": "/sbin/python3 ~/.config/waybar/mediaplayer.py --player spotify",  
+	"format": " {}   ",  
+	"return-type": "json",  
+	"on-click": "playerctl --player=spotify play-pause",  
+	"on-scroll-up": "playerctl --player=spotify next",  
+	"on-scroll-down": "playerctl --player=spotify previous"  
+    }
+}
