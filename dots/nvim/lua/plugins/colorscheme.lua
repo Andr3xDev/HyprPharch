@@ -1,3 +1,9 @@
+-----------------------------------------------------------
+-- Colorscheme to all nvim color
+-- Source: https://github.com/sainnhe/gruvbox-material
+-- Config autor: sainnhe
+-----------------------------------------------------------
+
 return {
     'sainnhe/gruvbox-material',
     lazy = false,

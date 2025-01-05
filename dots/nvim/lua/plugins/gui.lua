@@ -1,5 +1,10 @@
+---------------------------------------------------------------------------
+-- Dashboard config show on start
+-- Source: https://github.com/goolord/alpha-nvim
+-- Config autor: Andr3xDev
+---------------------------------------------------------------------------
+
 return {
-{
     'goolord/alpha-nvim',
     event = 'VimEnter',
     enabled = true,
@@ -41,7 +46,6 @@ return {
 
         dashboard.section.header.opts.hl = 'AlphaHeader'
         dashboard.section.buttons.opts.hl = 'AlphaButtons'
-        --dashboard.section.footer.opts.hl = 'AlphaFooter'
         dashboard.opts.layout[1].val = 8
         return dashboard
     end,
@@ -59,5 +63,4 @@ return {
     end
     require('alpha').setup(dashboard.opts)
     end,
-}
 }
