@@ -1,0 +1,181 @@
+#--------------------------------------------------------------------------------
+#                                                                              
+#  ,--.   ,--.        ,--.             ,-----.                ,---.,--.        
+#  |   `.'   | ,--,--.`--',--,--,     '  .--./ ,---. ,--,--, /  .-'`--' ,---.  
+#  |  |'.'|  |' ,-.  |,--.|      \    |  |    | .-. ||      \|  `-,,--.| .-. | 
+#  |  |   |  |\ '-'  ||  ||  ||  |    '  '--'\' '-' '|  ||  ||  .-'|  |' '-' ' 
+#  `--'   `--' `--`--'`--'`--''--'     `-----' `---' `--''--'`--'  `--'.`-  /  
+#                                                                      `---'
+#             
+#      , _ ,        RESUME:  This cnofig contains all elements, keyblinds, 
+#     ( o o )               
+#    /'` ' `'\
+#    |'''''''|      AUTHOR:  Andr3xDev
+#    |\\'''//|      URL: 
+#       """                                              
+#--------------------------------------------------------------------------------
+
+
+
+#--------------------------------------------------------------------------------
+#    Apps
+#--------------------------------------------------------------------------------
+
+# Basics
+set $term kitty
+set $fileManager kitty yazi
+set $network kitty nmtui
+
+# Menu
+set $menu rofi -show drun -theme ~/.config/rofi/config.rasi
+set $powermenu zsh -c '~/.config/rofi/powermenu/powermenu.sh'
+
+#fetch & control
+set $fetch kitty --hold -e fastfetch
+set $top kitty btop
+
+
+
+#--------------------------------------------------------------------------------
+#    Autostart
+#--------------------------------------------------------------------------------
+
+exec dunst &
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+
+
+#--------------------------------------------------------------------------------
+#    Keyblinds
+#--------------------------------------------------------------------------------
+
+set $mod Mod4
+
+# Basic
+bindsym $mod+Return exec $term
+bindsym $mod+q kill
+bindsym $mod+e exec $fileManager
+bindsym $mod+b exec $top
+bindsym $mod+Shift+c reload
+bindsym $mod+v floating toggle
+
+# Menus
+bindsym $mod+Space exec $menu    
+bindsym $mod+Backspace exec $powermenu
+bindsym $mod+i exec $fetch
+
+# Move focus around
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Ditto, with arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Resize windows
+bindsym $mod+Control+Right resize shrink width 20px
+bindsym $mod+Control+Up resize grow height 20px
+bindsym $mod+Control+Down resize shrink height 20px
+bindsym $mod+Control+Left resize grow width 20px
+
+# Scratchpad
+bindsym $mod+Shift+s move scratchpad
+bindsym $mod+s scratchpad show
+
+# Special function keys
+bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -1%
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +1%
+bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+
+# Workspaces movemnet
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+
+
+
+#--------------------------------------------------------------------------------
+#    Apparence
+#--------------------------------------------------------------------------------
+
+# Border props
+default_border pixel 2
+default_floating_border pixel 2
+titlebar_padding 1
+titlebar_border_thickness 0
+
+# Border color
+client.focused #89b482 #89b482 #89b482
+client.unfocused #1B1B1B #1B1B1B #1B1B1B
+gaps inner 10
+gaps outer 5
+
+# cursor
+seat seat0 xcursor_theme Bibata-Modern-Ice 20
+
+# Wallpaper
+output * background ~/.config/wallpapers/wall_freiren2.jpeg fill
+
+# Waybar conf in .config/waybar
+bar {
+    swaybar_command waybar
+}
+
+
+
+#--------------------------------------------------------------------------------
+#    Windows rules
+#--------------------------------------------------------------------------------
+
+for_window [app_id="kitty"] floating enable, resize set width 800px height 500px
+
+
+
+#--------------------------------------------------------------------------------
+#    Workspaces
+#--------------------------------------------------------------------------------
+
+
+
+
+#--------------------------------------------------------------------------------
+#    Input
+#--------------------------------------------------------------------------------
+
+input * {
+    xkb_layout latam
+}
+
+input "type:touchpad" {
+    dwt enabled
+    tap enabled
+    middle_emulation enabled
+}
+
+
+#--------------------------------------------------------------------------------
+#    Output
+#--------------------------------------------------------------------------------
