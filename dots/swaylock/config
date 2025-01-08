@@ -1,0 +1,70 @@
+#--------------------------------------------------------------------------------
+#                                                                   
+#   ,---.                              ,--.                ,--.     
+#  '   .-' ,--.   ,--. ,--,--.,--. ,--.|  |    ,---.  ,---.|  |,-.  
+#  `.  `-. |  |.'.|  |' ,-.  | \  '  / |  |   | .-. || .--'|     /  
+#  .-'    ||   .'.   |\ '-'  |  \   '  |  '--.' '-' '\ `--.|  \  \  
+#  `-----' '--'   '--' `--`--'.-'  /   `-----' `---'  `---'`--'`--' 
+#                             `---'                        
+#
+#
+#      , _ ,       RESUME: Swaylock style config, settings are
+#     ( o o )              declare on powerMneu.sh in rofi files
+#    /'` ' `'\     
+#    |'''''''|     AUTHOR:  Andr3xDev
+#    |\\'''//|     URL:  https://github.com/Andr3xDev/Dotfiles
+#       """                 
+#
+#--------------------------------------------------------------------------------
+
+
+
+# Fonts
+font=JetBrains Mono Nerd Font
+font-size=15
+
+# Blur
+
+
+effect-blur=5x3
+scaling=fill
+
+# Size
+indicator-radius=100
+indicator-thickness=10
+
+# Caps colors
+caps-lock-bs-hl-color=000000
+caps-lock-key-hl-color=000000
+
+# Background
+inside-color=282828
+inside-clear-color=282828
+inside-caps-lock-color=282828
+inside-ver-color=282828
+inside-wrong-color=402120
+
+key-hl-color=7fb4ca
+layout-bg-color=1f1f28
+layout-border-color=1f1f28
+layout-text-color=dcd7ba
+
+line-color=1f1f28
+line-clear-color=1f1f28
+line-caps-lock-color=1f1f28
+line-ver-color=1f1f28
+
+line-wrong-color=1f1f28
+ring-color=1f1f28
+ring-clear-color=ffa066
+ring-caps-lock-color=1f1f28
+ring-ver-color=98bb6c
+
+ring-wrong-color=1f1f28
+separator-color=00000000
+
+text-color=dcd7ba
+text-clear-color=ffa066
+text-caps-lock-color=957fbb
+text-ver-color=dcd7ba
+text-wrong-color=f7768e
