@@ -1,0 +1,39 @@
+[global]
+    allow_markup = yes
+    format = "<b>%s %p</b>\n%b"
+    sort = yes
+    indicate_hidden = true
+    idle_threshold = 0
+    width = 300
+    alignment = center
+    show_age_threshold = 60
+    sticky_history = yes
+    follow = mouse
+    word_wrap = yes
+    separator_height = 2
+    horizontal_padding = 10
+    separator_color = "#1B1B1B"
+    monitor = 0
+    frame_width = 3
+
+[urgency_low]
+    background = "#282828"
+    foreground = "#EBDBB2"
+    frame_color = "#1B1B1B"
+    timeout = 5
+    format = "<b><span color='#7DAEA3'>%s</span></b>\n%b"
+
+[urgency_normal]
+    background = "#282828"
+    foreground = "#EBDBB2"
+    frame_color = "#1B1B1B"
+    format = "<b><span color='#A9B665'>%s</span></b>\n%b"
+    timeout = 10
+
+[urgency_critical]
+    background = "#282828"
+    foreground = "#EBDBB2"
+    frame_color = "#1B1B1B"
+    highlight = "#EA6962"
+    timeout = 5
+    format = "<b><span color='#EA6962'>%s</span></b>\n%b"
