@@ -1,0 +1,128 @@
+//-----------------------------------------------------------------------------
+//
+//  ,------.               ,--.  ,------.        ,--.        ,--.
+//  |  .---',--,--. ,---.,-'  '-.|  .---',---. ,-'  '-. ,---.|  ,---.
+//  |  `--,' ,-.  |(  .-''-.  .-'|  `--,| .-. :'-.  .-'| .--'|  .-.  |
+//  |  |`  \ '-'  |.-'  `) |  |  |  |`  \   --.  |  |  \ `--.|  | |  |
+//  `--'    `--`--'`----'  `--'  `--'    `----'  `--'   `---'`--' `--'
+//
+//
+//
+//      , _ ,        RESUME:  Menu to run apps and see which are open
+//     ( o o )
+//    /'` ' `'\
+//    |'''''''|      AUTHOR:  Andr3xDev
+//    |\\'''//|      URL: https://github.com/Andr3xDev/Dotfiles-MainArch
+//       """
+//-----------------------------------------------------------------------------
+
+
+
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "file",
+        "source": "~/.config/fastfetch/logo.txt",
+        "width": 50,
+        "height": 10,
+        "padding": {
+            "top": 2,
+            "left": 6
+        },
+        "color": {
+            "1": "yellow",
+        }
+    },
+    "display": {
+        "separator": ""
+    },
+    "modules": [
+        {
+            "type": "custom",
+            "format": "╔════════════════════════════════════════════════════╗"
+        },
+        {
+            "type": "os",
+            "key": "  󰣇  OS        ║",
+            "format": " {3}",
+            "keyColor": "blue"
+        },
+        {
+            "type": "kernel",
+            "key": "    Kernel    ║ ",
+            "format": "{1} {2}",
+            "keyColor": "blue"
+        },
+        {
+            "type": "packages",
+            "key": "  󰏗  Packages  ║ ",
+            "format": "{2} (pacman){?3}[{3}]{?}",
+            "keyColor": "blue"
+        },
+        {
+            "type": "shell",
+            "key": "    Shell     ║ ",
+            "format": "{6}",
+            "keyColor": "blue"
+        },
+        {
+            "type": "terminal",
+            "key": "    Terminal  ║ ",
+            "format": "{5}",
+            "keyColor": "blue"
+        },
+        {
+            "type": "wm",
+            "key": "  󰍹  WM        ║ ",
+            "keyColor": "blue"
+        },
+        {
+            "type": "custom",
+            "format": "╚════════════════════════════════════════════════════╝"
+        },
+        {
+          "type": "colors",
+          "paddingLeft": 20,
+          "symbol": "circle"
+        },
+        {
+            "type": "custom",
+            "format": "╔════════════════════════════════════════════════════╗"
+        },
+        {
+            "type": "cpu",
+            "key": "    CPU       ║ ",
+            "format": "{1}",
+            "keyColor": "green"
+        },
+        {
+            "type": "gpu",
+            "key": "  󰊴  GPU       ║ ",
+            "format": "{2}",
+            "keyColor": "green"
+        },
+        {
+            "type": "memory",
+            "key": "    Memory    ║ ",
+            "format": "{1} / {2} ({3})",
+            "keyColor": "green"
+        },
+        {
+            "type": "disk",
+            "key": "    Disk      ║ ",
+            "format": "{1} / {2} ({3})",
+            "keyColor": "green"
+        },
+        {
+            "type": "custom",
+            "format": "╚════════════════════════════════════════════════════╝"
+        },
+        {
+            "type": "custom",
+            "format": " Github   ==>   Andr3xDev",
+            "color":{
+                "1": "red"
+            }
+        }
+    ]
+}
