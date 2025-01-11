@@ -171,8 +171,11 @@ input * {
 
 input "type:touchpad" {
     dwt enabled
+    natural_scroll disabled
     tap enabled
     middle_emulation enabled
+    accel_profile "flat"
+    pointer_accel 0.38
 }
 
 
