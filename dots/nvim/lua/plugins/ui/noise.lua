@@ -1,3 +1,8 @@
+---------------------------------------------------------------------------
+-- Botton bar config show everytime
+-- Source: https://github.com/folke/noice.nvim
+---------------------------------------------------------------------------
+
 return {
     'folke/noice.nvim',
     event = 'VeryLazy',

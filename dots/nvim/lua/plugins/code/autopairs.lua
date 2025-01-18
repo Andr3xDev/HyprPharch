@@ -1,3 +1,8 @@
+---------------------------------------------------------------------------------
+-- Autopairs any kind of bracket and keep identation
+-- Source: https://github.com/windwp/nvim-autopairs
+---------------------------------------------------------------------------------
+
 return {
     'windwp/nvim-autopairs',
     event = "InsertEnter",

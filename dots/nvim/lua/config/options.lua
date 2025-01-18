@@ -1,6 +1,7 @@
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
+---------------------------------------------------------------------------
+-- General config to Neovim
+-- Config autor: Andr3xDev
+---------------------------------------------------------------------------
 
 vim.g.have_nerd_font = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' } -- Spaces characters by type
