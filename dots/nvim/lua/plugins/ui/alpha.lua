@@ -5,7 +5,7 @@
 ---------------------------------------------------------------------------
 
 return {
-  'goolord/alpha-nvim',
+    'goolord/alpha-nvim',
   event = 'VimEnter',
   enabled = true,
   init = false,
