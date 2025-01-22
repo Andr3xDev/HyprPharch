@@ -40,6 +40,17 @@ return {
             local lspconfig = require("lspconfig")
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+            vim.api.nvim_create_autocmd("BufEnter", {
+                callback = function()
+                    local clients = vim.lsp.get_active_clients()
+                    for _, client in pairs(clients) do
+                        if not vim.lsp.buf_is_attached(0, client.id) then
+                            vim.lsp.stop_client(client.id)
+                        end
+                    end
+                end,
+            })
+
             local on_attach = function(_, bufnr)
                 local opts = { noremap = true, silent = true, buffer = bufnr }
                 vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -63,12 +74,17 @@ return {
                 },
             }
 
-            for server, config in pairs(servers) do
-                lspconfig[server].setup(vim.tbl_extend("force", {
-                    on_attach = on_attach,
-                    capabilities = capabilities,
-                }, config))
-            end
+            local mason_lspconfig = require("mason-lspconfig")
+            mason_lspconfig.setup_handlers({
+                function(server_name)
+                    lspconfig[server_name].setup({
+                        on_attach = on_attach,
+                        capabilities = capabilities,
+                        settings = servers[server_name] and servers[server_name].settings or nil,
+                    })
+                end,
+            })
         end,
     },
 }
+
