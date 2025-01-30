@@ -118,15 +118,7 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-	        swaylock --screenshots \
-		--ignore-empty-password \
-		--daemonize \
-		--indicator-caps-lock \
-		--indicator \
-		--clock \
-		--timestr "󰥔 %I:%M"\
-		--datestr "󰃭 %d-%m-%Y" \
-		--indicator-idle-visible
+	    hyprlock
         ;;
     $suspend)
 		run_cmd --suspend
