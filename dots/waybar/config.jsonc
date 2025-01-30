@@ -12,7 +12,7 @@
 //     ( o o )              
 //    /'` ' `'\
 //    |'''''''|      AUTHOR:  Andr3xDev
-//    |\\'''//|      URL:  https://github.com/Andr3xDev/Dotfiles-MainArch 
+//    |\\'''//|      URL:  https://github.com/Andr3xDev/Dotfiles
 //       """                                              
 //------------------------------------------------------------------------------------
 
@@ -26,7 +26,7 @@
 
     "layer": "top", 
     "position": "top",
-    "height": 40,
+    "height": 36,
     "spacing": 0,
     "margin-top": 7,
     "margin-left": 50,
@@ -41,7 +41,7 @@
 
     "modules-left": [
 	"clock",
-        "sway/workspaces"
+        "hyprland/workspaces"
     ],
 
 
@@ -75,9 +75,9 @@
     //    Left Configuration
     //--------------------------------------------------------------------------------
      
-    "sway/workspaces": {
+    "hyprland/workspaces": {
         "disable-scroll": true,
-	"disable-select-unfocused": true,
+	    "disable-select-unfocused": true,
         "all-outputs": true,
         "warp-on-scroll": false,
         "format": "{icon}",
@@ -87,16 +87,16 @@
             "3": "三", 
             "4": "四", 
             "5": "五",
-	    "6": "六",
-	    "7": "七",
-	    "8": "八",
-	    "9": "九"
+	        "6": "六",
+	        "7": "七",
+	        "8": "八",
+	        "9": "九"
         }
     },
 
     "clock": {
         "format": "{:%d-%m-%Y  | %I:%M}",
-	"tooltip-format": "{:%A}"
+	    "tooltip-format": "{:%A}"
     },
 
 
@@ -106,13 +106,13 @@
     //--------------------------------------------------------------------------------
 
     "bluetooth": {
-	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
-	"format": "󰂲",
-	"format-connected": " {num_connections}",
-	"tooltip-format": "{status}",
-	"tooltip-format-connected": "{device_alias}",
-	"on-click": "kitty bluetui",
-	"interval": 1
+	    "format": "󰂲",
+        "format-on": "",
+	    "format-connected": " {num_connections}",
+	    "tooltip-format": "{status}",
+	    "tooltip-format-connected": "{device_alias}",
+	    "on-click": "kitty bluetui",
+	    "interval": 1
     },
         
     "memory": {
@@ -141,8 +141,8 @@
     "network": {
         "format-wifi": "",
         "format-disconnected": "⚠",
-        "on-click-right": "kitty nmtui",
-	"tooltip-format": "{essid}"
+        "on-click": "kitty nmtui",
+	    "tooltip-format": "{essid}"
     },
 
     "wireplumber": {
@@ -152,7 +152,7 @@
             "default": [" ", " ", " "]
         },
         "on-click-right": "pavucontrol",
-	"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+	    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
 
     "custom/spotify": {  

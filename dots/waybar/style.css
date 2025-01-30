@@ -45,7 +45,7 @@
 
 *{
     font-family: FontAwesome, Jetbrains Mono Nert;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 window#waybar {
@@ -97,9 +97,16 @@ window#waybar {
 }
 #workspaces button {
     color: @foreground;
-    padding: 0 1px;
+    padding: 0 6px;
 }
 #workspaces button:hover {
+    background-color: @color_aqua;
+    color: #000000;
+}
+#workspaces button.active {
+    color: @color_red;
+}
+#workspaces button.active:hover {
     background-color: @color_aqua;
     color: #000000;
 }
