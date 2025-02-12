@@ -96,7 +96,8 @@
 
     "clock": {
         "format": "{:%d-%m-%Y  | %I:%M}",
-	    "tooltip-format": "{:%A}"
+	    "tooltip-format": "{:%A}",
+	    "on-click": "galendae"
     },
 
 
