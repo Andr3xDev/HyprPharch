@@ -111,7 +111,7 @@
 	    "format-connected": " {num_connections}",
 	    "tooltip-format": "{status}",
 	    "tooltip-format-connected": "{device_alias}",
-	    "on-click": "kitty bluetui",
+	    "on-click": "kitty --class bluetui -e bluetui",
 	    "interval": 1
     },
         
@@ -141,7 +141,7 @@
     "network": {
         "format-wifi": "",
         "format-disconnected": "⚠",
-        "on-click": "kitty nmtui",
+        "on-click": "kitty --class nmtui -e nmtui",
 	    "tooltip-format": "{essid}"
     },
 
