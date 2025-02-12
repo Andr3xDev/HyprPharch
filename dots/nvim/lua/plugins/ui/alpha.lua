@@ -45,7 +45,7 @@ return {
 
     dashboard.section.header.opts.hl = 'AlphaHeader'
     dashboard.section.buttons.opts.hl = 'AlphaButtons'
-    dashboard.opts.layout[1].val = 4
+    dashboard.opts.layout[1].val = 5
     return dashboard
   end,
 

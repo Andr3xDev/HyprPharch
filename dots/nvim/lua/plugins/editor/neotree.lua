@@ -22,6 +22,7 @@ return {
         close_if_last_window = false,
         popup_border_style = "single",
         enable_git_status = true,
+        focus_on_open = true,
         enable_modified_markers = true,
         enable_diagnostics = false,
         sort_case_insensitive = true,
@@ -68,7 +69,7 @@ return {
         },
         window = {
             position = "left",
-            width = 35,
+            width = 40,
             mappings = {
                 ["l"] = "open",
                 ["h"] = "close_node",
@@ -78,6 +79,7 @@ return {
         },
         filesystem = {
             use_libuv_file_watcher = true,
+            group_empty_dirs = true,
             filtered_items = {
                 hide_dotfiles = false,
                 hide_gitignored = false,
