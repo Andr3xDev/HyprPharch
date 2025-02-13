@@ -9,7 +9,7 @@
 
 ## About The Project
 
-This configuration is focused on having only the essential visual and practical elements, which are also lightweight and consume the least amount of resources. Even so, the configuration makes it possible to add or change its composition without damaging any element of the system. It has a sober and **minimalist style** that focuses on productivity without sacrificing a clean and calm aesthetic.
+This configuration is focused on having only the essential visual and practical elements, which are also lightweight and consume the least amount of resources. It has a sober and **minimalist style** that focuses on productivity without sacrificing a clean and calm aesthetic.
 
 </br>
 
