@@ -16,14 +16,44 @@ This configuration is focused on having only the essential visual and practical 
 ## Screenshots
 - Overview:
   
-[[]]
+![start](/Screenshots/home.png)
 
-- Others:
+<details>
+    <summary>Other images</summary>  
+    
+![start](/Screenshots/start.png)
+
+![start](/Screenshots/systemApps.png)
+
+![start](/Screenshots/menu.png)
+
+![start](/Screenshots/nvim.png)
+
+![start](/Screenshots/bSpotify.png)
+
+![start](/Screenshots/close.png)
+
+</details>
 
 
 </br>
 
 ## Resume
+
+| Categoría            | Aplicación         |
+|----------------------|--------------------|
+| **Compositor**      | Hyprland            |
+| **Terminal**        | Kitty               |
+| **Shell**           | Zsh                 |
+| **Editor**          | Neovim / VScode     |
+| **Notifications**   | Dunst               |
+| **Menu**            | Rofi-wayland        |
+| **Bar**             | Waybar              |
+| **Calendar**        | Gsimplecal          |
+| **Bluethoot**       | Bluetui             |
+| **Network**         | nmtui               |
+| **Sound control**   | Pavucontrol         |
+
 
 
 
@@ -32,6 +62,9 @@ This configuration is focused on having only the essential visual and practical 
 ## Getting Started
 To obtain this configuration, there are two options. The first one is through a script, and the other one is manually, depending on what you want to have in your config.
 
+
+> [!WARNING]
+> This section is not available at the moment
 
 ### Automatic installation
 This script will install all the dependencies and packages necessary to copy the complete configuration. Ideal to have an exact version of this configuration.
