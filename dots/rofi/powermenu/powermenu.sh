@@ -96,7 +96,7 @@ run_cmd() {
 			mpc -q pause
 			amixer set Master mute
 			systemctl suspend
-            hyprlock
+            loginctl lock-sesion
 		fi
 	else
 		exit 0
