@@ -51,7 +51,7 @@ This configuration is focused on having only the essential visual and practical 
 | **Bar**             | Waybar              |
 | **Calendar**        | Gsimplecal          |
 | **Bluethoot**       | Bluetui             |
-| **Network**         | nmtui               |
+| **Network**         | impala              |
 | **Sound control**   | Pavucontrol         |
 
 
@@ -76,6 +76,7 @@ This script will install all the dependencies and packages necessary to copy the
 
 2. Run the installation script
    ```sh
+    cd Dotfiles/script
    ./installation..sh
    ```
 3. Continue the installation, completing what the script asks for
@@ -83,26 +84,31 @@ This script will install all the dependencies and packages necessary to copy the
    
 ### Manual installation
 You can copy the configurations that interest you and also see what package and dependencies you need.
-1. Clone the repo
-   ```sh
-   git clone https://github.com/Andr3xDev/Dotfiles.git
-   ```
+1. Clone the repo.
+    ```sh
+    git clone https://github.com/Andr3xDev/Dotfiles.git
+    ```
 
-2. Copy target config
-   ```sh
-   cd Dotfiles/dots
-   cp -r <Target config> ¬/.config/
-   ```
+2. Copy target config.
+    ```sh
+    cd Dotfiles/dots
+    cp -r <Target config> ¬/.config/
+    ```
    
-3. Filter and install the packages you need
-   ```sh
-   sudo pacman -S [TODO: put all packages]
-   ```
+3. Filter and install the packages you need.
+    ```sh
+    sudo pacman -S --noconfirm --needed hyprland hyprpaper hyprlock hypridle kitty 7zip bluetui brightnessctl btop dunst fastfetch firefox fzf gtk-engine-murrine impala neovim noto-fonts-cjk nwg-look papirus-icon-theme pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse polkit-gnome python python-gobject rofi-wayland spotify-launcher ttf-firacode-nerd ttf-font-awesome ttf-jetbrains-mono-nerd unzip waybar wireplumber xdg-desktop-portal-hyprland xdg-utils yazi zsh
+    ```
 
-   ```sh
-   paru -S [TODO: put all packages]
-   ```
+    ```sh
+    paru -S --noconfirm --needed bibata-cursor-theme-bin galendae-git spicetify-cli visual-studio-code-bin
+    ```
 
+4. (OPTIONAL), download Gruvbox Material GTK theme from the sourse (), or run the script.
+    ```sh
+    cd Dotfiles/scripts
+    ./gtk.sh
+    ```
 
 </br>
 
