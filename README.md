@@ -51,7 +51,7 @@ This configuration is focused on having only the essential visual and practical 
 | **Bar**             | Waybar              |
 | **Calendar**        | Gsimplecal          |
 | **Bluethoot**       | Bluetui             |
-| **Network**         | impala              |
+| **Network**         | nmtui               |
 | **Sound control**   | Pavucontrol         |
 
 
@@ -97,7 +97,7 @@ You can copy the configurations that interest you and also see what package and 
    
 3. Filter and install the packages you need.
     ```sh
-    sudo pacman -S --noconfirm --needed hyprland hyprpaper hyprlock hypridle kitty 7zip bluetui brightnessctl btop dunst fastfetch firefox fzf gtk-engine-murrine impala neovim noto-fonts-cjk nwg-look papirus-icon-theme pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse polkit-gnome python python-gobject rofi-wayland spotify-launcher ttf-firacode-nerd ttf-font-awesome ttf-jetbrains-mono-nerd unzip waybar wireplumber xdg-desktop-portal-hyprland xdg-utils yazi zsh
+    sudo pacman -S --noconfirm --needed hyprland hyprpaper hyprlock hypridle kitty 7zip bluetui brightnessctl btop dunst fastfetch firefox fzf gtk-engine-murrine neovim noto-fonts-cjk nwg-look papirus-icon-theme pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse polkit-gnome python python-gobject rofi-wayland spotify-launcher ttf-firacode-nerd ttf-font-awesome ttf-jetbrains-mono-nerd unzip waybar wireplumber xdg-desktop-portal-hyprland xdg-utils yazi zsh
     ```
 
     ```sh
