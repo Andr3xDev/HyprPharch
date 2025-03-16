@@ -1,10 +1,10 @@
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
 [manager]
-ratio          = [ 1, 4, 3 ]
+ratio          = [ 1, 3, 3 ]
 sort_by        = "alphabetical"
 sort_sensitive = false
-sort_reverse 	 = false
+sort_reverse   = false
 sort_dir_first = true
 sort_translit  = false
 linemode       = "none"
@@ -16,7 +16,7 @@ title_format   = "Yazi: {cwd}"
 
 [preview]
 wrap            = "no"
-tab_size        = 2
+tab_size        = 3
 max_width       = 600
 max_height      = 900
 cache_dir       = ""
@@ -29,31 +29,24 @@ ueberzug_offset = [ 0, 0, 0, 0 ]
 
 [opener]
 edit = [
-	{ run = '${EDITOR:-vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
-	{ run = 'code %*',    orphan = true, desc = "code",           for = "windows" },
-	{ run = 'code -w %*', block = true,  desc = "code (block)",   for = "windows" },
+	{ run = '${EDITOR:-nvim} "$@"', desc = "$EDITOR", block = true, for = "unix" },
+	{ run = 'firefox "$1"', desc = "Browser", block = true, for = "unix" }
 ]
 open = [
-	{ run = 'xdg-open "$1"',                desc = "Open", for = "linux" },
-	{ run = 'open "$@"',                    desc = "Open", for = "macos" },
-	{ run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
-	{ run = 'termux-open "$1"',             desc = "Open", for = "android" },
+	{ run = 'xdg-open "$1"', desc = "Open", for = "unix" },
 ]
 reveal = [
-	{ run = 'xdg-open "$(dirname "$1")"',           desc = "Reveal", for = "linux" },
-	{ run = 'open -R "$1"',                         desc = "Reveal", for = "macos" },
-	{ run = 'explorer /select,"%1"', orphan = true, desc = "Reveal", for = "windows" },
-	{ run = 'termux-open "$(dirname "$1")"',        desc = "Reveal", for = "android" },
+	{ run = 'xdg-open "$(dirname "$1")"', desc = "Reveal", for = "linux" },
 	{ run = '''exiftool "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show EXIF", for = "unix" },
 ]
 extract = [
 	{ run = 'ya pub extract --list "$@"', desc = "Extract here", for = "unix" },
-	{ run = 'ya pub extract --list %*',   desc = "Extract here", for = "windows" },
 ]
 play = [
 	{ run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
-	{ run = 'mpv --force-window %*', orphan = true, for = "windows" },
 	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
+]
+text = [
 ]
 
 [open]
@@ -75,6 +68,7 @@ rules = [
 	{ mime = "inode/empty", use = [ "edit", "reveal" ] },
 	# Fallback
 	{ name = "*", use = [ "open", "reveal" ] },
+    { name = "*.html", use = [ "open", "edit" ] },
 ]
 
 [tasks]
@@ -180,7 +174,7 @@ search_origin = "top-center"
 search_offset = [ 0, 2, 50, 3 ]
 
 # shell
-shell_title  = [ "Shell:", "Shell (block):" ]
+shell_title  = [ "Shell:", " Only binaries... " ]
 shell_origin = "top-center"
 shell_offset = [ 0, 2, 50, 3 ]
 
