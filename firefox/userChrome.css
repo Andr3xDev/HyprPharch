@@ -1,0 +1,202 @@
+/* TODO: HEADER */
+
+/*------------------------------------------------------------------*/
+/*  General things                                                  */
+/*------------------------------------------------------------------*/
+
+* {
+  font-family: monospace !important;
+}
+
+:root {
+    /*--- Colors ---*/
+    --primary-color: #1b1b1b;
+    --secondary-color: #282828;
+    --red-color: #ea6962;
+    --green-color: #a9b665;
+
+    background-color: var(--primary-color) !important;
+    --toolbar-bgcolor: var(--primary-color) !important;
+    --tabs-border-color: var(--secondary-color) !important;
+    --lwt-sidebar-background-color: var(--primary-color) !important;
+    --lwt-toolbar-field-focus: var(--primary-color) !important;
+}
+
+
+
+/*------------------------------------------------------------------*/
+/*  Navigation Bar                                                  */
+/*------------------------------------------------------------------*/
+
+#navigator-toolbox {
+  background-color: var(--primary-color) !important;
+}
+
+/*--- center navbar ---*/
+#nav-bar {
+    display: flex;
+    justify-content: center;
+}
+#urlbar:not([focused]) #urlbar-input {
+    text-align: center !important;
+}
+#main-window #urlbar {
+    margin-top: 4px !important;
+    margin-bottom: 2px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+#urlbar[breakout][breakout-extend] > #urlbar-background {
+    animation: none !important;
+    box-shadow: none !important;
+}
+#urlbar:not([breakout][breakout-extend]) #urlbar-input {
+    text-align: center !important;
+}
+
+/* hide nav menu */
+.urlbarView {
+    display: none !important;
+}
+
+/* font size */
+#urlbar-input,
+.searchbar-textbox {
+    font-size: 13px !important;
+}
+
+
+/*--- Search bar focus ---*/
+#urlbar:focus-within > #urlbar-background {
+    background-color: #131313 !important;
+}
+#urlbar:focus-within:hover > #urlbar-background {
+    background-color: #131313 !important;
+}
+#urlbar ::-moz-selection {
+    background-color: var(--secondary-color) !important;
+    color: white !important;
+}
+
+
+
+/*------------------------------------------------------------------*/
+/*  Bookmarks bar                                                   */
+/*------------------------------------------------------------------*/
+
+/*--- Distribution ---*/
+#PlacesToolbarItems {
+    padding-block: 5px;
+    gap: 20px !important;
+    margin-left: 60px;
+}
+#PlacesToolbarItems .bookmark-item {
+    padding: 3px 3px !important;
+}
+
+/*--- Individual size ---*/
+toolbarbutton.bookmark-item:not(.subviewbutton) {
+    font-size: 12px;
+    margin-right: 3px !important;
+}
+.bookmark-item .toolbarbutton-icon {
+    width: 14px !important;
+    height: 14px !important;
+}
+
+
+
+/*------------------------------------------------------------------*/
+/*  Tabs Bar                                                        */
+/*------------------------------------------------------------------*/
+
+/* navigation arrows */
+#sidebar-switcher-arrow {
+    display: none !important;
+}
+
+/*--- Individual size ---*/
+.tabbrowser-tab:not([selected]):not(:hover) .tab-content {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+#tabbrowser-tabs[orient="vertical"] .tabbrowser-tab[selected="true"] {
+    background-color: var(--secondary-color) !important;
+    border-left: 3px solid var(--green-color) !important;
+    border-radius: 0px !important;
+    padding: 0px 10px;
+    box-shadow: none;
+}
+
+/*--- Icons ---*/
+#tabbrowser-tabs[orient=vertical]:not([expanded]) .tabbrowser-tab .tab-close-button  {
+    display: none !important;
+}
+#tabbrowser-tabs[orient=vertical]:not([expanded]) .tabbrowser-tab .tab-icon-overlay {
+    width: 10px !important;
+    height: 10px !important;
+    margin-left: 4px !important;
+}
+
+/*- separation -*/
+#vertical-tabs.customization-target #tabbrowser-tabs tab:not([pinned]) .tab-background { 
+    margin-block: -2px !important;
+    background: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+#vertical-tabs.customization-target #tabbrowser-tabs tab[pinned] .tab-background { 
+    margin-block: -3px !important;
+    background: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+#vertical-pinned-tabs-container {
+    margin-bottom: -2px !important;
+}
+
+#tabbrowser-tabbox {
+    outline: none !important;
+}
+
+
+
+/*------------------------------------------------------------------*/
+/*  Popup Menu                                                      */
+/*------------------------------------------------------------------*/
+
+menupopup, panel {
+    --panel-background: var(--primary-color) !important;
+    --panel-color: #CCC !important;
+    --panel-border-color: var(--secondary-color) !important;
+    --panel-border-radius: 0px !important;
+    --panel-separator-color: var(--browser-separator-color) !important;
+}
+menupopup menuitem[_moz-menuactive], menupopup menuitem:hover {
+    background-color: var(--green-color) !important;
+    font-size: 13px;
+    color: white !important;
+}
+
+
+
+/*------------------------------------------------------------------*/
+/*  Disable items                                                   */
+/*------------------------------------------------------------------*/
+
+#tabs-newtab-button,
+#sidebar-switcher-arrow > .toolbarbutton-icon,
+.tabbrowser-tab::after,
+.tabbrowser-tab::before,
+#back-button,
+#forward-button,
+#tracking-protection-icon-container,
+#identity-icon-box,
+#star-button-box,
+#page-action-buttons,
+#urlbar-go-button,
+#reader-mode-button {
+    display: none !important;
+}
