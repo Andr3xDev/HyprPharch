@@ -12,7 +12,7 @@
  *      ( o o )              
  *     /'` ' `'\
  *     |'''''''|      AUTHOR:  Andr3xDev
- *     |\\'''//|      URL:  https://github.com/Andr3xDev/Dotfiles-MainArch 
+ *     |\\'''//|      URL:  https://github.com/Andr3xDev/Dotfiles
  *        """
  */
 
@@ -44,10 +44,12 @@
  *-------------------------------------------------------------------------------*/
 
 *{
-    font-family: FontAwesome, Jetbrains Mono Nert;
+    font-family: FontAwesome, Jetbrains Mono Nerd;
     font-size: 11px;
 }
-
+#waybar > box {
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.7);
+}
 window#waybar {
     background-color: @background;
     color: @foreground;
@@ -67,7 +69,6 @@ window#waybar {
     border-right: 3px solid;
     border-bottom: 3px solid;
     border-color: @hard_background;
-
 }
 
 .modules-center {

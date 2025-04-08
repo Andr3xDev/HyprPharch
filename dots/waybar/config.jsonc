@@ -26,11 +26,11 @@
 
     "layer": "top", 
     "position": "top",
-    "height": 36,
+    "height": 34,
     "spacing": 0,
-    "margin-top": 7,
+    "margin-top": 6,
     "margin-left": 50,
-    "margin-bottom": 1,
+    "margin-bottom": 0,
     "margin-right": 50,
 
 
@@ -95,8 +95,8 @@
     },
 
     "clock": {
-        "format": "{:%d-%m-%Y  | %I:%M}",
-	    "tooltip-format": "{:%A}",
+        "format": " {:%a  / %d / %m  │  %I:%M} ",
+	    "tooltip-format": "{:%B of %Y}",
 	    "on-click": "galendae"
     },
 
@@ -111,6 +111,7 @@
         "format-on": "",
 	    "format-connected": " {num_connections}",
 	    "tooltip-format": "{status}",
+	    "tooltip-format-on": "{status}",
 	    "tooltip-format-connected": "{device_alias}",
 	    "on-click": "kitty --class bluetui -e bluetui",
 	    "interval": 1
@@ -127,6 +128,7 @@
     },
 
     "battery": {
+        "interval": 1,
         "states": {
             "good": 90,
             "warning": 15,
