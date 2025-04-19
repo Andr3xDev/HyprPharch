@@ -13,7 +13,6 @@ return {
     event = "VeryLazy",
     keys = {
         { "<Leader>e", "<Cmd>Neotree<CR>", desc = "Flie Explorer" },
-        { "<Leader>b", "<Cmd>Neotree buffers<CR>", desc = "Buffer Explorer" },
         { "<Leader>gg", "<Cmd>Neotree git_status<CR>", desc = "Git Explorer" },
         { "<Leader>ee", "<Cmd>Neotree toggle<CR>", desc = "Git Explorer" },
     },
@@ -26,15 +25,6 @@ return {
         enable_modified_markers = true,
         enable_diagnostics = false,
         sort_case_insensitive = true,
-        source_selector = {
-            winbar = true,
-            content_layout = "center",
-            sources = {
-                { source = "filesystem", display_name = " 󰉓  File " },
-                { source = "buffers", display_name = " ➜ Buffs " },
-                { source = "git_status", display_name = "  Git " },
-            },
-        },
         default_component_configs = {
             indent = {
                 indent_size = 2,
@@ -90,28 +80,6 @@ return {
                     ".DS_Store",
                     "thumbs.db",
                 },
-            },
-        },
-        buffers = {
-            follow_current_file = {
-                enabled = true,
-                leave_dirs_open = false,
-            },
-            group_empty_dirs = false,
-            show_unloaded = true,
-            window = {
-                mappings = {
-                    ["bd"] = "buffer_delete",
-                    ["<bs>"] = "navigate_up",
-                    ["."] = "set_root",
-                    ["o"] = { "show_help", nowait=false, config = { title = "Order by", prefix_key = "o" }},
-                    ["oc"] = { "order_by_created", nowait = false },
-                    ["od"] = { "order_by_diagnostics", nowait = false },
-                    ["om"] = { "order_by_modified", nowait = false },
-                    ["on"] = { "order_by_name", nowait = false },
-                    ["os"] = { "order_by_size", nowait = false },
-                    ["ot"] = { "order_by_type", nowait = false },
-                }
             },
         },
         event_handlers = {

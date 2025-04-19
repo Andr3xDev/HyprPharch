@@ -6,10 +6,10 @@
 
 return {
     'goolord/alpha-nvim',
-  event = 'VimEnter',
-  enabled = true,
-  init = false,
-  opts = function()
+    event = 'VimEnter',
+    enabled = true,
+    init = false,
+    opts = function()
     local dashboard = require 'alpha.themes.dashboard'
     local logo = [[
     ⠰⣶⣾⣶⣶⣄⠀⠀⠀⠀⠀⠀⣴⣶⣶⣶⣶⡆⣴⣶⣾⣶⣶⣶⣶⣶⣾⣷⣦⣴⢤⣴⣴⣶⣆⣶⣳⣶⢷⣶⣶⣶⣷⣶⣦⣄⡀⠀⠀⠀⢀⣠⣴⣶⣿⣿⢺⣿⣷⣶⣤⡀⠀⠀⠀
@@ -45,7 +45,7 @@ return {
 
     dashboard.section.header.opts.hl = 'AlphaHeader'
     dashboard.section.buttons.opts.hl = 'AlphaButtons'
-    dashboard.opts.layout[1].val = 5
+    dashboard.opts.layout[1].val = 7
     return dashboard
   end,
 
