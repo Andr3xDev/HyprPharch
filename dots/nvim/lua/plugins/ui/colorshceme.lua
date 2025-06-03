@@ -5,7 +5,7 @@
 -----------------------------------------------------------
 
 return {
-	'sainnhe/gruvbox-material',
+	'Andr3xDev/gruvbox-material-personal',
 	lazy = false,
 	priority = 1000,
 	config = function()

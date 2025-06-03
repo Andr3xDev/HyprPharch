@@ -1,30 +1,32 @@
 // -*- mode: jsonc -*-
 //-----------------------------------------------------------------------------------
-//                                                                           
-// 	,-----.                         
-//	|  |) /_  ,--,--.,--.--. ,---.  
-// 	|  .-.  \' ,-.  ||  .--'(  .-'  
-// 	|  '--' /\ '-'  ||  |   .-'  `) 
-// 	`------'  `--`--'`--'   `----'  
-//                      
-//             
+//
+// 	,-----.
+//	|  |) /_  ,--,--.,--.--. ,---.
+// 	|  .-.  \' ,-.  ||  .--'(  .-'
+// 	|  '--' /\ '-'  ||  |   .-'  `)
+// 	`------'  `--`--'`--'   `----'
+//
+//
 //      , _ ,        RESUME: Waybar config to my main PC
-//     ( o o )              
+//     ( o o )
 //    /'` ' `'\
 //    |'''''''|      AUTHOR:  Andr3xDev
 //    |\\'''//|      URL:  https://github.com/Andr3xDev/Dotfiles
-//       """                                              
+//       """
 //------------------------------------------------------------------------------------
+[
 
 
+//------------------------------------------------------------------------------------
+//    Laptop Bar
+//------------------------------------------------------------------------------------
 {
-
-
     //--------------------------------------------------------------------------------
     //    General
     //--------------------------------------------------------------------------------
-
-    "layer": "top", 
+    "output": "eDP-1",
+    "layer": "top",
     "position": "top",
     "height": 34,
     "spacing": 0,
@@ -34,31 +36,25 @@
     "margin-right": 100,
 
 
-
     //--------------------------------------------------------------------------------
     //    Left Modules
     //--------------------------------------------------------------------------------
-
     "modules-left": [
 	"clock",
         "hyprland/workspaces"
     ],
 
 
-
     //--------------------------------------------------------------------------------
     //    Center Modules
     //--------------------------------------------------------------------------------
-
     "modules-center": [
     ],
-
 
 
     //--------------------------------------------------------------------------------
     //    Right Modules
     //--------------------------------------------------------------------------------
-
     "modules-right": [
 	"custom/spotify",
         "wireplumber",
@@ -68,13 +64,11 @@
         "memory",
         "battery"
     ],
-     
-    
+
 
     //--------------------------------------------------------------------------------
     //    Left Configuration
     //--------------------------------------------------------------------------------
-     
     "hyprland/workspaces": {
         "disable-scroll": true,
 	    "disable-select-unfocused": true,
@@ -84,13 +78,14 @@
         "format-icons": {
             "1": "計",     //calculate :3
             "2": "二",
-            "3": "三", 
-            "4": "四", 
+            "3": "三",
+            "4": "四",
             "5": "五",
 	        "6": "六",
 	        "7": "七",
 	        "8": "八",
-	        "9": "九"
+	        "9": "九",
+	        "10": "九"
         }
     },
 
@@ -101,11 +96,9 @@
     },
 
 
-
     //--------------------------------------------------------------------------------
     //    Right Configuration
     //--------------------------------------------------------------------------------
-
     "bluetooth": {
 	    "format": "󰂲",
         "format-on": "",
@@ -116,12 +109,12 @@
 	    "on-click": "kitty --class bluetui -e bluetui",
 	    "interval": 1
     },
-        
+
     "memory": {
         "interval": 1,
         "format": "{}% "
     },
-        
+
     "cpu": {
         "format": "{usage}% ",
         "interval": 1
@@ -150,7 +143,7 @@
 
     "wireplumber": {
         "format": "{volume} {icon}",
-        "format-muted": "  ", 
+        "format-muted": "  ",
         "format-icons": {
             "default": [" ", " ", " "]
         },
@@ -158,12 +151,276 @@
 	    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
 
-    "custom/spotify": {  
-	"exec": "/sbin/python3 ~/.config/waybar/mediaplayer.py --player spotify",  
-	"format": "{}  ",  
-	"return-type": "json",  
-	"on-click": "playerctl --player=spotify play-pause",  
-	"on-double-click": "playerctl --player=spotify next",  
-	"on-double-click-right": "playerctl --player=spotify previous"  
+    "custom/spotify": {
+	"exec": "/sbin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
+	"format": "{}  ",
+	"return-type": "json",
+	"on-click": "playerctl --player=spotify play-pause",
+	"on-double-click": "playerctl --player=spotify next",
+	"on-double-click-right": "playerctl --player=spotify previous"
+    }
+},
+
+
+
+//------------------------------------------------------------------------------------
+//  Desktop Bar (main)
+//------------------------------------------------------------------------------------
+
+{
+    //--------------------------------------------------------------------------------
+    //    General
+    //--------------------------------------------------------------------------------
+    "output": "HDMI-A-1",
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "spacing": 0,
+    "margin-top": 5,
+    "margin-left": 160,
+    "margin-bottom": 0,
+    "margin-right": 160,
+
+
+    //--------------------------------------------------------------------------------
+    //    Left Modules
+    //--------------------------------------------------------------------------------
+    "modules-left": [
+	"clock",
+        "hyprland/workspaces"
+    ],
+
+
+    //--------------------------------------------------------------------------------
+    //    Center Modules
+    //--------------------------------------------------------------------------------
+    "modules-center": [
+    ],
+
+
+    //--------------------------------------------------------------------------------
+    //    Right Modules
+    //--------------------------------------------------------------------------------
+    "modules-right": [
+	"custom/spotify",
+        "wireplumber",
+        "bluetooth",
+        "network",
+        "cpu",
+        "memory"
+    ],
+
+
+    //--------------------------------------------------------------------------------
+    //    Left Configuration
+    //--------------------------------------------------------------------------------
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+	    "disable-select-unfocused": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "計",     //calculate :3
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+	        "6": "六",
+	        "7": "七",
+	        "8": "八",
+	        "9": "九"
+        }
+    },
+
+    "clock": {
+        "format": " {:%a /%d /%m  │  %I:%M} ",
+	    "tooltip-format": "{:%B of %Y}",
+	    "on-click": "galendae"
+    },
+
+
+    //--------------------------------------------------------------------------------
+    //    Right Configuration
+    //--------------------------------------------------------------------------------
+    "bluetooth": {
+	    "format": "󰂲",
+        "format-on": "",
+	    "format-connected": " {num_connections}",
+	    "tooltip-format": "{status}",
+	    "tooltip-format-on": "{status}",
+	    "tooltip-format-connected": "{device_alias}",
+	    "on-click": "kitty --class bluetui -e bluetui",
+	    "interval": 1
+    },
+
+    "memory": {
+        "interval": 1,
+        "format": "{}% "
+    },
+
+    "cpu": {
+        "format": "{usage}% ",
+        "interval": 1
+    },
+
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-disconnected": "⚠",
+        "on-click": "kitty --class nmtui -e nmtui",
+	    "tooltip-format": "{essid}"
+    },
+
+    "wireplumber": {
+        "format": "{volume} {icon}",
+        "format-muted": "  ",
+        "format-icons": {
+            "default": [" ", " ", " "]
+        },
+        "on-click-right": "pavucontrol",
+	    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+
+    "custom/spotify": {
+	"exec": "/sbin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
+	"format": "{}  ",
+	"return-type": "json",
+	"on-click": "playerctl --player=spotify play-pause",
+	"on-double-click": "playerctl --player=spotify next",
+	"on-double-click-right": "playerctl --player=spotify previous"
+    }
+},
+
+
+
+//------------------------------------------------------------------------------------
+//  Desktop Bar (second)
+//------------------------------------------------------------------------------------
+
+{
+    //--------------------------------------------------------------------------------
+    //    General
+    //--------------------------------------------------------------------------------
+    "output": "DVI-D-1",
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 0,
+    "margin-top": 5,
+    "margin-left": 100,
+    "margin-bottom": 0,
+    "margin-right": 100,
+
+
+    //--------------------------------------------------------------------------------
+    //    Left Modules
+    //--------------------------------------------------------------------------------
+    "modules-left": [
+	"clock",
+        "hyprland/workspaces"
+    ],
+
+
+    //--------------------------------------------------------------------------------
+    //    Center Modules
+    //--------------------------------------------------------------------------------
+    "modules-center": [
+    ],
+
+
+    //--------------------------------------------------------------------------------
+    //    Right Modules
+    //--------------------------------------------------------------------------------
+    "modules-right": [
+	"custom/spotify",
+        "wireplumber",
+        "bluetooth",
+        "network",
+        "cpu",
+        "memory"
+    ],
+
+
+    //--------------------------------------------------------------------------------
+    //    Left Configuration
+    //--------------------------------------------------------------------------------
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+	    "disable-select-unfocused": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "計",     //calculate :3
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+	        "6": "六",
+	        "7": "七",
+	        "8": "八",
+	        "9": "九"
+        }
+    },
+
+    "clock": {
+        "format": " {:%a /%d /%m  │  %I:%M} ",
+	    "tooltip-format": "{:%B of %Y}",
+	    "on-click": "galendae"
+    },
+
+
+    //--------------------------------------------------------------------------------
+    //    Right Configuration
+    //--------------------------------------------------------------------------------
+    "bluetooth": {
+	    "format": "󰂲",
+        "format-on": "",
+	    "format-connected": " {num_connections}",
+	    "tooltip-format": "{status}",
+	    "tooltip-format-on": "{status}",
+	    "tooltip-format-connected": "{device_alias}",
+	    "on-click": "kitty --class bluetui -e bluetui",
+	    "interval": 1
+    },
+
+    "memory": {
+        "interval": 1,
+        "format": "{}% "
+    },
+
+    "cpu": {
+        "format": "{usage}% ",
+        "interval": 1
+    },
+
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-disconnected": "⚠",
+        "on-click": "kitty --class nmtui -e nmtui",
+	    "tooltip-format": "{essid}"
+    },
+
+    "wireplumber": {
+        "format": "{volume} {icon}",
+        "format-muted": "  ",
+        "format-icons": {
+            "default": [" ", " ", " "]
+        },
+        "on-click-right": "pavucontrol",
+	    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+
+    "custom/spotify": {
+	    "exec": "/sbin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
+	    "format": "{}  ",
+	    "return-type": "json",
+	    "on-click": "playerctl --player=spotify play-pause",
+	    "on-double-click": "playerctl --player=spotify next",
+	    "on-double-click-right": "playerctl --player=spotify previous"
     }
 }
+
+]

@@ -1,25 +1,23 @@
 /*
- *                                                                    
- *     ,---.   ,--.           ,--.           ,-----.                  
- *    '   .-',-'  '-.,--. ,--.|  | ,---.     |  |) /_  ,--,--.,--.--. 
- *    `.  `-.'-.  .-' \  '  / |  || .-. :    |  .-.  \' ,-.  ||  .--' 
- *    .-'    | |  |    \   '  |  |\   --.    |  '--' /\ '-'  ||  |    
- *    `-----'  `--'  .-'  /   `--' `----'    `------'  `--`--'`--'    
- *                   `---'                                            
+ *
+ *     ,---.   ,--.           ,--.           ,-----.
+ *    '   .-',-'  '-.,--. ,--.|  | ,---.     |  |) /_  ,--,--.,--.--.
+ *    `.  `-.'-.  .-' \  '  / |  || .-. :    |  .-.  \' ,-.  ||  .--'
+ *    .-'    | |  |    \   '  |  |\   --.    |  '--' /\ '-'  ||  |
+ *    `-----'  `--'  .-'  /   `--' `----'    `------'  `--`--'`--'
+ *                   `---'
  *
  *
  *       , _ ,        RESUME: Minimal style config to have basic info
- *      ( o o )              
+ *      ( o o )
  *     /'` ' `'\
  *     |'''''''|      AUTHOR:  Andr3xDev
  *     |\\'''//|      URL:  https://github.com/Andr3xDev/Dotfiles
  *        """
  */
 
-
-
 /*--------------------------------------------------------------------------------
- *    Colors 
+ *    Colors
  *-------------------------------------------------------------------------------*/
 
 @define-color background            #282828;
@@ -37,155 +35,151 @@
 @define-color color_grey            #7C6F64;
 @define-color color_white           #A89984;
 
-
-
 /*--------------------------------------------------------------------------------
- *    General 
+ *    General
  *-------------------------------------------------------------------------------*/
 
-*{
-    font-family: "FontAwesome", "JetBrainsMono Nerd Font";
+* {
+  font-family: "FontAwesome", "JetBrainsMono Nerd Font";
 }
 #waybar {
-    box-shadow: 10px 10px 10px 10px #000000;
+  box-shadow: 10px 10px 10px 10px #000000;
 }
 window#waybar {
-    box-shadow: 10px 10px 10px 10px #000000;
-    background-color: @background;
-    color: @foreground;
-    border-top: 3px solid;
-    border-bottom: 3px solid;
-    border-color: @hard_background;
+  box-shadow: 10px 10px 10px 10px #000000;
+  background-color: @background;
+  color: @foreground;
+  border-top: 3px solid;
+  border-bottom: 3px solid;
+  border-color: @hard_background;
 }
 
 tooltip {
-    background: @background;
-    font-size: 10px;
-    opacity: 0.9;
-    border-radius: 0px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: @hard_background;
+  background: @background;
+  font-size: 10px;
+  opacity: 0.9;
+  border-radius: 0px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: @hard_background;
 }
 
-
-
 /*--------------------------------------------------------------------------------
- *    Sections 
+ *    Sections
  *-------------------------------------------------------------------------------*/
 
 .modules-right {
-    font-size: 9.8px;
-    border-top: 3px solid;
-    border-right: 3px solid;
-    border-bottom: 3px solid;
-    border-color: @hard_background;
+  font-size: 9.8px;
+  border-top: 3px solid;
+  border-right: 3px solid;
+  border-bottom: 3px solid;
+  border-color: @hard_background;
 }
 
 .modules-center {
-    border-top: 3px solid;
-    border-bottom: 3px solid;
-    border-color: @hard_background;
+  border-top: 3px solid;
+  border-bottom: 3px solid;
+  border-color: @hard_background;
 }
 
 .modules-left {
-    background-color: @background;
-    border-top: 3px solid;
-    border-left: 3px solid;
-    border-bottom: 3px solid;
-    border-color: @hard_background;
+  background-color: @background;
+  border-top: 3px solid;
+  border-left: 3px solid;
+  border-bottom: 3px solid;
+  border-color: @hard_background;
 }
 
-
-
 /*--------------------------------------------------------------------------------
- *    Left Modules 
+ *    Left Modules
  *-------------------------------------------------------------------------------*/
 
 #workspaces {
-    background-color: @background;
-    color: @foreground;
-    padding-left: 1em;
-    font-size: 9px;
+  background-color: @background;
+  color: @foreground;
+  padding-left: 1em;
+  font-size: 9.9px;
 }
 #workspaces button {
-    color: @foreground;
-    padding: 0 6px;
-    font-size: 9px;
+  color: @foreground;
+  padding: 0 6px;
+  font-size: 9.9px;
 }
 #workspaces button:hover {
-    background-color: @color_aqua;
-    color: #000000;
+  background-color: @color_aqua;
+  color: #000000;
 }
-#workspaces button.active {
-    color: @color_red;
-    font-size: 12px;
+#workspaces button.visible.active {
+  color: @color_red;
+  font-size: 12.5px;
+}
+#workspaces button.visible {
+  color: @color_aqua;
 }
 #workspaces button.active:hover {
-    background-color: @color_aqua;
-    color: #000000;
-    font-size: 11px;
+  background-color: @color_aqua;
+  color: #000000;
+  font-size: 12px;
 }
 
 #clock {
-    font-size: 10px;
-    background-color: @background;
-    padding-right: 1em; 
-    padding-top: 3px; 
-    padding-left: 1em;
-    border-right: 3px;
-    border-right-style: solid;
-    border-right-color: @color_yellow;
+  font-size: 10px;
+  background-color: @background;
+  padding-right: 1em;
+  padding-top: 3px;
+  padding-left: 1em;
+  border-right: 3px;
+  border-right-style: solid;
+  border-right-color: @color_yellow;
 }
 
-
-
 /*--------------------------------------------------------------------------------
- *    Right Modules 
+ *    Right Modules
  *-------------------------------------------------------------------------------*/
 
 #battery {
-    color: @foreground;
-    padding-left: 0.5em;
-    padding-right: 1.5em;
+  color: @foreground;
+  padding-left: 0.5em;
+  padding-right: 1.5em;
 }
-#battery.charging, #battery.plugged {
-    color: @foreground;
+#battery.charging,
+#battery.plugged {
+  color: @foreground;
 }
 
 #memory {
-    padding-left: 1em;
-    padding-right: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 #cpu {
-    padding-right: 1em;
-    padding-left: 1.5em;
-    border-left: 3px;
-    border-left-style: solid;
-    border-left-color: @color_green;
+  padding-right: 1em;
+  padding-left: 1.5em;
+  border-left: 3px;
+  border-left-style: solid;
+  border-left-color: @color_green;
 }
 
 #network {
-    padding-right: 2em;
-    padding-left: 1em;
+  padding-right: 2em;
+  padding-left: 1em;
 }
 
-#bluetooth{
-    padding-right: 1em;
-    padding-left: 1em;
+#bluetooth {
+  padding-right: 1em;
+  padding-left: 1em;
 }
 
-#wireplumber{
-    background-color: @background;
-    padding-right: 1em;
-    padding-left: 1.5em;
+#wireplumber {
+  background-color: @background;
+  padding-right: 1em;
+  padding-left: 1.5em;
 }
 
 #custom-spotify {
-    padding-right: 1.5em;
-    padding-left: 1em;
-    border-right: 3px;
-    border-right-style: solid;
-    border-right-color: @color_blue;
+  padding-right: 1.5em;
+  padding-left: 1em;
+  border-right: 3px;
+  border-right-style: solid;
+  border-right-color: @color_blue;
 }

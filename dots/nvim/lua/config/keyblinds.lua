@@ -22,7 +22,10 @@ vim.keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics<CR>", { noremap = 
 
 -- LSP --
 vim.keymap.set("n", "<leader>ls", ":Telescope lsp_document_symbols<CR>", { desc = "LSP docs symbols", noremap = true, silent = true })
-
+vim.keymap.set("n", "<leader>fa", function()
+  require("conform").format({ async = true, lsp_fallback = true })
+end, { desc = "Format file" })
 -- GIT --
+--
 vim.keymap.set("n", "<leader>gs", ":Telescope git_status<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>gc", ":Telescope git_commits<CR>", { noremap = true, silent = true })
