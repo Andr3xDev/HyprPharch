@@ -1,6 +1,7 @@
 -----------------------------------------------------------
 -- Colorscheme to all nvim color
 -- Source: https://github.com/sainnhe/gruvbox-material
+-- Source custom: https://github.com/Andr3xDev/gruvbox-material-personal
 -- Config autor: sainnhe
 -----------------------------------------------------------
 
