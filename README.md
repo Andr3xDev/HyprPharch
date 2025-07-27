@@ -16,22 +16,22 @@ This configuration is focused on having only the essential visual and practical 
 ## Screenshots
 - Overview:
   
-![start](/Screenshots/home.png)
+![start](docs/home.png)
 
 <details>
     <summary>Other images</summary>  
-    
-![start](/Screenshots/start.png)
 
-![start](/Screenshots/systemApps.png)
+![start](docs/start.png)
 
-![start](/Screenshots/menu.png)
+![start](docs/systemApps.png)
 
-![start](/Screenshots/nvim.png)
+![start](docs/menu.png)
 
-![start](/Screenshots/bSpotify.png)
+![start](docs/nvim.png)
 
-![start](/Screenshots/close.png)
+![start](docs/bSpotify.png)
+
+![start](docs/close.png)
 
 </details>
 
@@ -71,12 +71,12 @@ This script will install all the dependencies and packages necessary to copy the
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/Andr3xDev/Dotfiles.git
+   git clone https://github.com/Andr3xDev/dotfiles.git
    ```
 
 2. Run the installation script
    ```sh
-    cd Dotfiles/script
+    cd dotfiles/script
    ./installation..sh
    ```
 3. Continue the installation, completing what the script asks for
@@ -86,7 +86,7 @@ This script will install all the dependencies and packages necessary to copy the
 You can copy the configurations that interest you and also see what package and dependencies you need.
 1. Clone the repo.
     ```sh
-    git clone https://github.com/Andr3xDev/Dotfiles.git
+    git clone https://github.com/Andr3xDev/dotfiles.git
     ```
 
 2. Copy target config.
@@ -104,13 +104,13 @@ You can copy the configurations that interest you and also see what package and 
     paru -S --noconfirm --needed bibata-cursor-theme-bin galendae-git spicetify-cli visual-studio-code-bin
     ```
 
-4. (OPTIONAL), download Gruvbox Material GTK theme from the sourse (), or run the script.
+4. (OPTIONAL), download Gruvbox Material GTK theme from the sourse, or run the script.
     ```sh
-    cd Dotfiles/scripts
+    cd dotfiles/scripts
     ./gtk.sh
     ```
 
 </br>
 
 ## License
-Distributed under the Unlicense License. See `LICENSE.txt` for more information.
+Distributed under the Unlicense License. See `LICENSE` for more information.
