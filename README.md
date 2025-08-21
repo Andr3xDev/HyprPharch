@@ -1,7 +1,7 @@
 <div align="center">
-    <h1 align="center">Andr3x's Dotfiles</h1>
+    <h1 align="center">HyprPharch</h1>
     <p align="center">
-        My minimalist but functional Arch Linux setup with Hyprland
+Andr3x's Hyprland Dotfiles but functional Arch Linux setup with 
     </p>
 </div>
 
@@ -14,6 +14,7 @@ This configuration is focused on having only the essential visual and practical 
 </br>
 
 ## Screenshots
+
 - Overview:
   
 ![start](docs/home.png)
@@ -40,6 +41,10 @@ This configuration is focused on having only the essential visual and practical 
 
 ## Resume
 
+### Aps
+
+This are all basic apps i use
+
 | Categoría            | Aplicación         |
 |----------------------|--------------------|
 | **Compositor**      | Hyprland            |
@@ -49,36 +54,36 @@ This configuration is focused on having only the essential visual and practical 
 | **Notifications**   | Dunst               |
 | **Menu**            | Rofi-wayland        |
 | **Bar**             | Waybar              |
-| **Calendar**        | Gsimplecal          |
+| **Calendar**        | WORKING|
 | **Bluethoot**       | Bluetui             |
 | **Network**         | nmtui               |
 | **Sound control**   | Pavucontrol         |
 
 
+### Keyblinds
+WORKING
 
 
 </br>
 
 ## Getting Started
-To obtain this configuration, there are two options. The first one is through a script, and the other one is manually, depending on what you want to have in your config.
+To obtain this configuration, there are **two options**. The first one is through a script, and the other one is manually, depending on what you want to have in your config.
 
-
-> [!WARNING]
-> This section is not available at the moment
 
 ### Automatic installation
 This script will install all the dependencies and packages necessary to copy the complete configuration. Ideal to have an exact version of this configuration.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/Andr3xDev/dotfiles.git
+   git clone https://github.com/Andr3xDev/HyprPharch
    ```
 
 2. Run the installation script
    ```sh
-    cd dotfiles/script
-   ./installation..sh
+    cd HyprPharch/script
+   ./install.sh
    ```
+
 3. Continue the installation, completing what the script asks for
 
    
@@ -86,12 +91,12 @@ This script will install all the dependencies and packages necessary to copy the
 You can copy the configurations that interest you and also see what package and dependencies you need.
 1. Clone the repo.
     ```sh
-    git clone https://github.com/Andr3xDev/dotfiles.git
+    git clone https://github.com/Andr3xDev/HyprPharch.git
     ```
 
 2. Copy target config.
     ```sh
-    cd Dotfiles/dots
+    cd HyprPharch/dots
     cp -r <Target config> ¬/.config/
     ```
    
@@ -101,12 +106,12 @@ You can copy the configurations that interest you and also see what package and 
     ```
 
     ```sh
-    paru -S --noconfirm --needed bibata-cursor-theme-bin galendae-git spicetify-cli visual-studio-code-bin
+    paru -S --noconfirm --needed bibata-cursor-theme-bin spicetify-cli visual-studio-code-bin
     ```
 
 4. (OPTIONAL), download Gruvbox Material GTK theme from the sourse, or run the script.
     ```sh
-    cd dotfiles/scripts
+    cd HyprPharch/scripts
     ./gtk.sh
     ```
 
