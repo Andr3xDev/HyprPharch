@@ -80,7 +80,7 @@ This script will install all the dependencies and packages necessary to copy the
 
 2. Run the installation script
    ```sh
-    cd HyprPharch/script
+    cd HyprPharch/scripts
    ./install.sh
    ```
 
@@ -107,12 +107,6 @@ You can copy the configurations that interest you and also see what package and 
 
     ```sh
     paru -S --noconfirm --needed bibata-cursor-theme-bin spicetify-cli visual-studio-code-bin
-    ```
-
-4. (OPTIONAL), download Gruvbox Material GTK theme from the sourse, or run the script.
-    ```sh
-    cd HyprPharch/scripts
-    ./gtk.sh
     ```
 
 </br>
