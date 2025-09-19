@@ -2,5 +2,5 @@
 dots/update_dots.sh
 
 # AGS dependecies
-*/node_modules
-*/@girs
+**/node_modules
+**/@girs
