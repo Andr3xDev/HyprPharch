@@ -15,12 +15,12 @@ This configuration is focused on having only the essential visual and practical 
 
 ## Screenshots
 
-- Overview:
-  
+-   Overview:
+
 ![start](docs/home.png)
 
 <details>
-    <summary>Other images</summary>  
+    <summary>Other images</summary>
 
 ![start](docs/start.png)
 
@@ -36,7 +36,6 @@ This configuration is focused on having only the essential visual and practical 
 
 </details>
 
-
 </br>
 
 ## Resume
@@ -45,51 +44,55 @@ This configuration is focused on having only the essential visual and practical 
 
 This are all basic apps i use
 
-| Categoría            | Aplicación         |
-|----------------------|--------------------|
-| **Compositor**      | Hyprland            |
-| **Terminal**        | Kitty               |
-| **Shell**           | Zsh                 |
-| **Editor**          | Neovim / VScode     |
-| **Notifications**   | Dunst               |
-| **Menu**            | Rofi-wayland        |
-| **Bar**             | Waybar              |
-| **Calendar**        | WORKING|
-| **Bluethoot**       | Bluetui             |
-| **Network**         | nmtui               |
-| **Sound control**   | Pavucontrol         |
-
+| Categoría         | Aplicación      |
+| ----------------- | --------------- |
+| **Compositor**    | Hyprland        |
+| **Terminal**      | Kitty           |
+| **Shell**         | Zsh             |
+| **Editor**        | Neovim / VScode |
+| **Notifications** | Dunst           |
+| **Menu**          | Rofi-wayland    |
+| **Bar**           | Waybar          |
+| **Calendar**      | WORKING         |
+| **Bluethoot**     | Bluetui         |
+| **Network**       | nmtui           |
+| **Sound control** | Pavucontrol     |
 
 ### Keyblinds
-WORKING
 
+WORKING
 
 </br>
 
 ## Getting Started
+
 To obtain this configuration, there are **two options**. The first one is through a script, and the other one is manually, depending on what you want to have in your config.
 
-
 ### Automatic installation
+
 This script will install all the dependencies and packages necessary to copy the complete configuration. Ideal to have an exact version of this configuration.
 
 1. Clone the repo
-   ```sh
-   git clone https://github.com/Andr3xDev/HyprPharch
-   ```
+
+    ```sh
+    git clone https://github.com/Andr3xDev/HyprPharch
+    ```
 
 2. Run the installation script
-   ```sh
-    cd HyprPharch/scripts
-   ./install.sh
-   ```
+
+    ```sh
+     cd HyprPharch/scripts
+    ./install.sh
+    ```
 
 3. Continue the installation, completing what the script asks for
 
-   
 ### Manual installation
+
 You can copy the configurations that interest you and also see what package and dependencies you need.
+
 1. Clone the repo.
+
     ```sh
     git clone https://github.com/Andr3xDev/HyprPharch.git
     ```
@@ -99,8 +102,8 @@ You can copy the configurations that interest you and also see what package and 
     cd HyprPharch/dots
     cp -r <Target config> ¬/.config/
     ```
-   
 3. Filter and install the packages you need.
+
     ```sh
     sudo pacman -S --noconfirm --needed hyprland hyprpaper hyprlock hypridle kitty 7zip bluetui brightnessctl btop dunst fastfetch firefox fzf gtk-engine-murrine neovim noto-fonts-cjk nwg-look papirus-icon-theme pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse polkit-gnome python python-gobject rofi-wayland spotify-launcher ttf-firacode-nerd ttf-font-awesome ttf-jetbrains-mono-nerd unzip waybar wireplumber xdg-desktop-portal-hyprland xdg-utils yazi zsh
     ```
@@ -112,4 +115,5 @@ You can copy the configurations that interest you and also see what package and 
 </br>
 
 ## License
+
 Distributed under the Unlicense License. See `LICENSE` for more information.
