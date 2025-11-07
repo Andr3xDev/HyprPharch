@@ -1,0 +1,4 @@
+module Lucy.Theme
+
+singleton ThemeManager 1.0 ThemeManager.qml
+singleton Palettes 1.0 Palettes.qml
