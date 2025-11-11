@@ -1,5 +1,5 @@
 # update script
-dots/update_dots.sh
+config/update_dots.sh
 
 # AGS dependecies
 **/node_modules
