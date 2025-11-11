@@ -23,7 +23,7 @@
  *    Import Elements
 -------------------------------------------------------------------------------*/
 
-@import 			"/colors.rasi"
+@import "../colors.rasi"
 
 
 
@@ -50,7 +50,7 @@ window {
 
     /* properties for all widgets */
     enabled:                     true;
-    border: 			 3px;
+    border: 			         3px;
     border-color:                @background-alt;
     cursor:                      "default";
     background-color:            @background;
@@ -77,17 +77,17 @@ mainbox {
 -------------------------------------------------------------------------------*/
 
 inputbar {
-    location:			 center;
+    location:			         center;
     padding:                     8px;
     border-radius:               10px;
-    border: 			 2px solid;
-    border-color: 		 @blue;
+    border: 			         2px solid;
+    border-color: 		         @blue;
     background-color:            transparent;
     children:                    ["prompt"];
 }
 
 prompt {
-    padding: 			 6px;
+    padding: 			         6px;
     border-radius:               100%;
     background-color:            transparent;
     text-color:                  @foreground;
@@ -102,8 +102,8 @@ prompt {
 message {
     padding:                     10px;
     border-radius:               10px;
-    border:  			 2px solid;
-    border-color:		 @orange;
+    border:  			         2px solid;
+    border-color:		         @orange;
     background-color:            transparent;
     text-color:                  @foreground;
 }
@@ -153,7 +153,7 @@ element {
     border-radius:               100%;
     border-radius:               10px;
     border:                      2px solid;
-    border-color: 		 @green;
+    border-color: 		         @green;
     background-color:            @background-alt;
     text-color:                  @foreground;
     cursor:                      pointer;
@@ -169,6 +169,6 @@ element-text {
 }
 
 element selected.normal {
-    border-color: 		 @red;
+    border-color: 		         @red;
     text-color:                  @red;
 }
