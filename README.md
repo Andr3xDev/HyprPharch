@@ -28,7 +28,7 @@ This configuration is designed for **Arch Linux with Hyprland**, focusing on ess
 -   ⚡ **Optimized Performance**: Minimal resource usage with maximum functionality
 -   🎯 **Easy Theme Switching**: Change themes on the fly with a simple keybind
 -   🔧 **Highly Configurable**: Extensive customization options
--   📦 **Automated Installation**: One-script setup for the entire environment
+-   📦 **Automated Installation**: One script setup for the entire environment
 
 <br>
 <br>
@@ -40,12 +40,11 @@ This configuration is designed for **Arch Linux with Hyprland**, focusing on ess
 <table>
   <tr>
     <td width="50%" align="center">
-      <img src="docs/home.png" alt="Gruvbox Material Dark">
+      <img src="docs/lucy/general/gruvbox-material-d.png" alt="Gruvbox Material Dark">
       <br><b>Dark</b>
     </td>
     <td width="50%" align="center">
-      <!-- Add your image here -->
-      <i>Image pending</i>
+      <img src="docs/lucy/general/gruvbox-material-l.png" alt="Gruvbox Material Light">
       <br><b>Light</b>
     </td>
   </tr>
@@ -54,32 +53,73 @@ This configuration is designed for **Arch Linux with Hyprland**, focusing on ess
 <details>
 <summary><b>More Gruvbox Material Screenshots</b></summary>
 
-| Start Menu               | System Apps                  |
-| ------------------------ | ---------------------------- |
-| ![start](docs/start.png) | ![apps](docs/systemApps.png) |
-
-| Application Menu       | Neovim                 |
-| ---------------------- | ---------------------- |
-| ![menu](docs/menu.png) | ![nvim](docs/nvim.png) |
-
-| Spotify                       | Close Menu               |
-| ----------------------------- | ------------------------ |
-| ![spotify](docs/bSpotify.png) | ![close](docs/close.png) |
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/lucy/apps/gruvbox-material-d.png" alt="Apps Dark">
+      <br><b>System Apps (Dark)</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/lucy/apps/gruvbox-material-l.png" alt="Apps Light">
+      <br><b>System Apps (Light)</b>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/lucy/theme/gruvbox-material-d.png" alt="Theme Switcher Dark">
+      <br><b>Theme Switcher (Dark)</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/lucy/theme/gruvbox-material-l.png" alt="Theme Switcher Light">
+      <br><b>Theme Switcher (Light)</b>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/lucy/yazi-btop/gruvbox-material-d.png" alt="Yazi & Btop Dark">
+      <br><b>Yazi & Btop (Dark)</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/lucy/yazi-btop/gruvbox-material-l.png" alt="Yazi & Btop Light">
+      <br><b>Yazi & Btop (Light)</b>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/lucy/spotify/gruvbox-material-d.png" alt="Spotify Dark">
+      <br><b>Spotify (Dark)</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/lucy/spotify/gruvbox-material-l.png" alt="Spotify Light">
+      <br><b>Spotify (Light)</b>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/lucy/vs/gruvbox-material-d.png" alt="VSCode Dark">
+      <br><b>VSCode (Dark)</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/lucy/vs/gruvbox-material-l.png" alt="VSCode Light">
+      <br><b>VSCode (Light)</b>
+    </td>
+  </tr>
+</table>
 
 </details>
+
+<br>
 
 ### 🌸 Rose Pine
 
 <table>
   <tr>
     <td width="50%" align="center">
-      <!-- Add your image here -->
-      <i>Image pending</i>
+      <img src="docs/lucy/general/rose-pine-d.png" alt="Rose Pine Dark">
       <br><b>Dark</b>
     </td>
     <td width="50%" align="center">
-      <!-- Add your image here -->
-      <i>Image pending</i>
+      <img src="docs/lucy/general/rose-pine-l.png" alt="Rose Pine Light">
       <br><b>Light</b>
     </td>
   </tr>
@@ -88,9 +128,58 @@ This configuration is designed for **Arch Linux with Hyprland**, focusing on ess
 <details>
 <summary><b>More Rose Pine Screenshots</b></summary>
 
-<!-- Add more Rose Pine screenshots here -->
-
-<i>Screenshots pending</i>
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/lucy/apps/rose-pine-d.png" alt="Apps Dark">
+      <br><b>System Apps (Dark)</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/lucy/apps/rose-pine-l.png" alt="Apps Light">
+      <br><b>System Apps (Light)</b>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/lucy/theme/rose-pine-d.png" alt="Theme Switcher Dark">
+      <br><b>Theme Switcher (Dark)</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/lucy/theme/rose-pine-l.png" alt="Theme Switcher Light">
+      <br><b>Theme Switcher (Light)</b>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/lucy/yazi-btop/rose-pine-d.png" alt="Yazi & Btop Dark">
+      <br><b>Yazi & Btop (Dark)</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/lucy/yazi-btop/rose-pine-l.png" alt="Yazi & Btop Light">
+      <br><b>Yazi & Btop (Light)</b>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/lucy/spotify/rose-pine-d.png" alt="Spotify Dark">
+      <br><b>Spotify (Dark)</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/lucy/spotify/rose-pine-l.png" alt="Spotify Light">
+      <br><b>Spotify (Light)</b>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/lucy/vs/rose-pine-d.png" alt="VSCode Dark">
+      <br><b>VSCode (Dark)</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/lucy/vs/rose-pine-l.png" alt="VSCode Light">
+      <br><b>VSCode (Light)</b>
+    </td>
+  </tr>
+</table>
 
 </details>
 

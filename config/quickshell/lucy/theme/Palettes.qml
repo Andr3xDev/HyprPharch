@@ -32,7 +32,7 @@ QtObject {
             base:    "#faf4ed",
             surface: "#fffaf3",
             text:    "#575279",
-            color1:  "#f2e9e1", // overlay
+            color1:  "#cecacd", // overlay
             color2:  "#9893a5", // muted
             color3:  "#797593", // subtle
             color4:  "#b4637a", // love
