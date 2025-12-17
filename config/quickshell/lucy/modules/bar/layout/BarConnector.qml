@@ -32,6 +32,20 @@ Canvas {
         }
         ctx.closePath()
         ctx.fill()
+        
+        // Draw border on diagonal
+        ctx.strokeStyle = Theme.ThemeManager.currentPalette.color12
+        ctx.lineWidth = 3
+        ctx.beginPath()
+        if (mirrored) {
+            ctx.moveTo(0, -3)
+            ctx.lineTo(width, height)
+        } else {
+            ctx.moveTo(0, height)
+            ctx.lineTo(width, -3)
+        }
+        ctx.stroke()
+        
     }
     
     Component.onCompleted: requestPaint()

@@ -81,7 +81,7 @@ QtObject {
             color8:  "#45707A", // primary
             color10: "#F4E8BE", // surface
             color11: "#E5D5AD", // border
-            color12: "#E5D5AD"  // border
+            color12: "#A89984", // border
         }
 
     }

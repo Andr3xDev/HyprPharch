@@ -7,8 +7,7 @@ MONITORS=$(hyprctl monitors | grep -oP 'Monitor \K[^\s]+')
 case "$THEME" in
     "gruvbox-material-d")
         for MONITOR in $MONITORS; do
-
-            swww img "$WALLPAPER_DIR/wall-neon-n.jpg" \
+            swww img "$WALLPAPER_DIR/wall_s.jpg" \
                 --transition-type fade \
                 --transition-fps 60 \
                 --transition-duration 1 \

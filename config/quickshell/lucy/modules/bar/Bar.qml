@@ -40,6 +40,13 @@ PanelWindow {
                 Layout.fillHeight: true
                 Layout.preferredWidth: leftContent.implicitWidth + (Theme.ThemeManager.currentPalette.margin * 2)
                 color: Theme.ThemeManager.currentPalette.base
+                
+                // Border
+                Rectangle {
+                    anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
+                    height: 2
+                    color: Theme.ThemeManager.currentPalette.color12
+                }
 
                 RowLayout {
                     id: leftContent
@@ -109,6 +116,13 @@ PanelWindow {
                 Layout.fillHeight: true
                 Layout.preferredWidth: Math.max(100, workspacesRow.implicitWidth + (Theme.ThemeManager.currentPalette.spacing * 4))
                 color: Theme.ThemeManager.currentPalette.base
+
+                // Border
+                Rectangle {
+                    anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
+                    height: 2
+                    color: Theme.ThemeManager.currentPalette.color12
+                }
                 
                 RowLayout {
                     id: workspacesRow
@@ -145,6 +159,14 @@ PanelWindow {
                 Layout.fillHeight: true
                 Layout.preferredWidth: rightContent.implicitWidth + (Theme.ThemeManager.currentPalette.margin * 2)
                 color: Theme.ThemeManager.currentPalette.base
+
+                // Border
+                Rectangle {
+                    anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
+                    height: 2
+                    color: Theme.ThemeManager.currentPalette.color12
+                }
+                
 
                 RowLayout {
                     id: rightContent
