@@ -1,119 +1,489 @@
 <div align="center">
     <h1 align="center">HyprPharch</h1>
     <p align="center">
-Andr3x's Hyprland Dotfiles but functional Arch Linux setup with 
+        Andr3x's Hyprland Dotfiles - A functional and aesthetic Arch Linux setup
+    </p>
+    <p align="center">
+        <a href="https://archlinux.org/"><img src="https://img.shields.io/badge/Arch_Linux-7daea3?style=for-the-badge&logo=arch-linux&logoColor=white" alt="Arch Linux"></a>
+        <a href="https://hyprland.org/"><img src="https://img.shields.io/badge/Hyprland-a9b665?style=for-the-badge&logo=wayland&logoColor=white" alt="Hyprland"></a>
+        <a href="config/quickshell/lucy"><img src="https://img.shields.io/badge/Version-Lucy-e78a4e?style=for-the-badge" alt="Version: Lucy"></a>
+        <a href="https://github.com/Andr3xDev/HyprPharch/stargazers"><img src="https://img.shields.io/github/stars/Andr3xDev/HyprPharch?style=for-the-badge&color=d8a657" alt="Stars"></a>
     </p>
 </div>
 
-</br>
+<br>
+<br>
 
-## About The Project
+## 📖 About The Project
 
-This configuration is focused on having only the essential visual and practical elements, which are also lightweight and consume the least amount of resources. It has a sober and **minimalist style** that focuses on productivity without sacrificing a clean and calm aesthetic.
+This configuration is designed for **Arch Linux with Hyprland**, focusing on essential visual and practical elements that are lightweight and resource-efficient. It features a **minimalist style** that prioritizes productivity without sacrificing a clean and calm aesthetic.
 
-</br>
+> **⚠️ Important Note:**  
+> These dotfiles are primarily designed for **Arch Linux with Hyprland**. While some adaptations can be made for other distributions or window managers, such customizations are beyond the scope of the installation script. You may need to manually adjust configurations for other setups.
 
-## Screenshots
+### ✨ Key Features
 
--   Overview:
+-   🎨 **Four Beautiful Themes**: Gruvbox Material (Dark/Light) & Rose Pine (Dark/Light)
+-   🚀 **QuickShell Bar**: Modern, customizable, and performant status bar
+-   ⚡ **Optimized Performance**: Minimal resource usage with maximum functionality
+-   🎯 **Easy Theme Switching**: Change themes on the fly with a simple keybind
+-   🔧 **Highly Configurable**: Extensive customization options
+-   📦 **Automated Installation**: One-script setup for the entire environment
 
-![start](docs/home.png)
+<br>
+<br>
+
+## 🖼️ Gallery
+
+### 🎨 Gruvbox Material
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/home.png" alt="Gruvbox Material Dark">
+      <br><b>Dark</b>
+    </td>
+    <td width="50%" align="center">
+      <!-- Add your image here -->
+      <i>Image pending</i>
+      <br><b>Light</b>
+    </td>
+  </tr>
+</table>
 
 <details>
-    <summary>Other images</summary>
+<summary><b>More Gruvbox Material Screenshots</b></summary>
 
-![start](docs/start.png)
+| Start Menu               | System Apps                  |
+| ------------------------ | ---------------------------- |
+| ![start](docs/start.png) | ![apps](docs/systemApps.png) |
 
-![start](docs/systemApps.png)
+| Application Menu       | Neovim                 |
+| ---------------------- | ---------------------- |
+| ![menu](docs/menu.png) | ![nvim](docs/nvim.png) |
 
-![start](docs/menu.png)
-
-![start](docs/nvim.png)
-
-![start](docs/bSpotify.png)
-
-![start](docs/close.png)
+| Spotify                       | Close Menu               |
+| ----------------------------- | ------------------------ |
+| ![spotify](docs/bSpotify.png) | ![close](docs/close.png) |
 
 </details>
 
-</br>
+### 🌸 Rose Pine
 
-## Resume
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <!-- Add your image here -->
+      <i>Image pending</i>
+      <br><b>Dark</b>
+    </td>
+    <td width="50%" align="center">
+      <!-- Add your image here -->
+      <i>Image pending</i>
+      <br><b>Light</b>
+    </td>
+  </tr>
+</table>
 
-### Aps
+<details>
+<summary><b>More Rose Pine Screenshots</b></summary>
 
-This are all basic apps i use
+<!-- Add more Rose Pine screenshots here -->
 
-| Categoría         | Aplicación      |
-| ----------------- | --------------- |
-| **Compositor**    | Hyprland        |
-| **Terminal**      | Kitty           |
-| **Shell**         | Zsh             |
-| **Editor**        | Neovim / VScode |
-| **Notifications** | Dunst           |
-| **Menu**          | Rofi-wayland    |
-| **Bar**           | Waybar          |
-| **Calendar**      | WORKING         |
-| **Bluethoot**     | Bluetui         |
-| **Network**       | nmtui           |
-| **Sound control** | Pavucontrol     |
+<i>Screenshots pending</i>
 
-### Keyblinds
+</details>
 
-WORKING
+<br>
+<br>
 
-</br>
+### 📦 Legacy Version (Waybar)
 
-## Getting Started
+> **⚠️ No longer maintained** - Available on the [`legacy`](https://github.com/Andr3xDev/HyprPharch/tree/legacy) branch
 
-To obtain this configuration, there are **two options**. The first one is through a script, and the other one is manually, depending on what you want to have in your config.
+The legacy version uses **Waybar** instead of QuickShell. While no longer actively maintained, it remains available for those who prefer Waybar.
 
-### Automatic installation
+```bash
+# To access the legacy version
+git clone -b legacy https://github.com/Andr3xDev/HyprPharch.git
+```
 
-This script will install all the dependencies and packages necessary to copy the complete configuration. Ideal to have an exact version of this configuration.
+<details>
+<summary><b>View Legacy Screenshots</b></summary>
 
-1. Clone the repo
+<!-- Add legacy version images here -->
 
-    ```sh
-    git clone https://github.com/Andr3xDev/HyprPharch
-    ```
+<i>Screenshots pending</i>
 
-2. Run the installation script
+</details>
 
-    ```sh
-     cd HyprPharch/scripts
-    ./install.sh
-    ```
+<br>
+<br>
 
-3. Continue the installation, completing what the script asks for
+## 🛠️ Tech Stack
 
-### Manual installation
+### Core Components
 
-You can copy the configurations that interest you and also see what package and dependencies you need.
+| Category          | Tool                                                                                       |
+| ----------------- | ------------------------------------------------------------------------------------------ |
+| **Compositor**    | [Hyprland](https://hyprland.org/)                                                          |
+| **Bar**           | [QuickShell](https://github.com/quickshell-mirror/quickshell) (Lucy config)                |
+| **Terminal**      | [Kitty](https://sw.kovidgoyal.net/kitty/)                                                  |
+| **Shell**         | [Zsh](https://www.zsh.org/) + [Oh My Zsh](https://ohmyz.sh/)                               |
+| **Editor**        | [Neovim](https://neovim.io/) / [VSCode](https://code.visualstudio.com/)                    |
+| **Notifications** | [Dunst](https://dunst-project.org/)                                                        |
+| **Launcher**      | [Rofi (Wayland)](https://github.com/lbonn/rofi)                                            |
+| **Wallpaper**     | [SWWW](https://github.com/LGFae/swww)                                                      |
+| **File Manager**  | [Yazi](https://github.com/sxyazi/yazi) / [Thunar](https://docs.xfce.org/xfce/thunar/start) |
+| **Browser**       | [Firefox](https://www.mozilla.org/firefox/)                                                |
 
-1. Clone the repo.
+### System Tools
 
-    ```sh
-    git clone https://github.com/Andr3xDev/HyprPharch.git
-    ```
+| Category            | Tools                              |
+| ------------------- | ---------------------------------- |
+| **Lock/Idle**       | Hyprlock, Hypridle                 |
+| **Screenshots**     | Hyprshot, Grim, Slurp              |
+| **Color Picker**    | Hyprpicker                         |
+| **Audio**           | PipeWire, WirePlumber, Pavucontrol |
+| **Bluetooth**       | Bluez, Bluetui                     |
+| **Network**         | NetworkManager, nmtui              |
+| **System Monitor**  | btop, htop                         |
+| **Fetch Tools**     | Fastfetch, Kotofetch               |
+| **Display Manager** | Ly                                 |
 
-2. Copy target config.
-    ```sh
-    cd HyprPharch/dots
-    cp -r <Target config> ¬/.config/
-    ```
-3. Filter and install the packages you need.
+### CLI Utilities
 
-    ```sh
-    sudo pacman -S --noconfirm --needed hyprland hyprpaper hyprlock hypridle kitty 7zip bluetui brightnessctl btop dunst fastfetch firefox fzf gtk-engine-murrine neovim noto-fonts-cjk nwg-look papirus-icon-theme pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse polkit-gnome python python-gobject rofi-wayland spotify-launcher ttf-firacode-nerd ttf-font-awesome ttf-jetbrains-mono-nerd unzip waybar wireplumber xdg-desktop-portal-hyprland xdg-utils yazi zsh
-    ```
+```
+fzf, ripgrep, fd, bat, eza, lsd, tree, brightnessctl,
+wl-clipboard, cliphist, unzip, 7zip
+```
 
-    ```sh
-    paru -S --noconfirm --needed bibata-cursor-theme-bin spicetify-cli visual-studio-code-bin
-    ```
+### Themes & Appearance
 
-</br>
+| Component         | Options                                                    |
+| ----------------- | ---------------------------------------------------------- |
+| **GTK Themes**    | Gruvbox Material (Dark/Light), Rose Pine (Dark/Light)      |
+| **Icon Theme**    | Papirus                                                    |
+| **Cursor Themes** | Bibata, Phinger                                            |
+| **Fonts**         | FiraCode Nerd Font, JetBrains Mono Nerd Font, Font Awesome |
 
-## License
+### Optional Applications
 
-Distributed under the Unlicense License. See `LICENSE` for more information.
+**Full Installation Includes:**
+
+-   Discord
+-   Spotify + Spicetify
+-   LibreOffice
+-   OBS Studio
+-   GIMP, VLC
+-   Steam (optional)
+-   Docker (optional)
+
+<br>
+<br>
+
+## 📥 Installation
+
+> **💡 Recommended:** Install on a **fresh Arch Linux installation** for the best experience and to avoid conflicts with existing configurations.
+
+### Prerequisites
+
+You only need **Git** installed on your Arch Linux system. The installation script will handle everything else automatically.
+
+```bash
+sudo pacman -S git
+```
+
+### 🚀 Quick Install (Recommended)
+
+The automated installation script provides two modes:
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/Andr3xDev/HyprPharch.git
+cd HyprPharch/scripts
+```
+
+2. **Run the installation script**
+
+```bash
+sudo ./install.sh
+```
+
+3. **Choose your installation mode**
+
+    - **Full Installation**: Complete setup with personal apps (Discord, Spotify, etc.)
+    - **Basic Installation**: Minimal setup with essential tools only
+
+4. **Follow the prompts**
+
+    - The script will ask for confirmation before installing optional components
+    - Configure drivers (Intel/NVIDIA) if needed
+    - Set up development tools (Docker, npm, etc.) if desired
+
+5. **Reboot and enjoy!**
+
+```bash
+sudo reboot
+```
+
+After rebooting, select Hyprland from the Ly display manager.
+
+> 📚 **For detailed installation information**, see [scripts/README.md](scripts/README.md)
+
+### 🔧 Manual Installation
+
+For advanced users who want more control:
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/Andr3xDev/HyprPharch.git
+cd HyprPharch
+```
+
+2. **Install base packages**
+
+```bash
+sudo pacman -S --needed base-devel git hyprland hypridle hyprlock hyprpicker hyprshot hyprpaper \
+    kitty zsh starship dunst rofi swww wl-clipboard polkit-gnome \
+    pipewire pipewire-alsa pipewire-pulse wireplumber \
+    bluez bluez-utils bluetui brightnessctl grim slurp \
+    nwg-look papirus-icon-theme gtk-engine-murrine \
+    firefox thunar pavucontrol mpv \
+    fzf lsd btop fastfetch yazi ripgrep fd bat eza \
+    ttf-firacode-nerd ttf-jetbrains-mono-nerd \
+    xdg-desktop-portal-hyprland ly
+```
+
+3. **Install AUR helper and packages**
+
+```bash
+# Install Paru
+cd /tmp
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+
+# Install AUR packages
+paru -S --needed bibata-cursor-theme-bin phinger-cursors quickshell-git visual-studio-code-bin
+```
+
+4. **Copy configurations**
+
+```bash
+# Backup existing configs (optional)
+cp -r ~/.config ~/.config.backup-$(date +%Y%m%d-%H%M%S)
+
+# Copy dotfiles
+cp -r config/* ~/.config/
+```
+
+5. **Enable services**
+
+```bash
+sudo systemctl enable NetworkManager bluetooth ly
+```
+
+6. **Reboot**
+
+```bash
+sudo reboot
+```
+
+<br>
+<br>
+
+## ⌨️ Keybindings
+
+> **Note:** All keybindings can be customized in [config/hypr/configs/keyblinds.conf](config/hypr/configs/keyblinds.conf)
+
+### Essential Shortcuts
+
+| Keybind                 | Action                      |
+| ----------------------- | --------------------------- |
+| `SUPER + Enter`         | Open terminal (floating)    |
+| `SUPER + SHIFT + Enter` | Open terminal (fullscreen)  |
+| `SUPER + Q`             | Close window                |
+| `SUPER + SHIFT + F`     | Toggle fullscreen           |
+| `SUPER + V`             | Toggle floating             |
+| `SUPER + Space`         | Application launcher (Rofi) |
+| `SUPER + Backspace`     | Power menu                  |
+
+### Applications
+
+| Keybind             | Action                           |
+| ------------------- | -------------------------------- |
+| `SUPER + E`         | File manager (Yazi)              |
+| `SUPER + I`         | System monitor (btop)            |
+| `SUPER + SHIFT + I` | System fetch                     |
+| `SUPER + B`         | Bluetooth manager                |
+| `SUPER + N`         | Network manager                  |
+| `SUPER + P`         | Color picker                     |
+| `SUPER + T`         | Screenshot (region to clipboard) |
+| `SUPER + SHIFT + T` | Screenshot (region to file)      |
+
+### Window Management
+
+| Keybind                   | Action                   |
+| ------------------------- | ------------------------ |
+| `SUPER + H/J/K/L`         | Move focus (vim-style)   |
+| `SUPER + SHIFT + H/J/K/L` | Move window              |
+| `SUPER + CTRL + H/J/K/L`  | Resize window            |
+| `SUPER + 1-9`             | Switch to workspace      |
+| `SUPER + SHIFT + 1-9`     | Move window to workspace |
+| `SUPER + S`               | Toggle scratchpad        |
+| `SUPER + Tab`             | Previous workspace       |
+
+### Theme & System
+
+| Keybind             | Action                |
+| ------------------- | --------------------- |
+| `SUPER + Y`         | Theme switcher        |
+| `SUPER + G`         | Toggle QuickShell bar |
+| `SUPER + SHIFT + R` | Reload Hyprland       |
+
+### Media Controls
+
+| Keybind                 | Action              |
+| ----------------------- | ------------------- |
+| `XF86AudioRaiseVolume`  | Increase volume     |
+| `XF86AudioLowerVolume`  | Decrease volume     |
+| `XF86AudioMute`         | Toggle mute         |
+| `XF86MonBrightnessUp`   | Increase brightness |
+| `XF86MonBrightnessDown` | Decrease brightness |
+
+<br>
+<br>
+
+## ❓ Frequently Asked Questions
+
+<details>
+<summary><b>How do I add or edit themes?</b></summary>
+
+Theming requires changes in multiple locations:
+
+**Config files to edit:**
+
+-   QuickShell: [`config/quickshell/lucy/theme/Palettes.qml`](config/quickshell/lucy/theme/Palettes.qml)
+-   Rofi: [`config/rofi/`](config/rofi/) (`.rasi` files)
+-   Hyprland: [`config/hypr/configs/theme/`](config/hypr/configs/theme/)
+-   Kitty, Btop, Fastfetch, Starship: Respective config folders
+
+**Scripts to modify:**
+
+-   [`config/hypr/scripts/theme.sh`](config/hypr/scripts/theme.sh)
+-   Individual theme scripts in each config directory
+
+> 🚧 Working on reducing coupling for easier theme management.
+
+</details>
+
+<details>
+<summary><b>Can I use these dotfiles on other distributions?</b></summary>
+
+These dotfiles are designed for **Arch Linux with Hyprland**. You can adapt them, but:
+
+-   Installation script only works on Arch (uses `pacman` and `paru`)
+-   Configurations are Hyprland-specific
+-   Requires Wayland compatibility
+
+**For other distros**: Manually copy configs and install equivalent packages.
+
+</details>
+
+<details>
+<summary><b>How do I configure brightness controls?</b></summary>
+
+1. Find your backlight device: `ls /sys/class/backlight/`
+2. Edit [`config/hypr/configs/keyblinds.conf`](config/hypr/configs/keyblinds.conf)
+3. Replace `intel_backlight` with your device name
+
+Common devices: `intel_backlight`, `amdgpu_bl0`, `nvidia_0`
+
+</details>
+
+<details>
+<summary><b>How extensible are these dotfiles?</b></summary>
+
+These dotfiles are **moderately coupled** but allow extensibility:
+
+**✅ Easy to add:**
+
+-   New applications, keybindings, window rules
+
+**⚠️ Requires multiple edits:**
+
+-   New themes, bar components, theme switching
+
+> 🚧 Working on reducing coupling for easier customization.
+
+</details>
+
+<details>
+<summary><b>Something broke, how do I fix it?</b></summary>
+
+1. **Check logs:** `cat ~/.cache/hyprland/hyprland.log` or `journalctl -xe`
+2. **Restore backup:** `cp -r ~/.config.backup-* ~/.config/`
+3. **Restart services:** `SUPER + SHIFT + R` or `killall quickshell && quickshell --config lucy &`
+4. **Still broken?** Open an [issue](https://github.com/Andr3xDev/HyprPharch/issues) with logs
+
+</details>
+
+<details>
+<summary><b>Are these your personal dotfiles?</b></summary>
+
+Yes! These are my daily dotfiles, shared publicly to help others.
+
+**Keep in mind:**
+
+-   Reflects my personal workflow and preferences
+-   Some settings need hardware-specific adjustments
+-   Actively being developed and improved
+-   May not cover every use case
+
+Feedback and contributions are welcome!
+
+</details>
+
+<br>
+<br>
+
+## 🤝 Contributing
+
+Contributions are welcome and appreciated! Whether it's bug fixes, new features, or improvements to documentation, all help is valuable.
+
+### How to Contribute
+
+1. **Fork the repository**
+2. **Create a feature branch** (`git checkout -b feature/AmazingFeature`)
+3. **Commit your changes** (`git commit -m 'Add some AmazingFeature'`)
+4. **Push to the branch** (`git push origin feature/AmazingFeature`)
+5. **Open a Pull Request**
+
+### Reporting Issues
+
+If you encounter any problems:
+
+1. Check existing [issues](https://github.com/Andr3xDev/HyprPharch/issues) first
+2. Create a new issue with:
+    - Clear description of the problem
+    - Steps to reproduce
+    - System information (Arch version, hardware, etc.)
+    - Relevant logs or error messages
+
+### Code Style
+
+-   Follow existing code style and conventions
+-   Comment complex sections of code
+-   Keep commits focused and atomic
+-   Write clear commit messages
+
+<br>
+<br>
+
+## 📄 License
+
+Distributed under the Unlicense License. See [`LICENSE`](LICENSE) for more information.
+This means you can use, modify, and distribute this project freely without any restrictions.
