@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+MAGENTA='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+# Print functions
+print_message() { echo -e "${BLUE}==>${NC} ${1}"; }
+print_success() { echo -e "${GREEN}✓${NC} ${1}"; }
+print_error() { echo -e "${RED}✗${NC} ${1}"; }
+print_warning() { echo -e "${YELLOW}!${NC} ${1}"; }
+
+print_banner() {
+    clear
+    echo -e "${MAGENTA}╔════════════════════════════════════════════════╗${NC}"
+    echo -e "${MAGENTA}║${NC}  ${CYAN}${1}${NC}$(printf '%*s' $((43 - ${#1})) '')${MAGENTA}║${NC}"
+    echo -e "${MAGENTA}╚════════════════════════════════════════════════╝${NC}"
+    echo
+}
+
+# Utility functions
+get_real_user() { echo "${SUDO_USER:-$USER}"; }
+get_user_home() { eval echo ~"${1:-$(get_real_user)}"; }
+check_root() { [ "$EUID" -ne 0 ] && print_error "Run as root or with sudo" && exit 1; }
+command_exists() { command -v "$1" &> /dev/null; }
