@@ -9,4 +9,5 @@
     green:          #31748fFF;  // pine
     blue:           #eb6f92FF;  // love
     aqua:           #c4a7e7FF;  // iris
+    color6:         #ebbcba;    // rose
 }

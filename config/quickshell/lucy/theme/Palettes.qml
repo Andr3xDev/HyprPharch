@@ -1,6 +1,11 @@
 pragma Singleton
 import QtQuick
 
+/*!
+    Color schemes for all QuickShell applications.
+    The advantage is that colors are defined with numbers,
+    allowing for relatively simple changes.
+*/
 QtObject {
     readonly property var palettes: {
 
@@ -20,7 +25,7 @@ QtObject {
             color9:  "#c4a7e7", // iris
             color10: "#21202e", // highlightLow
             color11: "#403d52", // highlightMed
-            color12: "#524f67"  // highlightHigh
+            color12: "#2A2837"  // Other
         },
 
         "rose-pine-l": {
@@ -41,29 +46,42 @@ QtObject {
             color12: "#cecacd"  // highlightHigh
         },
 
+
         // --- Gruvbox Material Palettes ---
         "gruvbox-material-d": {
-            background: "#282828", // bg0
-            surface:    "#32302F", // bg1
-            primary:    "#7DAEA3", // blue
-            text:       "#D4BE98", // fg0
-            textMuted:  "#928374", // grey1
-            border:     "#45403D", // bg3
-            success:    "#A9B665", // green
-            warning:    "#D8A657", // yellow
-            error:      "#EA6962"  // red
+            base:    "#282828", // background
+            surface: "#32302F", // surface
+            text:    "#D4BE98", // text
+            color1:  "#45403D", // border
+            color2:  "#928374", // textMuted
+            color3:  "#928374", // textMuted
+            color4:  "#EA6962", // error
+            color5:  "#D8A657", // warning
+            color6:  "#A9B665", // error
+            color7:  "#7DAEA3", // primary
+            color9:  "#A9B665", // success
+            color8:  "#7DAEA3", // primary
+            color10: "#32302F", // surface
+            color11: "#45403D", // border
+            color12: "#45403D"  // border
         },
 
         "gruvbox-material-l": {
-            background: "#FBF1C7", // bg0
-            surface:    "#F4E8BE", // bg1
-            primary:    "#45707A", // blue
-            text:       "#4F3829", // fg1
-            textMuted:  "#928374", // grey1
-            border:     "#EEE0B7", // bg3
-            success:    "#6C782E", // green
-            warning:    "#B47109", // yellow
-            error:      "#C14A4A"  // red
+            base:    "#FBF1C7", // background
+            surface: "#F4E8BE", // surface
+            text:    "#4F3829", // text
+            color1:  "#E5D5AD", // border
+            color2:  "#928374", // textMuted
+            color3:  "#928374", // textMuted
+            color4:  "#C14A4A", // error
+            color5:  "#C35E0A", // warning
+            color6:  "#6C782E", // corresponde a tu green del dark
+            color7:  "#45707A", // primary
+            color9:  "#4C7A5D", // success
+            color8:  "#45707A", // primary
+            color10: "#F4E8BE", // surface
+            color11: "#E5D5AD", // border
+            color12: "#E5D5AD"  // border
         }
 
     }

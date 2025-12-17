@@ -11,7 +11,7 @@ import "../../../theme" as Theme
 */
 Item {
     implicitWidth: workspaceRow.implicitWidth
-    implicitHeight: 25
+    implicitHeight: parent
     width: implicitWidth
     height: implicitHeight
     
@@ -57,9 +57,9 @@ Item {
                     // This is for multiple monitors
                     color: {
                         if (modelData.focused) {
-                            return Theme.ThemeManager.currentPalette.color5 // focus
+                            return Theme.ThemeManager.currentPalette.color8 // focus
                         } else if (modelData.active) {
-                            return Theme.ThemeManager.currentPalette.text // no-focus
+                            return Theme.ThemeManager.currentPalette.color6 // no-focus
                         } else {
                             return Theme.ThemeManager.currentPalette.color2
                         }
@@ -81,9 +81,9 @@ Item {
                     // This is for multiple monitors
                     color: {
                         if (modelData.focused) {
-                            return Theme.ThemeManager.currentPalette.color5 // focus
+                            return Theme.ThemeManager.currentPalette.color8 // focus
                         } else if (modelData.active) {
-                            return Theme.ThemeManager.currentPalette.color2 // no-focus
+                            return Theme.ThemeManager.currentPalette.color6 // no-focus
                         } else {
                             return "transparent"
                         }

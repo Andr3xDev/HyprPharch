@@ -1,176 +1,99 @@
 import QtQuick
 import QtQuick.Layouts
-import Quickshell.Io
 import "../../../theme" as Theme
+import "../../../services" as Services
 
 /*!
-    Battery power profiles
-    This allow to select multiple power profiles with a daemon.
-    its a toggle menu with 3 options
+    Power profile selector component to set diferent profiles
 */
 Item {
-    id: powerProfile
-    
-    width: visible ? profileRow.implicitWidth : 0
-    height: 25
+    id: root
+    implicitWidth: visible ? profileRow.implicitWidth : 0
+    implicitHeight: parent.height
     clip: true
-
-    // variable to know selected profile
-    property string currentProfile: "balanced"
-
-    // animation to open or close
+    
+    // Profile color mapping
+    readonly property var profileColors: ({
+        "power-saver": Theme.ThemeManager.currentPalette.color9,
+        "balanced": Theme.ThemeManager.currentPalette.color5,
+        "performance": Theme.ThemeManager.currentPalette.color4
+    })
+    
+    RowLayout {
+        id: profileRow
+        anchors.centerIn: parent
+        spacing: 15
+        
+        Repeater {
+            model: Services.PowerService.profiles
+            delegate: Item {
+                id: profileButton
+                Layout.preferredWidth: buttonContent.implicitWidth
+                Layout.preferredHeight: buttonContent.implicitHeight
+                
+                property bool isActive: modelData.id === Services.PowerService.currentProfile
+                property color profileColor: root.profileColors[modelData.id] || Theme.ThemeManager.currentPalette.text
+                
+                ColumnLayout {
+                    id: buttonContent
+                    spacing: 1
+                    
+                    // Icon
+                    Text {
+                        id: iconText
+                        text: modelData.icon
+                        color: profileButton.isActive 
+                            ? profileButton.profileColor
+                            : Theme.ThemeManager.currentPalette.text
+                        font.pixelSize: Theme.ThemeManager.currentPalette.titleFontSize
+                        font.family: "Symbols Nerd Font"
+                        Layout.alignment: Qt.AlignHCenter
+                        
+                        Behavior on color {
+                            ColorAnimation { 
+                                duration: 200
+                                easing.type: Easing.OutCubic
+                            }
+                        }
+                    }
+                    
+                    // Underline indicator
+                    Rectangle {
+                        Layout.preferredWidth: iconText.implicitWidth
+                        Layout.preferredHeight: 2
+                        Layout.alignment: Qt.AlignHCenter
+                        color: profileButton.profileColor
+                        radius: 1
+                        opacity: profileButton.isActive ? 1 : 0
+                        
+                        Behavior on opacity {
+                            NumberAnimation { 
+                                duration: 200
+                                easing.type: Easing.OutCubic
+                            }
+                        }
+                    }
+                }
+                
+                MouseArea {
+                    anchors.fill: parent
+                    cursorShape: Qt.PointingHandCursor
+                    onClicked: Services.PowerService.setProfile(modelData.id)
+                    
+                    // Hover animation each icon
+                    hoverEnabled: true
+                    onEntered: iconText.scale = 1.1
+                    onExited: iconText.scale = 1.0
+                }
+            }
+        }
+    }
+    
+    // Animation to toggle
     Behavior on implicitWidth {
         NumberAnimation { 
             duration: 250
             easing.type: Easing.OutCubic
-        }
-    }
-    
-    
-    Timer {
-        interval: 3000
-        running: parent.visible
-        repeat: true
-        onTriggered: updateProfile()
-    }
-    
-    Component.onCompleted: updateProfile()
-    
-    /*!
-        Update profile based in the user choise 
-    */
-    function updateProfile() {
-        var profileProcess = Qt.createQmlObject(`
-            import Quickshell.Io
-            Process {
-                running: true
-                command: ["sh", "-c", "powerprofilesctl get"]
-                stdout: SplitParser {
-                    onRead: data => {
-                        currentProfile = data.trim()
-                    }
-                }
-            }
-        `, parent, "profileProcess")
-    }
-    
-    /*!
-        Apply user profile selection
-    */
-    function setProfile(profile) {
-        Qt.createQmlObject(`
-            import Quickshell.Io
-            Process {
-                running: true
-                command: ["powerprofilesctl", "set", "${profile}"]
-            }
-        `, parent, "setProfileProcess")
-
-        currentProfile = profile
-    }
-    
-    /*
-        Dysplay menu in bar
-    */
-    RowLayout {
-        id: profileRow
-        anchors.centerIn: parent
-        spacing: 8
-        opacity: powerProfile.visible ? 1 : 0
-        
-        Behavior on opacity {
-            NumberAnimation { duration: 200 }
-        }
-        
-        // Performancw
-        Rectangle {
-            Layout.preferredWidth: 30
-            Layout.preferredHeight: 25
-            color: currentProfile === "performance" 
-                ? Theme.ThemeManager.currentPalette.color4 
-                : Theme.ThemeManager.currentPalette.surface
-            radius: 4
-            border.color: Theme.ThemeManager.currentPalette.color1
-            
-            RowLayout {
-                anchors.centerIn: parent
-                
-                Text {
-                    text: "󰓅"
-                    color: currentProfile === "performance" 
-                        ? Theme.ThemeManager.currentPalette.base 
-                        : Theme.ThemeManager.currentPalette.color4
-                    font.pixelSize: Theme.ThemeManager.currentPalette.baseFontSize + 1
-                    font.family: "Symbols Nerd Font"
-                }
-                
-            }
-            
-            MouseArea {
-                anchors.fill: parent
-                cursorShape: Qt.PointingHandCursor
-                onClicked: setProfile("performance")
-            }
-        }
-        
-        // Balanced
-        Rectangle {
-            Layout.preferredWidth: 30
-            Layout.preferredHeight: 25
-            color: currentProfile === "balanced" 
-                ? Theme.ThemeManager.currentPalette.color3 
-                : Theme.ThemeManager.currentPalette.surface
-            radius: 4
-            border.color: Theme.ThemeManager.currentPalette.color1
-            
-            RowLayout {
-                anchors.centerIn: parent
-                
-                Text {
-                    text: "󰾅"
-                    color: currentProfile === "balanced" 
-                        ? Theme.ThemeManager.currentPalette.base 
-                        : Theme.ThemeManager.currentPalette.color3
-                    font.pixelSize: Theme.ThemeManager.currentPalette.baseFontSize + 1
-                    font.family: "Symbols Nerd Font"
-                }
-            }
-            
-            MouseArea {
-                anchors.fill: parent
-                cursorShape: Qt.PointingHandCursor
-                onClicked: setProfile("balanced")
-            }
-        }
-        
-        // Power Saver button
-        Rectangle {
-            Layout.preferredWidth: 30
-            Layout.preferredHeight: 25
-            color: currentProfile === "power-saver" 
-                ? Theme.ThemeManager.currentPalette.color5 
-                : Theme.ThemeManager.currentPalette.surface
-            radius: 4
-            border.color: Theme.ThemeManager.currentPalette.color1
-            
-            RowLayout {
-                anchors.centerIn: parent
-                
-                Text {
-                    text: "󰂎"
-                    color: currentProfile === "power-saver" 
-                        ? Theme.ThemeManager.currentPalette.base 
-                        : Theme.ThemeManager.currentPalette.color5
-                    font.pixelSize: Theme.ThemeManager.currentPalette.baseFontSize + 1
-                    font.family: "Symbols Nerd Font"
-                }
-            }
-            
-            MouseArea {
-                anchors.fill: parent
-                cursorShape: Qt.PointingHandCursor
-                onClicked: setProfile("power-saver")
-            }
         }
     }
 }

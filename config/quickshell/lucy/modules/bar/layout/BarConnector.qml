@@ -36,10 +36,10 @@ Canvas {
     
     Component.onCompleted: requestPaint()
     
-    // Reload the config
+    // Repaint when theme changes
     Connections {
         target: Theme.ThemeManager
-        function onCurrentPaletteChanged() {
+        function onCurrentThemeChanged() {
             requestPaint()
         }
     }

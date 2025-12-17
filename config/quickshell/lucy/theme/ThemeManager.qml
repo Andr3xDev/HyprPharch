@@ -20,10 +20,10 @@ QtObject {
     readonly property QtObject currentPalette: QtObject {
         readonly property color base:    Local.Palettes.palettes[currentTheme].base
         readonly property color surface: Local.Palettes.palettes[currentTheme].surface
+        readonly property color text:    Local.Palettes.palettes[currentTheme].text
         readonly property color color1:  Local.Palettes.palettes[currentTheme].color1
         readonly property color color2:  Local.Palettes.palettes[currentTheme].color2
         readonly property color color3:  Local.Palettes.palettes[currentTheme].color3
-        readonly property color text:    Local.Palettes.palettes[currentTheme].text
         readonly property color color4:  Local.Palettes.palettes[currentTheme].color4
         readonly property color color5:  Local.Palettes.palettes[currentTheme].color5
         readonly property color color6:  Local.Palettes.palettes[currentTheme].color6
@@ -41,7 +41,9 @@ QtObject {
         
         // Spacing
         readonly property int spacing: 10
+        readonly property int barComponentsSpacing: 30
         readonly property int margin: 1
+        readonly property int marginItems: 15
     }
     
     function setTheme(themeName) {

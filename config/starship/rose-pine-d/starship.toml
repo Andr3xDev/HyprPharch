@@ -1,0 +1,123 @@
+#-------------------------------------------------------------------------------------
+#                                                            
+#   ,---.   ,--.                        ,--.     ,--.        
+#  '   .-',-'  '-. ,--,--.,--.--. ,---. |  ,---. `--' ,---.  
+#  `.  `-.'-.  .-'' ,-.  ||  .--'(  .-' |  .-.  |,--.| .-. | 
+#  .-'    | |  |  \ '-'  ||  |   .-'  `)|  | |  ||  || '-' ' 
+#  `-----'  `--'   `--`--'`--'   `----' `--' `--'`--'|  |-'  
+#                                                    `--'    
+#
+#      , _ ,        RESUME:  Custom pront for terminals and complement
+#     ( o o )                because i use OhMyZsh.
+#    /'` ' `'\
+#    |'''''''|      AUTHOR:  Andr3xDev
+#    |\\'''//|      URL: (https://github.com/Andr3xDev/Dotfiles)
+#       """                                              
+#-------------------------------------------------------------------------------------
+
+
+#------------------------------------------------------------
+#   Format
+#------------------------------------------------------------
+
+format = """
+$line_break\
+ $os\
+$directory\
+$git_branch\
+$git_status\
+$cmd_duration\
+$docker\
+$aws\
+$status
+[  └─➤](bold pine) """
+
+#--- properties ---#
+add_newline = true 
+continuation_prompt = "▶▶ "
+
+
+
+#------------------------------------------------------------
+#   Palette
+#------------------------------------------------------------
+
+palette = 'rose_pine'
+
+[palettes.rose_pine]
+base = "#191724"
+surface = "#1f1d2e"
+overlay = "#26233a"
+muted = "#6e6a86"
+subtle = "#908caa"
+text = "#e0def4"
+love = "#eb6f92"
+gold = "#f6c177"
+rose = "#ebbcba"
+pine = "#31748f"
+foam = "#9ccfd8"
+iris = "#c4a7e7"
+highlight_low = "#21202e"
+highlight_med = "#403d52"
+highlight_high = "#524f67"
+
+
+
+#------------------------------------------------------------
+#   Elements
+#------------------------------------------------------------
+
+[os]
+format = '[◢](bold fg:overlay)[  ](bold fg:rose bg:overlay)[◤](bold fg:overlay)'
+disabled = false
+
+[directory]
+truncation_length = 3
+fish_style_pwd_dir_length = 3
+truncate_to_repo = true
+home_symbol = ' ~'
+read_only = '  '
+format = '[◢](bold fg:overlay)[  ](bold fg:rose bg:overlay)[$path](bold fg:text bg:overlay)[$read_only ](bold fg:love bg:overlay)[◤](bold fg:overlay)'
+
+[git_branch]
+format = '[◢](bold fg:overlay)[  $branch](bold fg:foam bg:overlay)'
+truncation_symbol = '…/'
+
+[git_status]
+format = '[ $all_status$ahead_behind ](bold fg:gold bg:overlay)[◤](bold fg:overlay)'
+stashed = " "
+ahead = " ↑"
+behind = " ↓"
+diverged = " ↕"
+conflicted = " "
+untracked = " ?"
+staged = " +"
+modified = " !"
+renamed = " »"
+deleted = " ✘"
+
+[cmd_duration]
+min_time = 0
+format = "[◢](bold fg:overlay)[ ⏱ ](bold fg:pine bg:overlay)[$duration ](bold fg:text bg:overlay)[◤](bold fg:overlay)"
+show_milliseconds = true
+
+[status]
+disabled = false
+format = '[◢](bold fg:overlay)[ ✘ ](bold fg:love bg:overlay)[◤](bold fg:overlay)'
+
+
+
+#------------------------------------------------------------
+#   Extra Elements
+#------------------------------------------------------------
+
+[line_break]
+disabled = false
+
+[aws]
+symbol = " "
+format = '[◢](bold fg:overlay)[ $symbol](bold fg:pine bg:overlay)[◤](bold fg:overlay)'
+
+[docker_context]
+symbol = " "
+format = '[◢](bold fg:overlay)[ $symbol](bold fg:pine bg:overlay)[◤](bold fg:overlay)'
