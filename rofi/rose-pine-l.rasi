@@ -1,0 +1,12 @@
+// rose pine dawn
+* {
+    font:           "jetbrains mono nerd font 9";
+    background:     #faf4edff;  // base
+    background-alt: #cecacdff;  // surface
+    foreground:     #575279ff;  // text
+    red:            #56949fff;  // foam
+    orange:         #ea9d34ff;  // gold
+    green:          #286983ff;  // pine
+    blue:           #b4637aff;  // love
+    aqua:           #907aa9ff;  // iris
+}
