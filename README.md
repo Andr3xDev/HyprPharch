@@ -4,10 +4,10 @@
         Andr3x's Hyprland Dotfiles - A functional and aesthetic Arch Linux setup
     </p>
     <p align="center">
-        <a href="https://archlinux.org/"><img src="https://img.shields.io/badge/Arch_Linux-7daea3?style=for-the-badge&logo=arch-linux&logoColor=white" alt="Arch Linux"></a>
-        <a href="https://hyprland.org/"><img src="https://img.shields.io/badge/Hyprland-a9b665?style=for-the-badge&logo=wayland&logoColor=white" alt="Hyprland"></a>
-        <a href="config/quickshell/lucy"><img src="https://img.shields.io/badge/Version-Lucy-e78a4e?style=for-the-badge" alt="Version: Lucy"></a>
-        <a href="https://github.com/Andr3xDev/HyprPharch/stargazers"><img src="https://img.shields.io/github/stars/Andr3xDev/HyprPharch?style=for-the-badge&color=d8a657" alt="Stars"></a>
+        <a href="https://archlinux.org/"><img src="https://img.shields.io/badge/Arch_Linux-45707a?style=for-the-badge&logo=arch-linux&logoColor=white" alt="Arch Linux"></a>
+        <a href="https://hyprland.org/"><img src="https://img.shields.io/badge/Hyprland-89b482?style=for-the-badge&logo=wayland&logoColor=white" alt="Hyprland"></a>
+        <a href="config/quickshell/lucy"><img src="https://img.shields.io/badge/Version-Lucy-a9b665?style=for-the-badge" alt="Version: Lucy"></a>
+        <a href="https://github.com/Andr3xDev/HyprPharch/stargazers"><img src="https://img.shields.io/github/stars/Andr3xDev/HyprPharch?style=for-the-badge&color=e78a4e" alt="Stars"></a>
     </p>
 </div>
 
@@ -97,7 +97,7 @@ This configuration is designed for **Arch Linux with Hyprland**, focusing on ess
 <br>
 <br>
 
-### 📦 Legacy Version (Waybar)
+## 📦 Legacy Version
 
 > **⚠️ No longer maintained** - Available on the [`legacy`](https://github.com/Andr3xDev/HyprPharch/tree/legacy) branch
 
@@ -111,9 +111,44 @@ git clone -b legacy https://github.com/Andr3xDev/HyprPharch.git
 <details>
 <summary><b>View Legacy Screenshots</b></summary>
 
-<!-- Add legacy version images here -->
-
-<i>Screenshots pending</i>
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/legacy/home.png" alt="Legacy Home">
+      <br><b>Overview</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/legacy/start.png" alt="Legacy Start">
+      <br><b>Start Menu</b>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/legacy/systemApps.png" alt="Legacy System Apps">
+      <br><b>System Apps</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/legacy/menu.png" alt="Legacy Menu">
+      <br><b>Application Menu</b>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/legacy/nvim.png" alt="Legacy Neovim">
+      <br><b>Neovim</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/legacy/bSpotify.png" alt="Legacy Spotify">
+      <br><b>Spotify</b>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <img src="docs/legacy/close.png" alt="Legacy Close Menu">
+      <br><b>Close Menu</b>
+    </td>
+  </tr>
+</table>
 
 </details>
 
