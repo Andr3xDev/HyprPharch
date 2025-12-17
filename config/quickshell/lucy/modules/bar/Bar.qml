@@ -44,7 +44,7 @@ PanelWindow {
                 // Border
                 Rectangle {
                     anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
-                    height: 2
+                    height: 1.5
                     color: Theme.ThemeManager.currentPalette.color12
                 }
 
@@ -120,7 +120,7 @@ PanelWindow {
                 // Border
                 Rectangle {
                     anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
-                    height: 2
+                    height: 1.5
                     color: Theme.ThemeManager.currentPalette.color12
                 }
                 
@@ -163,7 +163,7 @@ PanelWindow {
                 // Border
                 Rectangle {
                     anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
-                    height: 2
+                    height: 1.5
                     color: Theme.ThemeManager.currentPalette.color12
                 }
                 
