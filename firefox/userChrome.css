@@ -9,17 +9,8 @@
 }
 
 :root {
-    /*--- Colors ---*/
-    --primary-color: #1b1b1b;
-    --secondary-color: #282828;
-    --red-color: #ea6962;
-    --green-color: #a9b665;
-
-    background-color: var(--primary-color) !important;
-    --toolbar-bgcolor: var(--primary-color) !important;
-    --tabs-border-color: var(--secondary-color) !important;
-    --lwt-sidebar-background-color: var(--primary-color) !important;
-    --lwt-toolbar-field-focus: var(--primary-color) !important;
+    /*--- Minimal color overrides ---*/
+    --tab-selected-indicator: #888888;
 }
 
 
@@ -27,10 +18,6 @@
 /*------------------------------------------------------------------*/
 /*  Navigation Bar                                                  */
 /*------------------------------------------------------------------*/
-
-#navigator-toolbox {
-  background-color: var(--primary-color) !important;
-}
 
 /*--- center navbar ---*/
 #nav-bar {
@@ -63,19 +50,6 @@
 #urlbar-input,
 .searchbar-textbox {
     font-size: 13px !important;
-}
-
-
-/*--- Search bar focus ---*/
-#urlbar:focus-within > #urlbar-background {
-    background-color: #131313 !important;
-}
-#urlbar:focus-within:hover > #urlbar-background {
-    background-color: #131313 !important;
-}
-#urlbar ::-moz-selection {
-    background-color: var(--secondary-color) !important;
-    color: white !important;
 }
 
 
@@ -123,8 +97,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 }
 
 #tabbrowser-tabs[orient="vertical"] .tabbrowser-tab[selected="true"] {
-    background-color: var(--secondary-color) !important;
-    border-left: 3px solid var(--green-color) !important;
+    border-left: 3px solid var(--tab-selected-indicator) !important;
     border-radius: 0px !important;
     padding: 0px 10px;
     box-shadow: none;
@@ -167,17 +140,8 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 /*  Popup Menu                                                      */
 /*------------------------------------------------------------------*/
 
-menupopup, panel {
-    --panel-background: var(--primary-color) !important;
-    --panel-color: #CCC !important;
-    --panel-border-color: var(--secondary-color) !important;
-    --panel-border-radius: 0px !important;
-    --panel-separator-color: var(--browser-separator-color) !important;
-}
 menupopup menuitem[_moz-menuactive], menupopup menuitem:hover {
-    background-color: var(--green-color) !important;
     font-size: 13px;
-    color: white !important;
 }
 
 
