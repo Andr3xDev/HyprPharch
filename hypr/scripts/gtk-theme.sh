@@ -11,7 +11,7 @@ case "$1" in
     "gruvbox-material-l")
         GTK_THEME="Gruvbox-Light"
         ICON_THEME="Papirus-Light"
-        COLOR_SCHEME="prefer-light"
+        COLOR_SCHEME="default"
         CURSOR="phinger-cursors-light"
         CURSOR_SIZE=25
         ;;
@@ -25,7 +25,7 @@ case "$1" in
     "rose-pine-l")
         GTK_THEME="Rosepine-Light"
         ICON_THEME="Papirus-Light"
-        COLOR_SCHEME="prefer-light"
+        COLOR_SCHEME="default"
         CURSOR="phinger-cursors-light"
         CURSOR_SIZE=25
         ;;
@@ -38,9 +38,9 @@ esac
 # apply theme
 gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME"
 gsettings set org.gnome.desktop.interface icon-theme "$ICON_THEME"
-gsettings set org.gnome.desktop.interface color-scheme "$COLOR_SCHEME"
 gsettings set org.gnome.desktop.interface cursor-theme "$CURSOR"
 gsettings set org.gnome.desktop.interface cursor-size "$CURSOR_SIZE"
+gsettings set org.gnome.desktop.interface color-scheme "$COLOR_SCHEME"
 
 # GTK 3 config
 GTK3_CONF="$HOME/.config/gtk-3.0/settings.ini"
