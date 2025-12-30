@@ -51,9 +51,19 @@ This configuration is designed for **Arch Linux with Hyprland**, focusing on ess
 </table>
 
 <details>
-<summary><b>More Gruvbox Material Screenshots</b></summary>
+<summary><b>More Gruvbox Material Screenshots (click to expand)</b></summary>
 
 <table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/lucy/firefox/gruvbox-material-d.png" alt="Firefox Gruvbox Material Dark">
+      <br><b>Firefox (Dark)</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/lucy/firefox/gruvbox-material-l.png" alt="Firefox Gruvbox Material Light">
+      <br><b>Firefox (Light)</b>
+    </td>
+  </tr>
   <tr>
     <td width="50%" align="center">
       <img src="docs/lucy/apps/gruvbox-material-d.png" alt="Apps Dark">
@@ -126,9 +136,19 @@ This configuration is designed for **Arch Linux with Hyprland**, focusing on ess
 </table>
 
 <details>
-<summary><b>More Rose Pine Screenshots</b></summary>
+<summary><b>More Rose Pine Screenshots (click to expand)</b></summary>
 
 <table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="docs/lucy/firefox/rose-pine-d.png" alt="Firefox Rose Pine Dark">
+      <br><b>Firefox (Dark)</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="docs/lucy/firefox/rose-pine-l.png" alt="Firefox Rose Pine Light">
+      <br><b>Firefox (Light)</b>
+    </td>
+  </tr>
   <tr>
     <td width="50%" align="center">
       <img src="docs/lucy/apps/rose-pine-d.png" alt="Apps Dark">
@@ -546,12 +566,14 @@ These dotfiles are **moderately coupled** but allow extensibility:
 </details>
 
 <details>
-<summary><b>Something broke, how do I fix it?</b></summary>
 
-1. **Check logs:** `cat ~/.cache/hyprland/hyprland.log` or `journalctl -xe`
-2. **Restore backup:** `cp -r ~/.config.backup-* ~/.config/`
-3. **Restart services:** `SUPER + SHIFT + R` or `killall quickshell && quickshell --config lucy &`
-4. **Still broken?** Open an [issue](https://github.com/Andr3xDev/HyprPharch/issues) with logs
+<summary><b>QuickShell bar is not visible</b></summary>
+
+If the QuickShell bar does not appear, check the following:
+
+1. **Where QuickShell starts:** The startup and configuration scripts are in `config/quickshell/lucy/`.
+2. **Ignored monitors configuration:** In `config/quickshell/lucy/config/monitors_ignore.json` you can define monitors that should not display the bar. If a monitor is listed there, it will not have a bar.
+3. **Restart QuickShell:** Use `SUPER + SHIFT + R` or run `killall quickshell && quickshell --config lucy &`.
 
 </details>
 
