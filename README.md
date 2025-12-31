@@ -4,9 +4,9 @@
         Andr3x's Hyprland Dotfiles - A functional,minimal and aesthetic Arch Linux setup
     </p>
     <p align="center">
-        <a href="https://archlinux.org/"><img src="https://img.shields.io/badge/Arch_Linux-282828a?style=for-the-badge&logo=arch-linux&logoColor=45707" alt="Arch Linux"></a>
+        <a href="https://archlinux.org/"><img src="https://img.shields.io/badge/Arch_Linux-282828?style=for-the-badge&logo=arch-linux&logoColor=45707" alt="Arch Linux"></a>
         <a href="https://hyprland.org/"><img src="https://img.shields.io/badge/Hyprland-282828?style=for-the-badge&logo=wayland&logoColor=89b482" alt="Hyprland"></a>
-        <a href="config/quickshell/lucy"><img src="https://img.shields.io/badge/Version-Lucy_1.0-a9b665?style=for-the-badge" alt="Version: Lucy"></a>
+        <a href="config/quickshell/lucy"><img src="https://img.shields.io/badge/Version-Lucy_1.0-282828?style=for-the-badge" alt="Version: Lucy"></a>
         <a href="https://github.com/Andr3xDev/HyprPharch/stargazers"><img src="https://img.shields.io/github/stars/Andr3xDev/HyprPharch?style=for-the-badge&color=282828" alt="Stars"></a>
     </p>
 </div>
@@ -14,26 +14,30 @@
 <br>
 <br>
 
-## 📖 About The Project
+## Lucy config
 
 This configuration is designed for **Arch Linux with Hyprland**, focusing on essential visual and practical elements that are lightweight and resource-efficient. It features a **minimalist style** that prioritizes productivity without sacrificing a clean and calm aesthetic.
+
+<br>
 
 > **⚠️ Important Note:**  
 > These dotfiles are primarily designed for **Arch Linux with Hyprland**. While some adaptations can be made for other distributions or window managers, such customizations are beyond the scope of the installation script. You may need to manually adjust configurations for other setups.
 
+<br>
+
 ### Key Features
 
--   🎨 **Four Beautiful Themes**: Gruvbox Material & Rose Pine (Dark/Light both)
--   🚀 **QuickShell Bar**: Modern, customizable, and performant status bar
--   ⚡ **Optimized Performance**: Minimal resource usage with maximum functionality
--   🎯 **Easy Theme Switching**: Change themes on the fly with a simple keybind
--   🔧 **Highly Configurable**: Extensive customization options
--   📦 **Automated Installation**: One script setup for the entire environment
+-   **Four Beautiful Themes**: Gruvbox Material & Rose Pine (Dark/Light both)
+-   **QuickShell Bar**: Modern, customizable, and performant status bar
+-   **Optimized Performance**: Minimal resource usage with maximum functionality
+-   **Easy Theme Switching**: Change themes on the fly with a simple keybind
+-   **Highly Configurable**: Extensive customization options
+-   **Automated Installation**: One script setup for the entire environment
 
 <br>
 <br>
 
-## 🖼️ Gallery
+## Gallery
 
 ### Gruvbox Material
 
@@ -502,7 +506,7 @@ sudo reboot
 <br>
 <br>
 
-## ❓ Frequently Asked Questions
+## Frequently Asked Questions
 
 <details>
 <summary><b>How do I add or edit themes?</b></summary>
@@ -595,7 +599,7 @@ Feedback and contributions are welcome!
 <br>
 <br>
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome and appreciated! Whether it's bug fixes, new features, or improvements to documentation, all help is valuable.
 
