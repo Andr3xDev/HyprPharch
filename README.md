@@ -1,13 +1,13 @@
 <div align="center">
     <h1 align="center">HyprPharch</h1>
     <p align="center">
-        Andr3x's Hyprland Dotfiles - A functional and aesthetic Arch Linux setup
+        Andr3x's Hyprland Dotfiles - A functional,minimal and aesthetic Arch Linux setup
     </p>
     <p align="center">
-        <a href="https://archlinux.org/"><img src="https://img.shields.io/badge/Arch_Linux-45707a?style=for-the-badge&logo=arch-linux&logoColor=white" alt="Arch Linux"></a>
-        <a href="https://hyprland.org/"><img src="https://img.shields.io/badge/Hyprland-89b482?style=for-the-badge&logo=wayland&logoColor=white" alt="Hyprland"></a>
-        <a href="config/quickshell/lucy"><img src="https://img.shields.io/badge/Version-Lucy-a9b665?style=for-the-badge" alt="Version: Lucy"></a>
-        <a href="https://github.com/Andr3xDev/HyprPharch/stargazers"><img src="https://img.shields.io/github/stars/Andr3xDev/HyprPharch?style=for-the-badge&color=e78a4e" alt="Stars"></a>
+        <a href="https://archlinux.org/"><img src="https://img.shields.io/badge/Arch_Linux-282828a?style=for-the-badge&logo=arch-linux&logoColor=45707" alt="Arch Linux"></a>
+        <a href="https://hyprland.org/"><img src="https://img.shields.io/badge/Hyprland-282828?style=for-the-badge&logo=wayland&logoColor=89b482" alt="Hyprland"></a>
+        <a href="config/quickshell/lucy"><img src="https://img.shields.io/badge/Version-Lucy_1.0-a9b665?style=for-the-badge" alt="Version: Lucy"></a>
+        <a href="https://github.com/Andr3xDev/HyprPharch/stargazers"><img src="https://img.shields.io/github/stars/Andr3xDev/HyprPharch?style=for-the-badge&color=282828" alt="Stars"></a>
     </p>
 </div>
 
@@ -21,9 +21,9 @@ This configuration is designed for **Arch Linux with Hyprland**, focusing on ess
 > **⚠️ Important Note:**  
 > These dotfiles are primarily designed for **Arch Linux with Hyprland**. While some adaptations can be made for other distributions or window managers, such customizations are beyond the scope of the installation script. You may need to manually adjust configurations for other setups.
 
-### ✨ Key Features
+### Key Features
 
--   🎨 **Four Beautiful Themes**: Gruvbox Material (Dark/Light) & Rose Pine (Dark/Light)
+-   🎨 **Four Beautiful Themes**: Gruvbox Material & Rose Pine (Dark/Light both)
 -   🚀 **QuickShell Bar**: Modern, customizable, and performant status bar
 -   ⚡ **Optimized Performance**: Minimal resource usage with maximum functionality
 -   🎯 **Easy Theme Switching**: Change themes on the fly with a simple keybind
@@ -35,7 +35,7 @@ This configuration is designed for **Arch Linux with Hyprland**, focusing on ess
 
 ## 🖼️ Gallery
 
-### 🎨 Gruvbox Material
+### Gruvbox Material
 
 <table>
   <tr>
@@ -120,7 +120,7 @@ This configuration is designed for **Arch Linux with Hyprland**, focusing on ess
 
 <br>
 
-### 🌸 Rose Pine
+### Rose Pine
 
 <table>
   <tr>
@@ -206,14 +206,13 @@ This configuration is designed for **Arch Linux with Hyprland**, focusing on ess
 <br>
 <br>
 
-## 📦 Legacy Version
+## Legacy Version
 
 > **⚠️ No longer maintained** - Available on the [`legacy`](https://github.com/Andr3xDev/HyprPharch/tree/legacy) branch
 
-The legacy version uses **Waybar** instead of QuickShell. While no longer actively maintained, it remains available for those who prefer Waybar.
+The legacy version uses **Waybar**. While no longer actively maintained, it remains available for those who prefer Waybar.
 
 ```bash
-# To access the legacy version
 git clone -b legacy https://github.com/Andr3xDev/HyprPharch.git
 ```
 
@@ -222,37 +221,40 @@ git clone -b legacy https://github.com/Andr3xDev/HyprPharch.git
 
 <table>
   <tr>
-    <td width="50%" align="center">
+    <td colspan="2" align="center">
       <img src="docs/legacy/home.png" alt="Legacy Home">
       <br><b>Overview</b>
     </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
     <td width="50%" align="center">
       <img src="docs/legacy/start.png" alt="Legacy Start">
       <br><b>Start Menu</b>
     </td>
-  </tr>
-  <tr>
     <td width="50%" align="center">
       <img src="docs/legacy/systemApps.png" alt="Legacy System Apps">
       <br><b>System Apps</b>
     </td>
+  </tr>
+  <tr>
     <td width="50%" align="center">
       <img src="docs/legacy/menu.png" alt="Legacy Menu">
       <br><b>Application Menu</b>
     </td>
-  </tr>
-  <tr>
     <td width="50%" align="center">
       <img src="docs/legacy/nvim.png" alt="Legacy Neovim">
       <br><b>Neovim</b>
     </td>
+  </tr>
+  <tr>
     <td width="50%" align="center">
       <img src="docs/legacy/bSpotify.png" alt="Legacy Spotify">
       <br><b>Spotify</b>
     </td>
-  </tr>
-  <tr>
-    <td colspan="2" align="center">
+    <td width="50%" align="center">
       <img src="docs/legacy/close.png" alt="Legacy Close Menu">
       <br><b>Close Menu</b>
     </td>
@@ -264,14 +266,14 @@ git clone -b legacy https://github.com/Andr3xDev/HyprPharch.git
 <br>
 <br>
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Core Components
 
 | Category          | Tool                                                                                       |
 | ----------------- | ------------------------------------------------------------------------------------------ |
 | **Compositor**    | [Hyprland](https://hyprland.org/)                                                          |
-| **Bar**           | [QuickShell](https://github.com/quickshell-mirror/quickshell) (Lucy config)                |
+| **Bar**           | [QuickShell](https://github.com/quickshell-mirror/quickshell)                              |
 | **Terminal**      | [Kitty](https://sw.kovidgoyal.net/kitty/)                                                  |
 | **Shell**         | [Zsh](https://www.zsh.org/) + [Oh My Zsh](https://ohmyz.sh/)                               |
 | **Editor**        | [Neovim](https://neovim.io/) / [VSCode](https://code.visualstudio.com/)                    |
@@ -308,8 +310,8 @@ wl-clipboard, cliphist, unzip, 7zip
 | ----------------- | ---------------------------------------------------------- |
 | **GTK Themes**    | Gruvbox Material (Dark/Light), Rose Pine (Dark/Light)      |
 | **Icon Theme**    | Papirus                                                    |
-| **Cursor Themes** | Bibata, Phinger                                            |
-| **Fonts**         | FiraCode Nerd Font, JetBrains Mono Nerd Font, Font Awesome |
+| **Cursor Themes** | Phinger                                            |
+| **Fonts**         | JetBrains Mono Nerd Font, Font Awesome |
 
 ### Optional Applications
 
@@ -326,7 +328,7 @@ wl-clipboard, cliphist, unzip, 7zip
 <br>
 <br>
 
-## 📥 Installation
+## Installation
 
 > **💡 Recommended:** Install on a **fresh Arch Linux installation** for the best experience and to avoid conflicts with existing configurations.
 
@@ -338,7 +340,7 @@ You only need **Git** installed on your Arch Linux system. The installation scri
 sudo pacman -S git
 ```
 
-### 🚀 Quick Install (Recommended)
+## Quick Install
 
 The automated installation script provides two modes:
 
@@ -374,9 +376,7 @@ sudo reboot
 
 After rebooting, select Hyprland from the Ly display manager.
 
-> 📚 **For detailed installation information**, see [scripts/README.md](scripts/README.md)
-
-### 🔧 Manual Installation
+### Manual Installation
 
 For advanced users who want more control:
 
@@ -439,7 +439,7 @@ sudo reboot
 <br>
 <br>
 
-## ⌨️ Keybindings
+## Keybindings
 
 > **Note:** All keybindings can be customized in [config/hypr/configs/keyblinds.conf](config/hypr/configs/keyblinds.conf)
 
@@ -459,7 +459,8 @@ sudo reboot
 
 | Keybind             | Action                           |
 | ------------------- | -------------------------------- |
-| `SUPER + E`         | File manager (Yazi)              |
+| `SUPER + E`         | Termina File manager (Yazi)      |
+| `SUPER + E`         | File manager (thunar)            |
 | `SUPER + I`         | System monitor (btop)            |
 | `SUPER + SHIFT + I` | System fetch                     |
 | `SUPER + B`         | Bluetooth manager                |
@@ -544,8 +545,6 @@ These dotfiles are designed for **Arch Linux with Hyprland**. You can adapt them
 2. Edit [`config/hypr/configs/keyblinds.conf`](config/hypr/configs/keyblinds.conf)
 3. Replace `intel_backlight` with your device name
 
-Common devices: `intel_backlight`, `amdgpu_bl0`, `nvidia_0`
-
 </details>
 
 <details>
@@ -553,11 +552,11 @@ Common devices: `intel_backlight`, `amdgpu_bl0`, `nvidia_0`
 
 These dotfiles are **moderately coupled** but allow extensibility:
 
-**✅ Easy to add:**
+**Easy to add:**
 
 -   New applications, keybindings, window rules
 
-**⚠️ Requires multiple edits:**
+**Requires multiple edits:**
 
 -   New themes, bar components, theme switching
 
@@ -629,7 +628,7 @@ If you encounter any problems:
 <br>
 <br>
 
-## 📄 License
+## License
 
-Distributed under the Unlicense License. See [`LICENSE`](LICENSE) for more information.
-This means you can use, modify, and distribute this project freely without any restrictions.
+Distributed under License. See [`LICENSE`](LICENSE) for more information.
+This means you can use or modify keeping it open source.
