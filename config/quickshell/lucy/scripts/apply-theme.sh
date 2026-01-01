@@ -48,14 +48,14 @@ esac
 # Kitty
 kitty +kitten themes --reload-in=all "$THEME"
 
-# GTK theme
-# TODO
-
 # Hyprland
 ~/.config/hypr/scripts/theme.sh $THEME
 
 # Rofi
 ~/.config/rofi/theme.sh $THEME
+
+# Fastfetch
+~/.config/fastfetch/theme.sh $THEME
 
 # Btop
 ~/.config/btop/theme.sh $THEME

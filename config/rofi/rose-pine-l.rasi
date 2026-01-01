@@ -2,7 +2,7 @@
 * {
     font:           "jetbrains mono nerd font 9";
     background:     #faf4edff;  // base
-    background-alt: #fffaf3ff;  // surface
+    background-alt: #cecacdff;  // surface
     foreground:     #575279ff;  // text
     red:            #56949fff;  // foam
     orange:         #ea9d34ff;  // gold
