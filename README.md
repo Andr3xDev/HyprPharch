@@ -6,8 +6,8 @@
     <p align="center">
         <a href="https://archlinux.org/"><img src="https://img.shields.io/badge/Arch_Linux-282828?style=for-the-badge&logo=arch-linux&logoColor=45707" alt="Arch Linux"></a>
         <a href="https://hyprland.org/"><img src="https://img.shields.io/badge/Hyprland-282828?style=for-the-badge&logo=wayland&logoColor=89b482" alt="Hyprland"></a>
-        <a href="config/quickshell/lucy"><img src="https://img.shields.io/badge/Version-Lucy_1.0-282828?style=for-the-badge" alt="Version: Lucy"></a>
-        <a href="https://github.com/Andr3xDev/HyprPharch/stargazers"><img src="https://img.shields.io/github/stars/Andr3xDev/HyprPharch?style=for-the-badge&color=282828" alt="Stars"></a>
+        <a href="config/quickshell/lucy"><img src="https://img.shields.io/badge/Version-Lucy_1.0-1b1b1b?style=for-the-badge&labelColor=282828" alt="Version: Lucy"></a>
+        <a href="https://github.com/Andr3xDev/HyprPharch/stargazers"><img src="https://img.shields.io/github/stars/Andr3xDev/HyprPharch?style=for-the-badge&color=1b1b1b&labelColor=282828" alt="Stars"></a>
     </p>
 </div>
 
