@@ -1,0 +1,165 @@
+#--------------------------------------------------------------------------------
+#   Gruvbox Material Light theme for Yazi
+#   Based on: https://github.com/sainnhe/gruvbox-material
+#--------------------------------------------------------------------------------
+
+[app]
+overall = { bg = "#FBF1C7" }
+
+[manager]
+cwd = { fg = "#4C7A5D" }
+
+# Hovered
+hovered         = { reversed = true }
+preview_hovered = { underline = true }
+
+# Find
+find_keyword  = { fg = "#B47109", bold = true, italic = true, underline = true }
+find_position = { fg = "#945E80", bg = "reset", bold = true, italic = true }
+
+# Symlink
+symlink_target = { italic = true }
+
+# Marker
+marker_copied   = { fg = "#45707A", bg = "#45707A" }
+marker_cut      = { fg = "#C14A4A", bg = "#C14A4A" }
+marker_marked   = { fg = "#C35E0A", bg = "#C35E0A" }
+marker_selected = { fg = "#B47109", bg = "#B47109" }
+
+# Count
+count_copied   = { fg = "#654735", bg = "#45707A" }
+count_cut      = { fg = "#654735", bg = "#C14A4A" }
+count_selected = { fg = "#FBF1C7", bg = "#B47109" }
+
+# Border
+border_symbol = "│"
+border_style  = { fg = "#DDCCAB" }
+
+# Highlighting
+syntect_theme = ""
+
+[indicator]
+padding = { open = "█", close = "█" }
+
+[tabs]
+active   = { fg = "#654735", bg = "#45707A", bold = true }
+inactive = { fg = "#45707A", bg = "#F4E8BE" }
+
+# Separator
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "█", close = "" }
+
+[mode]
+normal_main = { fg = "#FBF1C7", bg = "#6C782E", bold = true }
+normal_alt  = { fg = "#FBF1C7", bg = "#654735", bold = true }
+
+# Select mode
+select_main = { fg = "#FBF1C7", bg = "#C14A4A", bold = true }
+select_alt  = { fg = "#FBF1C7", bg = "#654735", bold = true }
+
+# Unset mode
+unset_main = { fg = "#FBF1C7", bg = "#C14A4A", bold = true }
+unset_alt  = { fg = "#FBF1C7", bg = "#654735", bold = true }
+
+[status]
+overall   = { bg = "#FBF1C7" }
+sep_left  = { open = "█", close = "" }
+sep_right = { open = "", close = "█" }
+
+# Permissions
+perm_sep   = { fg = "#A89984" }
+perm_type  = { fg = "#945E80" }
+perm_read  = { fg = "#B47109" }
+perm_write = { fg = "#C14A4A" }
+perm_exec  = { fg = "#4C7A5D" }
+
+# Progress
+progress_label  = { fg = "#654735", bold = true }
+progress_normal = { fg = "#45707A", bg = "#F4E8BE" }
+progress_error  = { fg = "#C14A4A", bg = "#F4E8BE" }
+
+[which]
+cols            = 3
+mask            = { bg = "#F4E8BE" }
+cand            = { fg = "#4C7A5D" }
+rest            = { fg = "#A89984" }
+desc            = { fg = "#B47109" }
+separator       = "  "
+separator_style = { fg = "#A89984" }
+
+[confirm]
+border     = { fg = "#DDCCAB" }
+title      = { fg = "#C14A4A", bold = true }
+body       = { fg = "#654735" }
+list       = { fg = "#654735" }
+btn_yes    = { fg = "#FBF1C7", bg = "#45707A", bold = true }
+btn_no     = { fg = "#FBF1C7", bg = "#654735", bold = true }
+btn_labels = [ "  [y]es  ", "  (n)o  " ]
+
+[spot]
+border = { fg = "#DDCCAB" }
+title  = { fg = "#4C7A5D", bold = true }
+
+# Table
+tbl_col  = { fg = "#4C7A5D" }
+tbl_cell = { fg = "#FBF1C7", bg = "#B47109", bold = true }
+
+[notify]
+title_info  = { fg = "#45707A" }
+title_warn  = { fg = "#B47109" }
+title_error = { fg = "#C14A4A" }
+
+[pick]
+border   = { fg = "#45707A" }
+active   = { fg = "#945E80", bold = true }
+inactive = { fg = "#928374"}
+
+[input]
+border   = { fg = "#45707A" }
+title    = { bold = true }
+value    = { fg = "#654735"}
+selected = { reversed = true }
+
+[cmp]
+border   = { fg = "#45707A" }
+active   = { bg = "#654735", fg = "#FBF1C7", bold = true }
+inactive = { fg = "#928374" }
+
+[tasks]
+border  = { fg = "#45707A" }
+title   = { bold = true}
+hovered = { fg = "#945E80", bold = true, reversed = true }
+
+[help]
+on      = { fg = "#4C7A5D" }
+run     = { fg = "#945E80" }
+desc    = { fg = "#B47109"}
+hovered = { reversed = true, bold = true }
+footer  = { fg = "#FBF1C7", bg = "#654735" }
+
+[filetype]
+rules = [
+	# Images
+	{ mime = "image/*", fg = "#945E80" },
+
+	# Media
+	{ mime = "{audio,video}/*", fg = "#B47109" },
+
+	# Archives
+	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#C14A4A" },
+
+	# Documents
+	{ mime = "application/{pdf,doc,rtf}", fg = "#C35E0A" },
+
+	# Special files
+	{ name = "*", is = "orphan", fg = "#FBF1C7", bg = "#AE5858" },
+	{ name = "*", is = "exec"  , fg = "#6C782E" },
+
+	# Dummy files
+	{ name = "*", is = "dummy",  fg = "#FBF1C7", bg = "#AE5858" },
+	{ name = "*/", is = "dummy", fg = "#FBF1C7", bg = "#AE5858" },
+
+	# Fallback
+	{ name = "*",  fg = "#4F3829" },
+	{ name = "*/", fg = "#6F8352" }
+]
