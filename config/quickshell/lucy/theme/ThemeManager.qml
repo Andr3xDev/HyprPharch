@@ -1,12 +1,19 @@
 pragma Singleton
 import QtQuick
+import Qt.labs.settings
 import "." as Local
 
 QtObject {
     id: themeManager
     
-    property string currentTheme: "rose-pine-d"
+    property string currentTheme: settings.savedTheme || "rose-pine-d"
     property var theme: currentPalette
+    
+    // Persistencia del tema
+    property Settings settings: Settings {
+        category: "appearance"
+        property string savedTheme: "rose-pine-d"
+    }
     
     // Paletas disponibles
     readonly property var availableThemes: [
@@ -49,6 +56,7 @@ QtObject {
     function setTheme(themeName) {
         if (availableThemes.includes(themeName)) {
             currentTheme = themeName
+            settings.savedTheme = themeName
             return true
         }
         return false

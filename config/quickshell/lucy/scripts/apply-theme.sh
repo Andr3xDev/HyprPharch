@@ -54,6 +54,12 @@ kitty +kitten themes --reload-in=all "$THEME"
 # Rofi
 ~/.config/rofi/theme.sh $THEME
 
+# Dunst
+~/.config/dunst/theme.sh $THEME
+
+# Yazi
+~/.config/yazi/theme.sh $THEME
+
 # Fastfetch
 ~/.config/fastfetch/theme.sh $THEME
 
