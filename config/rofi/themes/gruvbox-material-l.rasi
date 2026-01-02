@@ -1,0 +1,24 @@
+//--------------------------------------------------------------------------------
+//             _______
+//　　　　　 /  ＞　　フ     
+//　　　　　| 　_　 _ l      THEME: Gruvbox Material Light
+//　 　　　／` ミ＿xノ               
+//　　 　 /　　　 　 |
+//　　　 /　 ヽ　　 ﾉ
+//　 　 │　　|　|　|         AUTHOR:  Andr3xDev
+//　／￣|　　 |　|　|        URL: https://github.com/Andr3xDev/HyprPharch
+//　| (￣ヽ＿_ヽ_)__)
+//　＼二つ
+//--------------------------------------------------------------------------------
+
+* {
+    font:            "JetBrains Mono Nerd Font 9";
+    background:      #FBF1C7FF;
+    background-alt:  #F2E5BCFF;
+    foreground:      #654735FF;
+    blue:            #45707AFF;
+    orange:          #C35E0AFF;
+    green:           #6C782EFF;
+    red:             #C14A4AFF;
+    aqua:            #4C7A5DFF;
+}

@@ -1,11 +1,20 @@
 #--------------------------------------------------------------------------------
-#   theme of rose pine dawn, based in https://github.com/rose-pine/yazi 
+#             _______
+#　　　　　 /  ＞　　フ     
+#　　　　　| 　_　 _ l      THEME: Rose Pine
+#　 　　　／` ミ＿xノ               
+#　　 　 /　　　 　 |       Based on: https://github.com/rose-pine/yazi 
+#　　　 /　 ヽ　　 ﾉ
+#　 　 │　　|　|　|         AUTHOR:  Andr3xDev
+#　／￣|　　 |　|　|        URL: https://github.com/Andr3xDev/HyprPharch
+#　| (￣ヽ＿_ヽ_)__)
+#　＼二つ
+#   
 #--------------------------------------------------------------------------------
 
 
 [app]
 overall = { bg = "#faf4ed" }
-
 
 
 [mgr]
@@ -41,10 +50,8 @@ border_style  = { fg = "#cecacd" }
 syntect_theme = ""
 
 
-
 [indicator]
 padding = { open = "█", close = "█" }
-
 
 
 [tabs]
@@ -54,7 +61,6 @@ inactive = { fg = "#286983", bg = "#575279" }
 # Separator
 sep_inner = { open = "", close = "" }
 sep_outer = { open = "█", close = "" }
-
 
 
 [mode]
@@ -68,7 +74,6 @@ select_alt  = { fg = "#faf4ed", bg = "#575279", bold = true }
 # Unset mode
 unset_main = { fg = "#faf4ed", bg = "#b4637a", bold = true }
 unset_alt  = { fg = "#faf4ed", bg = "#575279", bold = true }
-
 
 
 [status]
@@ -89,7 +94,6 @@ progress_normal = { fg = "#286983", bg = "#f4ede8" }
 progress_error  = { fg = "#b4637a", bg = "#f4ede8" }
 
 
-
 [which]
 cols            = 3
 mask            = { bg = "#fffaf3" }
@@ -98,7 +102,6 @@ rest            = { fg = "#9893a5" }
 desc            = { fg = "#ea9d34" }
 separator       = "  "
 separator_style = { fg = "#9893a5" }
-
 
 
 [confirm]
@@ -111,7 +114,6 @@ btn_no     = { fg = "#faf4ed", bg = "#575279", bold = true }
 btn_labels = [ "  [y]es  ", "  (n)o  " ]
 
 
-
 [spot]
 border = { fg = "#cecacd" }
 title  = { fg = "#56949f", bold = true }
@@ -121,19 +123,16 @@ tbl_col  = { fg = "#56949f" }
 tbl_cell = { fg = "#faf4ed", bg = "#ea9d34", bold = true }
 
 
-
 [notify]
 title_info  = { fg = "#286983" }
 title_warn  = { fg = "#ea9d34" }
 title_error = { fg = "#b4637a" }
 
 
-
 [pick]
 border   = { fg = "#286983" }
 active   = { fg = "#907aa9", bold = true }
 inactive = { fg = "#797593"}
-
 
 
 [input]
@@ -143,12 +142,10 @@ value    = { fg = "#575279"}
 selected = { reversed = true }
 
 
-
 [cmp]
 border   = { fg = "#286983" }
 active   = { bg = "#575279", fg = "#faf4ed", bold = true }
 inactive = { fg = "#797593" }
-
 
 
 [tasks]
@@ -157,14 +154,12 @@ title   = { bold = true}
 hovered = { fg = "#907aa9", bold = true, reversed = true }
 
 
-
 [help]
 on      = { fg = "#56949f" }
 run     = { fg = "#907aa9" }
 desc    = { fg = "#ea9d34"}
 hovered = { reversed = true, bold = true }
 footer  = { fg = "#faf4ed", bg = "#575279" }
-
 
 
 [filetype]

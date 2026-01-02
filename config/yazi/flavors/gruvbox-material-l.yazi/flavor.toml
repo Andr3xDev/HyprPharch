@@ -1,10 +1,21 @@
 #--------------------------------------------------------------------------------
-#   Gruvbox Material Light theme for Yazi
-#   Based on: https://github.com/sainnhe/gruvbox-material
+#             _______
+#　　　　　 /  ＞　　フ     
+#　　　　　| 　_　 _ l      THEME: Gruvbox Material Light
+#　 　　　／` ミ＿xノ               
+#　　 　 /　　　 　 |       Based on: https://github.com/sainnhe/gruvbox-material
+#　　　 /　 ヽ　　 ﾉ
+#　 　 │　　|　|　|         AUTHOR:  Andr3xDev
+#　／￣|　　 |　|　|        URL: https://github.com/Andr3xDev/HyprPharch
+#　| (￣ヽ＿_ヽ_)__)
+#　＼二つ
+#   
 #--------------------------------------------------------------------------------
+
 
 [app]
 overall = { bg = "#FBF1C7" }
+
 
 [manager]
 cwd = { fg = "#4C7A5D" }
@@ -38,8 +49,10 @@ border_style  = { fg = "#DDCCAB" }
 # Highlighting
 syntect_theme = ""
 
+
 [indicator]
 padding = { open = "█", close = "█" }
+
 
 [tabs]
 active   = { fg = "#654735", bg = "#45707A", bold = true }
@@ -48,6 +61,7 @@ inactive = { fg = "#45707A", bg = "#F4E8BE" }
 # Separator
 sep_inner = { open = "", close = "" }
 sep_outer = { open = "█", close = "" }
+
 
 [mode]
 normal_main = { fg = "#FBF1C7", bg = "#6C782E", bold = true }
@@ -60,6 +74,7 @@ select_alt  = { fg = "#FBF1C7", bg = "#654735", bold = true }
 # Unset mode
 unset_main = { fg = "#FBF1C7", bg = "#C14A4A", bold = true }
 unset_alt  = { fg = "#FBF1C7", bg = "#654735", bold = true }
+
 
 [status]
 overall   = { bg = "#FBF1C7" }
@@ -78,6 +93,7 @@ progress_label  = { fg = "#654735", bold = true }
 progress_normal = { fg = "#45707A", bg = "#F4E8BE" }
 progress_error  = { fg = "#C14A4A", bg = "#F4E8BE" }
 
+
 [which]
 cols            = 3
 mask            = { bg = "#F4E8BE" }
@@ -86,6 +102,7 @@ rest            = { fg = "#A89984" }
 desc            = { fg = "#B47109" }
 separator       = "  "
 separator_style = { fg = "#A89984" }
+
 
 [confirm]
 border     = { fg = "#DDCCAB" }
@@ -96,6 +113,7 @@ btn_yes    = { fg = "#FBF1C7", bg = "#45707A", bold = true }
 btn_no     = { fg = "#FBF1C7", bg = "#654735", bold = true }
 btn_labels = [ "  [y]es  ", "  (n)o  " ]
 
+
 [spot]
 border = { fg = "#DDCCAB" }
 title  = { fg = "#4C7A5D", bold = true }
@@ -104,15 +122,18 @@ title  = { fg = "#4C7A5D", bold = true }
 tbl_col  = { fg = "#4C7A5D" }
 tbl_cell = { fg = "#FBF1C7", bg = "#B47109", bold = true }
 
+
 [notify]
 title_info  = { fg = "#45707A" }
 title_warn  = { fg = "#B47109" }
 title_error = { fg = "#C14A4A" }
 
+
 [pick]
 border   = { fg = "#45707A" }
 active   = { fg = "#945E80", bold = true }
 inactive = { fg = "#928374"}
+
 
 [input]
 border   = { fg = "#45707A" }
@@ -120,15 +141,18 @@ title    = { bold = true }
 value    = { fg = "#654735"}
 selected = { reversed = true }
 
+
 [cmp]
 border   = { fg = "#45707A" }
 active   = { bg = "#654735", fg = "#FBF1C7", bold = true }
 inactive = { fg = "#928374" }
 
+
 [tasks]
 border  = { fg = "#45707A" }
 title   = { bold = true}
 hovered = { fg = "#945E80", bold = true, reversed = true }
+
 
 [help]
 on      = { fg = "#4C7A5D" }
@@ -136,6 +160,7 @@ run     = { fg = "#945E80" }
 desc    = { fg = "#B47109"}
 hovered = { reversed = true, bold = true }
 footer  = { fg = "#FBF1C7", bg = "#654735" }
+
 
 [filetype]
 rules = [

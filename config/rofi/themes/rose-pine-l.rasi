@@ -1,0 +1,24 @@
+//--------------------------------------------------------------------------------
+//             _______
+//　　　　　 /  ＞　　フ     
+//　　　　　| 　_　 _ l      THEME: Rose Pine Dawn
+//　 　　　／` ミ＿xノ               
+//　　 　 /　　　 　 |
+//　　　 /　 ヽ　　 ﾉ
+//　 　 │　　|　|　|         AUTHOR:  Andr3xDev
+//　／￣|　　 |　|　|        URL: https://github.com/Andr3xDev/HyprPharch
+//　| (￣ヽ＿_ヽ_)__)
+//　＼二つ
+//--------------------------------------------------------------------------------
+
+* {
+    font:           "JetBrains Mono Nerd Font 9";
+    background:     #faf4edff;  // base
+    background-alt: #cecacdff;  // surface
+    foreground:     #575279ff;  // text
+    red:            #56949fff;  // foam
+    orange:         #ea9d34ff;  // gold
+    green:          #286983ff;  // pine
+    blue:           #b4637aff;  // love
+    aqua:           #907aa9ff;  // iris
+}

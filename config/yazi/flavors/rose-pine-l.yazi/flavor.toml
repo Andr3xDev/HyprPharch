@@ -1,11 +1,20 @@
 #--------------------------------------------------------------------------------
-#   theme of rose pine, based in https://github.com/rose-pine/yazi 
+#             _______
+#　　　　　 /  ＞　　フ     
+#　　　　　| 　_　 _ l      THEME: Rose Pine Dawn
+#　 　　　／` ミ＿xノ               
+#　　 　 /　　　 　 |       Based on: https://github.com/rose-pine/yazi 
+#　　　 /　 ヽ　　 ﾉ
+#　 　 │　　|　|　|         AUTHOR:  Andr3xDev
+#　／￣|　　 |　|　|        URL: https://github.com/Andr3xDev/HyprPharch
+#　| (￣ヽ＿_ヽ_)__)
+#　＼二つ
+#   
 #--------------------------------------------------------------------------------
 
 
 [app]
 overall = { bg = "#191724" }
-
 
 
 [mgr]
@@ -41,10 +50,8 @@ border_style  = { fg = "#524f67" }
 syntect_theme = ""
 
 
-
 [indicator]
 padding = { open = "█", close = "█" }
-
 
 
 [tabs]
@@ -54,7 +61,6 @@ inactive = { fg = "#31748f", bg = "#e0def4" }
 # Separator
 sep_inner = { open = "", close = "" }
 sep_outer = { open = "█", close = "" }
-
 
 
 [mode]
@@ -68,7 +74,6 @@ select_alt  = { fg = "#191724", bg = "#e0def4", bold = true }
 # Unset mode
 unset_main = { fg = "#191724", bg = "#eb6f92", bold = true }
 unset_alt  = { fg = "#191724", bg = "#e0def4", bold = true }
-
 
 
 [status]
@@ -89,7 +94,6 @@ progress_normal = { fg = "#31748f", bg = "#21202e" }
 progress_error  = { fg = "#eb6f92", bg = "#21202e" }
 
 
-
 [which]
 cols            = 3
 mask            = { bg = "#1f1d2e" }
@@ -98,7 +102,6 @@ rest            = { fg = "#6e6a86" }
 desc            = { fg = "#f6c177" }
 separator       = "  "
 separator_style = { fg = "#6e6a86" }
-
 
 
 [confirm]
@@ -111,7 +114,6 @@ btn_no     = { fg = "#191724", bg = "#e0def4", bold = true }
 btn_labels = [ "  [y]es  ", "  (n)o  " ]
 
 
-
 [spot]
 border = { fg = "#524f67" }
 title  = { fg = "#9ccfd8", bold = true }
@@ -121,19 +123,16 @@ tbl_col  = { fg = "#9ccfd8" }
 tbl_cell = { fg = "#191724", bg = "#f6c177", bold = true }
 
 
-
 [notify]
 title_info  = { fg = "#31748f" }
 title_warn  = { fg = "#f6c177" }
 title_error = { fg = "#eb6f92" }
 
 
-
 [pick]
 border   = { fg = "#31748f" }
 active   = { fg = "#c4a7e7", bold = true }
 inactive = { fg = "#908caa"}
-
 
 
 [input]
@@ -143,19 +142,16 @@ value    = { fg = "#e0def4"}
 selected = { reversed = true }
 
 
-
 [cmp]
 border   = { fg = "#31748f" }
 active   = { bg = "#e0def4", fg = "#191724", bold = true }
 inactive = { fg = "#908caa" }
 
 
-
 [tasks]
 border  = { fg = "#31748f" }
 title   = { bold = true}
 hovered = { fg = "#c4a7e7", bold = true, reversed = true }
-
 
 
 [help]

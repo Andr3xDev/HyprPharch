@@ -1,6 +1,18 @@
+#--------------------------------------------------------------------------------
+#             _______
+#　　　　　 /  ＞　　フ     
+#　　　　　| 　_　 _ l      THEME: Rose Pine Normal 
+#　 　　　／` ミ＿xノ               
+#　　 　 /　　　 　 |
+#　　　 /　 ヽ　　 ﾉ
+#　 　 │　　|　|　|         AUTHOR:  Andr3xDev
+#　／￣|　　 |　|　|        URL: https://github.com/Andr3xDev/HyprPharch
+#　| (￣ヽ＿_ヽ_)__)
+#　＼二つ
+#--------------------------------------------------------------------------------
+
 # Main background, empty for terminal default, need to be empty if you want transparent background
 theme[main_bg]="#191724"
-# Base
 
 # Main text color
 theme[main_fg]="#e0def4"

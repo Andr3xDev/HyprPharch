@@ -21,8 +21,6 @@ case $THEME in
     ;;
 esac
 
-# Remove old symlink
 rm -f "$HOME/.config/starship.toml"
 
-# Create symlink
 ln -s "$TARGET" "$HOME/.config/starship.toml"

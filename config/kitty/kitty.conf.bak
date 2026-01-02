@@ -70,6 +70,6 @@ enable_audio_bell no
 
 
 # BEGIN_KITTY_THEME
-# gruvbox-material-d
+# rose-pine-d
 include current-theme.conf
 # END_KITTY_THEME

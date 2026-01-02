@@ -1,12 +1,20 @@
 #--------------------------------------------------------------------------------
-#   Gruvbox Material Dark theme for Yazi
-#   Based on: https://github.com/sainnhe/gruvbox-material
+#             _______
+#　　　　　 /  ＞　　フ     
+#　　　　　| 　_　 _ l      THEME: Gruvbox Material Dark
+#　 　　　／` ミ＿xノ               
+#　　 　 /　　　 　 |       Based on: https://github.com/sainnhe/gruvbox-material
+#　　　 /　 ヽ　　 ﾉ
+#　 　 │　　|　|　|         AUTHOR:  Andr3xDev
+#　／￣|　　 |　|　|        URL: https://github.com/Andr3xDev/HyprPharch
+#　| (￣ヽ＿_ヽ_)__)
+#　＼二つ
+#   
 #--------------------------------------------------------------------------------
 
 
 [app]
 overall = { bg = "#282828" }
-
 
 
 [manager]
@@ -42,10 +50,8 @@ border_style  = { fg = "#45403D" }
 syntect_theme = ""
 
 
-
 [indicator]
 padding = { open = "█", close = "█" }
-
 
 
 [tabs]
@@ -55,7 +61,6 @@ inactive = { fg = "#7DAEA3", bg = "#282828" }
 # Separator
 sep_inner = { open = "", close = "" }
 sep_outer = { open = "█", close = "" }
-
 
 
 [mode]
@@ -69,7 +74,6 @@ select_alt  = { fg = "#282828", bg = "#D4BE98", bold = true }
 # Unset mode
 unset_main = { fg = "#282828", bg = "#EA6962", bold = true }
 unset_alt  = { fg = "#282828", bg = "#D4BE98", bold = true }
-
 
 
 [status]
@@ -90,7 +94,6 @@ progress_normal = { fg = "#7DAEA3", bg = "#282828" }
 progress_error  = { fg = "#EA6962", bg = "#282828" }
 
 
-
 [which]
 cols            = 3
 mask            = { bg = "#282828" }
@@ -99,7 +102,6 @@ rest            = { fg = "#7C6F64" }
 desc            = { fg = "#D8A657" }
 separator       = "  "
 separator_style = { fg = "#7C6F64" }
-
 
 
 [confirm]
@@ -112,7 +114,6 @@ btn_no     = { fg = "#1B1B1B", bg = "#D4BE98", bold = true }
 btn_labels = [ "  [y]es  ", "  (n)o  " ]
 
 
-
 [spot]
 border = { fg = "#45403D" }
 title  = { fg = "#89B482", bold = true }
@@ -122,19 +123,16 @@ tbl_col  = { fg = "#89B482" }
 tbl_cell = { fg = "#1B1B1B", bg = "#D8A657", bold = true }
 
 
-
 [notify]
 title_info  = { fg = "#7DAEA3" }
 title_warn  = { fg = "#D8A657" }
 title_error = { fg = "#EA6962" }
 
 
-
 [pick]
 border   = { fg = "#7DAEA3" }
 active   = { fg = "#D3869B", bold = true }
 inactive = { fg = "#928374"}
-
 
 
 [input]
@@ -144,12 +142,10 @@ value    = { fg = "#D4BE98"}
 selected = { reversed = true }
 
 
-
 [cmp]
 border   = { fg = "#7DAEA3" }
 active   = { bg = "#D4BE98", fg = "#1B1B1B", bold = true }
 inactive = { fg = "#928374" }
-
 
 
 [tasks]
@@ -158,14 +154,12 @@ title   = { bold = true}
 hovered = { fg = "#D3869B", bold = true, reversed = true }
 
 
-
 [help]
 on      = { fg = "#89B482" }
 run     = { fg = "#D3869B" }
 desc    = { fg = "#D8A657"}
 hovered = { reversed = true, bold = true }
 footer  = { fg = "#1B1B1B", bg = "#D4BE98" }
-
 
 
 [filetype]
