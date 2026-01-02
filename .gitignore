@@ -1,6 +1,2 @@
 # update script
 config/update_dots.sh
-
-# AGS dependecies
-**/node_modules
-**/@girs
