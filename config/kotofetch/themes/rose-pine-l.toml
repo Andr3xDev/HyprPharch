@@ -1,0 +1,37 @@
+#--------------------------------------------------------------------------------
+#                                                                      
+#    ,--.            ,--.          ,---.         ,--.        ,--.      
+#    |  |,-. ,---. ,-'  '-. ,---. /  .-' ,---. ,-'  '-. ,---.|  ,---.  
+#    |     /| .-. |'-.  .-'| .-. ||  `-,| .-. :'-.  .-'| .--'|  .-.  | 
+#    |  \  \' '-' '  |  |  ' '-' '|  .-'\   --.  |  |  \ `--.|  | |  | 
+#    `--'`--'`---'   `--'   `---' `--'   `----'  `--'   `---'`--' `--' 
+#                                                                      
+#             _______
+#　　　　　 /  ＞　　フ     
+#　　　　　| 　_　 _ l      RESUME: Quotes to show when terminal is open
+#　 　　　／` ミ＿xノ               
+#　　 　 /　　　 　 |       THEME: Rose Pine Dawn
+#　　　 /　 ヽ　　 ﾉ
+#　 　 │　　|　|　|         AUTHOR:  Andr3xDev
+#　／￣|　　 |　|　|        URL: https://github.com/Andr3xDev/HyprPharch
+#　| (￣ヽ＿_ヽ_)__)
+#　＼二つ
+#--------------------------------------------------------------------------------
+
+
+[display]
+horizontal_padding = 0
+vertical_padding = 1
+width = 100
+show_translation = "english"
+quote_color = "#575279"
+translation_color = "#9893a5"
+font_size = "small"
+bold = true
+border = false
+rounded_border = false
+source = true
+modes = ["proverb", "anime"]
+seed = 0
+centered = true
+dynamic = false

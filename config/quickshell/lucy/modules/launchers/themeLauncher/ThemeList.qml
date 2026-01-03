@@ -11,7 +11,7 @@ Item {
 
     signal themeSelected(string themeId)
 
-    // Color previews for each theme (base + 2 accent colors)
+    // Color previews for each theme
     readonly property var themePreviewColors: ({
         "rose-pine-d": ["#191724", "#eb6f92", "#c4a7e7"],
         "rose-pine-l": ["#faf4ed", "#b4637a", "#907aa9"],

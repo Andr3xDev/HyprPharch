@@ -3,27 +3,34 @@ import QtQuick
 import Qt.labs.settings
 import "." as Local
 
+/**
+ * ThemeManager is a singleton object responsible for managing the application's theme.
+ * It provides functionality to persist the current theme, retrieve available themes,
+ * and compute the current palette based on the selected theme.
+ */
 QtObject {
     id: themeManager
-    
+
+    // Current theme name, defaults to "rose-pine-d" if no saved theme is found
     property string currentTheme: settings.savedTheme || "rose-pine-d"
     property var theme: currentPalette
-    
-    // Persistencia del tema
+
+    // Theme persistence settings
     property Settings settings: Settings {
         category: "appearance"
+        // Saved theme name, defaults to "rose-pine-d"
         property string savedTheme: "rose-pine-d"
     }
-    
-    // Paletas disponibles
+
+    // List of available themes
     readonly property var availableThemes: [
         "rose-pine-d",
         "rose-pine-l",
         "gruvbox-material-d",
         "gruvbox-material-l"
     ]
-    
-    // Paleta actual computada
+
+    // Computed current palette based on the selected theme
     readonly property QtObject currentPalette: QtObject {
         readonly property color base:    Local.Palettes.palettes[currentTheme].base
         readonly property color surface: Local.Palettes.palettes[currentTheme].surface
@@ -40,19 +47,25 @@ QtObject {
         readonly property color color10: Local.Palettes.palettes[currentTheme].color10
         readonly property color color11: Local.Palettes.palettes[currentTheme].color11
         readonly property color color12: Local.Palettes.palettes[currentTheme].color12
-        
+
         // Font sizes
         readonly property int baseFontSize: 11
         readonly property int titleFontSize: 13
         readonly property int smallFontSize: 9
-        
+
         // Spacing
         readonly property int spacing: 10
         readonly property int barComponentsSpacing: 30
         readonly property int margin: 1
         readonly property int marginItems: 15
     }
-    
+
+    /**
+     * Sets the current theme to the specified theme name.
+     * If the theme name is valid, it updates the current theme and persists it.
+     * @param {string} themeName - The name of the theme to set.
+     * @returns {boolean} - True if the theme was successfully set, false otherwise.
+     */
     function setTheme(themeName) {
         if (availableThemes.includes(themeName)) {
             currentTheme = themeName
@@ -61,14 +74,23 @@ QtObject {
         }
         return false
     }
-    
+
+    /**
+     * Retrieves the next theme in the list of available themes.
+     * Cycles back to the first theme if the current theme is the last in the list.
+     * @returns {string} - The name of the next theme.
+     */
     function getNextTheme() {
         const currentIndex = availableThemes.indexOf(currentTheme)
         const nextIndex = (currentIndex + 1) % availableThemes.length
         return availableThemes[nextIndex]
     }
-    
-    // Nombres legibles para mostrar en UI
+
+    /**
+     * Retrieves a user-friendly display name for the specified theme.
+     * @param {string} themeName - The name of the theme.
+     * @returns {string} - The display name of the theme.
+     */
     function getThemeDisplayName(themeName) {
         const names = {
             "rose-pine-d": "Rosé Pine Dark",
