@@ -1,11 +1,11 @@
 #-------------------------------------------------------------------------------------
 #                                                            
 #       ,---.   ,--.                        ,--.     ,--.        
-#     '   .-',-'  '-. ,--,--.,--.--. ,---. |  ,---. `--' ,---.  
-#     `.  `-.'-.  .-'' ,-.  ||  .--'(  .-' |  .-.  |,--.| .-. | 
-#     .-'    | |  |  \ '-'  ||  |   .-'  `)|  | |  ||  || '-' ' 
-#     `-----'  `--'   `--`--'`--'   `----' `--' `--'`--'|  |-'  
-#                                                       `--'    
+#     "   .-",-"  "-. ,--,--.,--.--. ,---. |  ,---. `--" ,---.  
+#     `.  `-."-.  .-"" ,-.  ||  .--"(  .-" |  .-.  |,--.| .-. | 
+#     .-"    | |  |  \ "-"  ||  |   .-"  `)|  | |  ||  || "-" " 
+#     `-----"  `--"   `--`--"`--"   `----" `--" `--"`--"|  |-"  
+#                                                       `--"    
 #             _______
 #　　　　　 /  ＞　　フ     
 #　　　　　| 　_　 _ l      RESUME: Custom pront for terminals and complement
@@ -24,16 +24,16 @@
 #-------------------------------------------------------------------------------------
 
 format = """
-[┌──](bold green)$os\
+$line_break \
+$os \
 $directory\
 $git_branch\
-$git_status \
-$aws\
-$memory_usage\
-$docker_context\
+$git_status\
 $cmd_duration\
+$docker\
+$aws\
 $status
-[└─➤](bold green) """
+[ └─➤ ](blue)"""
 
 #--- properties ---#
 add_newline = true 
@@ -44,15 +44,17 @@ continuation_prompt = "▶▶ "
 #   Palette
 #-------------------------------------------------------------------------------------
 
-palette = 'gruvbox_material'
+palette = "gruvbox_material"
 
 [palettes.gruvbox_material]
-background = "#32302f"
-green = '#a9b665'
-red = '#ea6962'
-blue = '#7daea3'
-yellow = '#d8a657'
-orange = '#e78a4e'
+background = ""
+overlay = "#32302f"
+text = "#d4be98"
+green = "#a9b665"
+red = "#ea6962"
+blue = "#7daea3"
+yellow = "#d8a657"
+orange = "#e78a4e"
 
 
 #-------------------------------------------------------------------------------------
@@ -60,22 +62,23 @@ orange = '#e78a4e'
 #-------------------------------------------------------------------------------------
 
 [os]
-format = '[┃](bold fg:green bg:background)[   ](bold fg:white bg:background) '
+format = "[](bold fg:blue)[](bold fg:overlay bg:blue)[   ](bold fg:blue bg:overlay)[◤](bold fg:overlay)"
 disabled = false
 
 [directory]
 truncation_length = 3
 fish_style_pwd_dir_length = 3
-home_symbol = ' 󰋜 ~'
-read_only = '  '
-format = '[┃](bold fg:blue bg:background)[$path ](bold fg:white bg:background)[$read_only ](bold fg:white bg:background)'
+truncate_to_repo = true
+home_symbol = " ~"
+read_only = "  "
+format = "[](bold fg:green)[](bold fg:overlay bg:green)[  ](bold fg:text bg:overlay)[$path](bold fg:text bg:overlay)[$read_only ](bold fg:orange bg:overlay)[◤](bold fg:overlay)"
 
 [git_branch]
-format = ' [┃](bold fg:yellow bg:background)[  $branch ](bold fg:white bg:background)'
-truncation_symbol = '…/'
+format = "[](bold fg:green)[](bold fg:overlay bg:green)[  ](bold fg:text bg:overlay)[$branch](bold fg:text bg:overlay)"
+truncation_symbol = "…/"
 
 [git_status]
-format = '[$all_status$ahead_behind ](bold fg:white bg:background)'
+format = "[ $all_status$ahead_behind ](bold fg:orange bg:overlay)[◤](bold fg:overlay)"
 stashed = " "
 ahead = " ↑"
 behind = " ↓"
@@ -89,12 +92,12 @@ deleted = " ✘"
 
 [cmd_duration]
 min_time = 0
-format = "[┃](bold fg:orange bg:background)[ ⏱ $duration ](bold fg:white bg:background)"
+format = "[](bold fg:green)[](bold fg:overlay bg:green)[ ⏱ ](bold fg:text bg:overlay)[$duration ](bold fg:text bg:overlay)[◤](bold fg:overlay)"
 show_milliseconds = true
 
 [status]
 disabled = false
-format = '[┃](bold fg:red bg:background)[ ✘ ](bold fg:red bg:background)'
+format = "[](bold fg:red)[](bold fg:overlay bg:red)[ ✘ ](bold fg:red bg:overlay)[◤](bold fg:overlay)"
 
 
 #-------------------------------------------------------------------------------------
@@ -102,10 +105,12 @@ format = '[┃](bold fg:red bg:background)[ ✘ ](bold fg:red bg:background)'
 #-------------------------------------------------------------------------------------
 
 [line_break]
-disabled = true
+disabled = false
 
 [aws]
-symbol = "  "
+symbol = " "
+format = "[◢](bold fg:overlay)[ $symbol](bold fg:pine bg:overlay)[◤](bold fg:overlay)"
 
 [docker_context]
 symbol = " "
+format = "[◢](bold fg:overlay)[ $symbol](bold fg:pine bg:overlay)[◤](bold fg:overlay)"
