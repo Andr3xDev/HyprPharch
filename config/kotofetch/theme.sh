@@ -14,5 +14,6 @@ fi
 [[ "$THEME_NAME" != *.toml ]] && FILE="${THEME_NAME}.toml" || FILE="$THEME_NAME"
 TARGET="$THEME_DIR/$FILE"
 
+rm -f "$CONFIG_FILE"
+
 ln -sf "$TARGET" "$CONFIG_FILE"
-#cp -f "$TARGET" "$CONFIG_FILE"

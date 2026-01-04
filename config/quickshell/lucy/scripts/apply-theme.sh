@@ -73,7 +73,7 @@ kitty +kitten themes --reload-in=all "$THEME"
 ~/.config/swww/theme.sh $THEME
 
 # Kotofetch
-~/.config/Kotofetch/theme.sh $THEME
+~/.config/kotofetch/theme.sh $THEME
 
 # spotify
 ~/.config/hypr/scripts/spotify-theme.sh $THEME
