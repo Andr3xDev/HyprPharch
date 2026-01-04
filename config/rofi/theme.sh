@@ -10,10 +10,10 @@ case "$1" in
         ln -sf themes/gruvbox-material-l.rasi colors.rasi
         ;;
     rose-pine-l)
-        ln -sf theme/rose-pine-l.rasi colors.rasi
+        ln -sf themes/rose-pine-l.rasi colors.rasi
         ;;
     rose-pine-d)
-        ln -sf theme/rose-pine-d.rasi colors.rasi
+        ln -sf themes/rose-pine-d.rasi colors.rasi
         ;;
     *)
         echo "Usage: rofi-theme {gruvbox|rose}"
