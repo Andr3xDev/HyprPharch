@@ -2,9 +2,14 @@
 
 set -e
 
-TMP_DIR=$(mktemp -d)
-
-trap "rm -rf $TMP_DIR" EXIT
+# Use temp directory from parent script or create one
+if [ -z "$HYPRPHARCH_TEMP" ]; then
+    TMP_DIR=$(mktemp -d)
+    trap "rm -rf $TMP_DIR" EXIT
+else
+    TMP_DIR="$HYPRPHARCH_TEMP/gtk-themes"
+    mkdir -p "$TMP_DIR"
+fi
 
 mkdir -p "$HOME/.themes" "$HOME/.icons"
 

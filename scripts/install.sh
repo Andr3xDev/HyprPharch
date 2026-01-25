@@ -6,6 +6,13 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 source "$SCRIPT_DIR/common.sh" || { echo "Error: common.sh not found"; exit 1; }
 
+# Create temporary directory in HOME
+export HYPRPHARCH_TEMP="$HOME/.cache/hyprpharch-install-$$"
+mkdir -p "$HYPRPHARCH_TEMP"
+
+# Cleanup on exit
+trap "rm -rf '$HYPRPHARCH_TEMP'" EXIT INT TERM
+
 # Ask function
 ask() {
     read -p "$1 (y/N): " -n 1 -r

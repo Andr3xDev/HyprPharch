@@ -19,16 +19,31 @@ sudo pacman -S --needed --noconfirm base-devel git
 
 # Install paru
 print_message "Installing paru..."
-TEMP_DIR="/tmp/paru-install"
-mkdir -p "$TEMP_DIR"
+
+# Use temp directory from parent script or create one
+if [ -z "$HYPRPHARCH_TEMP" ]; then
+    TEMP_DIR="$HOME/.cache/paru-install-$$"
+    mkdir -p "$TEMP_DIR"
+    CLEANUP_TEMP=true
+else
+    TEMP_DIR="$HYPRPHARCH_TEMP/paru"
+    mkdir -p "$TEMP_DIR"
+    CLEANUP_TEMP=false
+fi
+
 cd "$TEMP_DIR"
 
-git clone https://aur.archlinux.org/paru.git
+print_message "Downloading paru from AUR..."
+git clone --depth 1 https://aur.archlinux.org/paru.git
 cd paru
+
+print_message "Building paru (this may take a few minutes)..."
 makepkg -si --noconfirm
 
-# Cleanup
-cd /
-rm -rf "$TEMP_DIR"
+# Cleanup only if we created our own temp dir
+if [ "$CLEANUP_TEMP" = true ]; then
+    cd "$HOME"
+    rm -rf "$TEMP_DIR"
+fi
 
 print_success "Paru installed successfully"
