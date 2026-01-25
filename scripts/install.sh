@@ -16,7 +16,7 @@ ask() {
 # Update system
 update_system() {
     print_message "Updating system..."
-    pacman -Syu --noconfirm
+    sudo pacman -Syu --noconfirm
 }
 
 # Install paru
@@ -30,25 +30,25 @@ install_paru() {
 # Base packages
 install_base() {
     print_message "Installing base packages..."
-    pacman -S --needed --noconfirm base base-devel linux linux-firmware linux-headers linux-zen linux-zen-headers efibootmgr dkms git wget nano vim neovim tree smartmontools networkmanager network-manager-applet iwd wireless_tools pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber libpulse gst-plugin-pipewire bluez bluez-utils bluetui brightnessctl grim slurp sof-firmware python-gobject qt5-wayland qt6-wayland zram-generator noto-fonts-emoji noto-fonts-cjk dosfstools bridge-utils iptables-nft dnsmasq sudo npm
+    sudo pacman -S --needed --noconfirm base base-devel linux linux-firmware linux-headers linux-zen linux-zen-headers efibootmgr dkms git wget nano vim neovim tree smartmontools networkmanager network-manager-applet iwd wireless_tools pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber libpulse gst-plugin-pipewire bluez bluez-utils bluetui brightnessctl grim slurp sof-firmware python-gobject qt5-wayland qt6-wayland zram-generator noto-fonts-emoji noto-fonts-cjk dosfstools bridge-utils iptables-nft dnsmasq sudo npm
 }
 
 # Hyprland and wayland tools
 install_hyprland() {
     print_message "Installing Hyprland..."
-    pacman -S --needed --noconfirm hyprland hypridle hyprlock hyprpicker hyprshot dunst rofi swww xdg-desktop-portal-hyprland xdg-desktop-portal-gnome polkit-gnome polkit-kde-agent xdg-utils uwsm quickshell
+    sudo pacman -S --needed --noconfirm hyprland hypridle hyprlock hyprpicker hyprshot dunst rofi swww xdg-desktop-portal-hyprland xdg-desktop-portal-gnome polkit-gnome polkit-kde-agent xdg-utils uwsm quickshell
 }
 
 # Terminal and shell
 install_terminal() {
     print_message "Installing terminal and shell..."
-    pacman -S --needed --noconfirm kitty zsh starship fzf lsd htop fastfetch yazi ghostty tmux
+    sudo pacman -S --needed --noconfirm kitty zsh starship fzf lsd htop fastfetch yazi ghostty tmux
 }
 
 # Themes and appearance
 install_themes() {
     print_message "Installing themes and fonts..."
-    pacman -S --needed --noconfirm nwg-look sassc ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols woff2-font-awesome gtk-engine-murrine
+    sudo pacman -S --needed --noconfirm nwg-look sassc ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols woff2-font-awesome gtk-engine-murrine
     
     # Install GTK themes
     print_message "Installing GTK themes..."
@@ -58,20 +58,20 @@ install_themes() {
 # Basic apps
 install_apps() {
     print_message "Installing basic applications..."
-    pacman -S --needed --noconfirm firefox pavucontrol mpv power-profiles-daemon
+    sudo pacman -S --needed --noconfirm firefox pavucontrol mpv power-profiles-daemon
 }
 
 # Display manager
 install_display_manager() {
     print_message "Installing display manager..."
-    pacman -S --needed --noconfirm ly xorg-server xorg-xinit
+    sudo pacman -S --needed --noconfirm ly xorg-server xorg-xinit
 }
 
 # Intel drivers
 install_intel() {
     if ask "Install Intel drivers?"; then
         print_message "Installing Intel drivers..."
-        pacman -S --needed --noconfirm intel-media-driver intel-ucode vulkan-intel lib32-vulkan-intel libva-intel-driver vulkan-tools
+        sudo pacman -S --needed --noconfirm intel-media-driver intel-ucode vulkan-intel lib32-vulkan-intel libva-intel-driver vulkan-tools
     fi
 }
 
@@ -80,7 +80,7 @@ install_nvidia() {
     if ask "Install NVIDIA drivers?"; then
         print_warning "Make sure you have an NVIDIA GPU!"
         print_message "Installing NVIDIA drivers..."
-        pacman -S --needed --noconfirm nvidia-open-dkms lib32-nvidia-utils libva-nvidia-driver
+        sudo pacman -S --needed --noconfirm nvidia-open-dkms lib32-nvidia-utils libva-nvidia-driver
     fi
 }
 
@@ -88,10 +88,10 @@ install_nvidia() {
 install_dev() {
     if ask "Install development tools (Docker)?"; then
         print_message "Installing development tools..."
-        pacman -S --needed --noconfirm docker docker-buildx docker-compose
+        sudo pacman -S --needed --noconfirm docker docker-buildx docker-compose
         
         # Add user to docker group
-        usermod -aG docker "$USER"
+        sudo usermod -aG docker "$USER"
         print_success "User added to docker group"
     fi
 }
@@ -100,7 +100,7 @@ install_dev() {
 install_personal() {
     if ask "Install personal apps (Discord, Spotify, LibreOffice, OBS)?"; then
         print_message "Installing personal applications..."
-        pacman -S --needed --noconfirm discord spotify-launcher libreoffice-fresh obs-studio proton-vpn-gtk-app bruno
+        sudo pacman -S --needed --noconfirm discord spotify-launcher libreoffice-fresh obs-studio proton-vpn-gtk-app bruno
         
         # AUR packages
         if command_exists paru; then
@@ -114,7 +114,7 @@ install_personal() {
 install_gaming() {
     if ask "Install Steam?"; then
         print_message "Installing Steam..."
-        pacman -S --needed --noconfirm steam lib32-mesa
+        sudo pacman -S --needed --noconfirm steam lib32-mesa
     fi
 }
 
@@ -137,13 +137,13 @@ enable_services() {
     print_message "Enabling system services..."
     
     # Basic services for everyone
-    systemctl enable NetworkManager
-    systemctl enable bluetooth
-    systemctl enable ly
+    sudo systemctl enable NetworkManager
+    sudo systemctl enable bluetooth
+    sudo systemctl enable ly
     
     # Docker if installed
     if pacman -Q docker &>/dev/null; then
-        systemctl enable docker
+        sudo systemctl enable docker
     fi
     
     print_success "Services enabled"

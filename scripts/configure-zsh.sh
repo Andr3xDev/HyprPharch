@@ -9,11 +9,11 @@ print_banner "Configuring Zsh"
 
 # Install Zsh and Starship if not present
 if ! command_exists zsh; then
-    pacman -S --needed --noconfirm zsh
+    sudo pacman -S --needed --noconfirm zsh
 fi
 
 if ! command_exists starship; then
-    pacman -S --needed --noconfirm starship
+    sudo pacman -S --needed --noconfirm starship
 fi
 
 # Install Oh My Zsh
@@ -56,7 +56,7 @@ EOF
 
 # Change default shell
 print_message "Changing default shell..."
-chsh -s "$(which zsh)" "$USER"
+sudo chsh -s "$(which zsh)" "$USER"
 
 print_success "Zsh configured successfully"
 print_warning "Run 'exec zsh' or restart your session"

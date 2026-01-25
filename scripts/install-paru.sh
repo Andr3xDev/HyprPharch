@@ -15,7 +15,7 @@ print_banner "Installing Paru"
 
 # Install dependencies
 print_message "Checking dependencies..."
-pacman -S --needed --noconfirm base-devel git
+sudo pacman -S --needed --noconfirm base-devel git
 
 # Install paru
 print_message "Installing paru..."
