@@ -92,7 +92,7 @@ deleted = " ✘"
 
 [cmd_duration]
 min_time = 0
-format = "[](bold fg:green)[](bold fg:overlay bg:green)[ ⏱ ](bold fg:text bg:overlay)[$duration ](bold fg:text bg:overlay)[◤](bold fg:overlay)"
+format = "[](bold fg:green)[](bold fg:overlay bg:green)[ ⏱  ](bold fg:text bg:overlay)[$duration ](bold fg:text bg:overlay)[◤](bold fg:overlay)"
 show_milliseconds = true
 
 [status]

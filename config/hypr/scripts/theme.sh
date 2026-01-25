@@ -1,6 +1,6 @@
 #!/bin/bash
 
-HYPR_DIR="$HOME/.config/hypr/configs/theme/"
+HYPR_DIR="$HOME/.config/hypr/theme/"
 
 case "$1" in
     gruvbox-material-d)

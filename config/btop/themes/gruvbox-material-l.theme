@@ -12,9 +12,6 @@
 #--------------------------------------------------------------------------------
 
 
-# Btop gruvbox material light (https://github.com/sainnhe/gruvbox-material) theme
-# By Andr3xDev
-
 # Main background
 theme[main_bg]="#fbf1c7"
 

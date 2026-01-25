@@ -11,28 +11,22 @@ if [ -z "$THEME" ]; then
     exit 1
 fi
 
-echo "Applying theme: $THEME"
-
-# Map quickshell theme names to your app-specific names if needed
+# Map quickshell theme names to app-specific names
 case "$THEME" in
     "rose-pine-d")
         GTK_THEME="rose-pine"
-        KITTY_THEME="Rose Pine"
         HYPR_THEME="rose-pine"
         ;;
     "rose-pine-l")
         GTK_THEME="rose-pine-dawn"
-        KITTY_THEME="Rose Pine Dawn"
         HYPR_THEME="rose-pine-dawn"
         ;;
     "gruvbox-material-d")
         GTK_THEME="gruvbox-dark"
-        KITTY_THEME="Gruvbox Material Dark Medium"
         HYPR_THEME="gruvbox-dark"
         ;;
     "gruvbox-material-l")
         GTK_THEME="gruvbox-light"
-        KITTY_THEME="Gruvbox Material Light Medium"
         HYPR_THEME="gruvbox-light"
         ;;
     *)
@@ -42,11 +36,11 @@ case "$THEME" in
 esac
 
 # ============================================
-# Add your theme change commands below
+# Theme Change Commands
 # ============================================
 
-# Kitty
-kitty +kitten themes --reload-in=all "$THEME"
+# Ghostty
+~/.config/ghostty/theme.sh $THEME
 
 # Hyprland
 ~/.config/hypr/scripts/theme.sh $THEME
@@ -78,5 +72,11 @@ kitty +kitten themes --reload-in=all "$THEME"
 # spotify
 ~/.config/hypr/scripts/spotify-theme.sh $THEME
 
+# VScode theme
+~/.config/hypr/scripts/vscode-theme.sh $THEME
+
 # GTK
 ~/.config/hypr/scripts/gtk-theme.sh $THEME
+
+# Firefox tabs
+~/.config/hypr/scripts/theme-firefox-tab.sh $THEME

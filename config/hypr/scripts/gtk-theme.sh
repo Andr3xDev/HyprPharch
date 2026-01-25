@@ -11,7 +11,7 @@ case "$1" in
     "gruvbox-material-l")
         GTK_THEME="Gruvbox-Light"
         ICON_THEME="Papirus-Light"
-        COLOR_SCHEME="default"
+        COLOR_SCHEME="prefer-light"
         CURSOR="phinger-cursors-light"
         CURSOR_SIZE=25
         ;;
@@ -25,7 +25,7 @@ case "$1" in
     "rose-pine-l")
         GTK_THEME="Rosepine-Light"
         ICON_THEME="Papirus-Light"
-        COLOR_SCHEME="default"
+        COLOR_SCHEME="prefer-light"
         CURSOR="phinger-cursors-light"
         CURSOR_SIZE=25
         ;;

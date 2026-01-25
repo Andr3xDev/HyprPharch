@@ -25,7 +25,7 @@ QtObject {
             color9:  "#c4a7e7", // iris
             color10: "#21202e", // highlightLow
             color11: "#403d52", // highlightMed
-            color12: "#2A2837"  // Other
+            color12: "#423f53"  // Other
         },
 
         "rose-pine-l": {
