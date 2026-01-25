@@ -24,7 +24,4 @@ print_banner() {
 }
 
 # Utility functions
-get_real_user() { echo "${SUDO_USER:-$USER}"; }
-get_user_home() { eval echo ~"${1:-$(get_real_user)}"; }
-check_root() { [ "$EUID" -ne 0 ] && print_error "Run as root or with sudo" && exit 1; }
 command_exists() { command -v "$1" &> /dev/null; }
