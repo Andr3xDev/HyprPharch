@@ -1,0 +1,63 @@
+#--------------------------------------------------------------------------------
+#                                                              
+#     ,----.   ,--.                    ,--.    ,--.            
+#    '  .-./   |  ,---.  ,---.  ,---.,-'  '-.,-'  '-.,--. ,--. 
+#    |  | .---.|  .-.  || .-. |(  .-''-.  .-''-.  .-' \  '  /  
+#    '  '--'  ||  | |  |' '-' '.-'  `) |  |    |  |    \   '   
+#     `------' `--' `--' `---' `----'  `--'    `--'  .-'  /    
+#                                                    `---'     
+#             _______
+#　　　　　 /  ＞　　フ     
+#　　　　　| 　_　 _ l      RESUME: basic configs to this terminal, using 
+#　 　　　／` ミ＿xノ               default keyblinds
+#　　 　 /　　　 　 |
+#　　　 /　 ヽ　　 ﾉ
+#　 　 │　　|　|　|         AUTHOR:  Andr3xDev
+#　／￣|　　 |　|　|        URL: https://github.com/Andr3xDev/HyprPharch
+#　| (￣ヽ＿_ヽ_)__)
+#　＼二つ
+#--------------------------------------------------------------------------------
+
+
+#--------------------------------------------------------------------------------
+# General Config
+#--------------------------------------------------------------------------------
+
+#--- Cursor & Trail ---#
+cursor-style = bar
+cursor-style-blink = true
+custom-shader = shaders/cursor-trail.glsl
+
+#--- Fonts ---#
+font-family = "JetBrains Mono Nerd Font"
+font-size = 10
+font-feature = calt
+
+#--- Visuals ---#
+window-padding-x = 5
+window-padding-y = 5
+window-decoration = false 
+
+#--- Other ---#
+gtk-single-instance = true
+confirm-close-surface = false 
+copy-on-select = clipboard
+scrollback-limit = 50000
+shell-integration-features = no-cursor
+selection-clear-on-copy = true
+
+
+#--------------------------------------------------------------------------------
+#  Keyblinds
+#--------------------------------------------------------------------------------
+
+#--- Others ---#
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+shift+v=paste_from_clipboard
+keybind = ctrl+shift+r=reload_config
+
+
+#--------------------------------------------------------------------------------
+# Theme
+#--------------------------------------------------------------------------------
+theme = Rose Pine
