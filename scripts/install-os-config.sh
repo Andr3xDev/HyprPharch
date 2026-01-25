@@ -23,7 +23,7 @@ fi
 mkdir -p "$HOME/.config"
 
 # Copy each config directory
-for config in btop dunst fastfetch gtk-3.0 gtk-4.0 hypr kitty kotofetch nvim nwg-look quickshell rofi starship swww xsettingsd yazi; do
+for config in btop dunst fastfetch ghostty gtk-3.0 gtk-4.0 hypr kitty kotofetch nvim nwg-look quickshell rofi starship startpage swww tmux xsettingsd yazi; do
     if [ -d "$CONFIG_SRC/$config" ]; then
         print_message "Installing $config config..."
         cp -r "$CONFIG_SRC/$config" "$HOME/.config/"

@@ -28,7 +28,7 @@ PLUGIN_DIR="$HOME/.oh-my-zsh/custom/plugins"
 
 for plugin in zsh-syntax-highlighting zsh-autosuggestions; do
     if [ ! -d "$PLUGIN_DIR/$plugin" ]; then
-        git clone "https://github.com/zsh-users/$plugin.git" "$PLUGIN_DIR/$plugin"
+        git clone --depth 1 "https://github.com/zsh-users/$plugin.git" "$PLUGIN_DIR/$plugin"
     fi
 done
 
@@ -36,7 +36,14 @@ done
 print_message "Configuring .zshrc..."
 [ -f "$HOME/.zshrc" ] && cp "$HOME/.zshrc" "$HOME/.zshrc.backup"
 
-tee "$HOME/.zshrc" > /dev/null <<'EOF'
+# Copy .zshrc from repository
+CUSTOM_ZSHRC="$SCRIPT_DIR/../zshrc/.zshrc"
+if [ -f "$CUSTOM_ZSHRC" ]; then
+    print_message "Using .zshrc from repository..."
+    cp "$CUSTOM_ZSHRC" "$HOME/.zshrc"
+else
+    print_warning ".zshrc not found in repository, creating default..."
+    tee "$HOME/.zshrc" > /dev/null <<'EOF'
 export ZSH="$HOME/.oh-my-zsh"
 
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
@@ -53,10 +60,11 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt HIST_IGNORE_ALL_DUPS SHARE_HISTORY
 EOF
+fi
 
 # Change default shell
 print_message "Changing default shell..."
-sudo chsh -s "$(which zsh)" "$USER"
+chsh -s "/bin/zsh"
 
 print_success "Zsh configured successfully"
 print_warning "Run 'exec zsh' or restart your session"

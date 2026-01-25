@@ -112,7 +112,7 @@ install_personal() {
         # AUR packages
         if command_exists paru; then
             print_message "Installing AUR personal packages..."
-            paru -S --needed --noconfirm visual-studio-code-bin spicetify-cli gearlever opencode-bin || true
+            paru -S --needed --noconfirm visual-studio-code-bin spicetify-cli gearlever opencode-bin
         fi
     fi
 }
@@ -136,7 +136,7 @@ install_gaming() {
 install_aur() {
     if command_exists paru; then
         print_message "Installing AUR packages..."
-        paru -S --needed --noconfirm drm_info-git dwarfs-bin kotofetch paru paru-debug phinger-cursors python-desktop-entry-lib python-ftputil vial-appimage || true
+        paru -S --needed --noconfirm dwarfs-bin kotofetch phinger-cursors
     fi
 }
 
