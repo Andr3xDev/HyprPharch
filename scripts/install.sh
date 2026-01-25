@@ -112,7 +112,7 @@ install_personal() {
         # AUR packages
         if command_exists paru; then
             print_message "Installing AUR personal packages..."
-            paru -S --needed --noconfirm visual-studio-code-bin spicetify-cli gearlever opencode-bin bruno || true
+            paru -S --needed --noconfirm visual-studio-code-bin spicetify-cli gearlever opencode-bin || true
         fi
     fi
 }
@@ -120,6 +120,13 @@ install_personal() {
 # Gaming (Steam)
 install_gaming() {
     if ask "Install Steam?"; then
+        print_message "Enabling multilib repository..."
+        # Enable multilib if not already enabled
+        if ! grep -q "^\[multilib\]" /etc/pacman.conf; then
+            sudo sed -i '/^#\[multilib\]/,/^#Include/ s/^#//' /etc/pacman.conf
+            sudo pacman -Sy --noconfirm
+        fi
+        
         print_message "Installing Steam..."
         sudo pacman -S --needed --noconfirm steam lib32-mesa
     fi
@@ -129,7 +136,7 @@ install_gaming() {
 install_aur() {
     if command_exists paru; then
         print_message "Installing AUR packages..."
-        paru -S --needed --noconfirm bruno drm_info-git dwarfs-bin gearlever kotofetch opencode-bin paru paru-debug phinger-cursors python-desktop-entry-lib python-ftputil spicetify-cli vial-appimage visual-studio-code-bin || true
+        paru -S --needed --noconfirm drm_info-git dwarfs-bin kotofetch paru paru-debug phinger-cursors python-desktop-entry-lib python-ftputil vial-appimage || true
     fi
 }
 
@@ -146,7 +153,12 @@ enable_services() {
     # Basic services for everyone
     sudo systemctl enable NetworkManager
     sudo systemctl enable bluetooth
-    sudo systemctl enable ly
+    
+    # Ly if installed
+    if pacman -Q ly &>/dev/null; then
+        sudo systemctl enable --now ly@tty1.service
+
+    fi
     
     # Docker if installed
     if pacman -Q docker &>/dev/null; then
