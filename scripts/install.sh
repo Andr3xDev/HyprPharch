@@ -37,7 +37,7 @@ install_paru() {
 # Base packages
 install_base() {
     print_message "Installing base packages..."
-    sudo pacman -S --needed --noconfirm base base-devel linux linux-firmware linux-headers linux-zen linux-zen-headers efibootmgr dkms git wget nano vim neovim tree smartmontools networkmanager network-manager-applet iwd wireless_tools pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber libpulse gst-plugin-pipewire bluez bluez-utils bluetui brightnessctl grim slurp sof-firmware python-gobject qt5-wayland qt6-wayland zram-generator noto-fonts-emoji noto-fonts-cjk dosfstools bridge-utils dnsmasq sudo npm
+    sudo pacman -S --needed --noconfirm base base-devel linux linux-firmware linux-headers linux-zen linux-zen-headers efibootmgr dkms git wget nano vim neovim tree smartmontools networkmanager network-manager-applet iwd pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber bluez bluez-utils bluetui brightnessctl grim slurp sof-firmware python-gobject qt5-wayland qt6-wayland zram-generator noto-fonts-emoji noto-fonts-cjk dosfstools bridge-utils dnsmasq sudo npm
 }
 
 # Hyprland and wayland tools
@@ -136,7 +136,7 @@ install_gaming() {
 install_aur() {
     if command_exists paru; then
         print_message "Installing AUR packages..."
-        paru -S --needed --noconfirm dwarfs-bin kotofetch phinger-cursors
+        paru -S --needed --noconfirm kotofetch phinger-cursors
     fi
 }
 

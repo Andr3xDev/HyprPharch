@@ -132,7 +132,7 @@ PanelWindow {
                     
                     // Execute external script if configured
                     if (externalScriptPath !== "") {
-                        scriptProcess.command = [externalScriptPath, themeId]
+                        scriptProcess.command = ["bash", externalScriptPath, themeId]
                         scriptProcess.running = true
                     }
                     
