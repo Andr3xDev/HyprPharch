@@ -37,7 +37,7 @@ install_paru() {
 # Base packages
 install_base() {
     print_message "Installing base packages..."
-    sudo pacman -S --needed --noconfirm base base-devel linux linux-firmware linux-headers linux-zen linux-zen-headers efibootmgr dkms git wget nano vim neovim tree smartmontools networkmanager network-manager-applet iwd wireless_tools pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber libpulse gst-plugin-pipewire bluez bluez-utils bluetui brightnessctl grim slurp sof-firmware python-gobject qt5-wayland qt6-wayland zram-generator noto-fonts-emoji noto-fonts-cjk dosfstools bridge-utils iptables-nft dnsmasq sudo npm
+    sudo pacman -S --needed --noconfirm base base-devel linux linux-firmware linux-headers linux-zen linux-zen-headers efibootmgr dkms git wget nano vim neovim tree smartmontools networkmanager network-manager-applet iwd wireless_tools pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber libpulse gst-plugin-pipewire bluez bluez-utils bluetui brightnessctl grim slurp sof-firmware python-gobject qt5-wayland qt6-wayland zram-generator noto-fonts-emoji noto-fonts-cjk dosfstools bridge-utils dnsmasq sudo npm
 }
 
 # Hyprland and wayland tools
@@ -49,7 +49,7 @@ install_hyprland() {
 # Terminal and shell
 install_terminal() {
     print_message "Installing terminal and shell..."
-    sudo pacman -S --needed --noconfirm kitty zsh starship fzf lsd htop fastfetch yazi ghostty tmux
+    sudo pacman -S --needed --noconfirm kitty zsh starship fzf lsd btop fastfetch yazi ghostty tmux
 }
 
 # Themes and appearance
@@ -107,12 +107,12 @@ install_dev() {
 install_personal() {
     if ask "Install personal apps (Discord, Spotify, LibreOffice, OBS)?"; then
         print_message "Installing personal applications..."
-        sudo pacman -S --needed --noconfirm discord spotify-launcher libreoffice-fresh obs-studio proton-vpn-gtk-app bruno
+        sudo pacman -S --needed --noconfirm discord spotify-launcher libreoffice-fresh obs-studio proton-vpn-gtk-app
         
         # AUR packages
         if command_exists paru; then
             print_message "Installing AUR personal packages..."
-            paru -S --needed --noconfirm visual-studio-code-bin spicetify-cli gearlever opencode-bin || true
+            paru -S --needed --noconfirm visual-studio-code-bin spicetify-cli gearlever opencode-bin bruno || true
         fi
     fi
 }
