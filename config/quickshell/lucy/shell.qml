@@ -42,7 +42,7 @@ ShellRoot {
     // Theme Launcher - Toggle with hyprctl dispatch
     ThemeLauncher {
         id: themeLauncher
-        externalScriptPath: "/home/andrex/.config/quickshell/lucy/scripts/apply-theme.sh"
+        externalScriptPath: Quickshell.env("HOME") + "/.config/quickshell/lucy/scripts/apply-theme.sh"
     }
     
     /*!
