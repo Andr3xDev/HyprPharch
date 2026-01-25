@@ -49,13 +49,13 @@ install_hyprland() {
 # Terminal and shell
 install_terminal() {
     print_message "Installing terminal and shell..."
-    sudo pacman -S --needed --noconfirm kitty zsh starship fzf lsd btop fastfetch yazi ghostty tmux
+    sudo pacman -S --needed --noconfirm kitty zsh starship fzf lsd btop fastfetch yazi ghostty tmux gtk4 gtk3
 }
 
 # Themes and appearance
 install_themes() {
     print_message "Installing themes and fonts..."
-    sudo pacman -S --needed --noconfirm nwg-look sassc ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols woff2-font-awesome gtk-engine-murrine
+    sudo pacman -S --needed --noconfirm nwg-look sassc ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols woff2-font-awesome
     
     # Install GTK themes
     print_message "Installing GTK themes..."
