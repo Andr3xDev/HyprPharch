@@ -358,7 +358,7 @@ cd HyprPharch/scripts
 2. **Run the installation script**
 
 ```bash
-sudo ./install.sh
+./scripts/install.sh
 ```
 
 3. **Choose your installation mode**
@@ -375,7 +375,7 @@ sudo ./install.sh
 5. **Reboot and enjoy!**
 
 ```bash
-sudo reboot
+reboot
 ```
 
 After rebooting, select Hyprland from the Ly display manager.
@@ -394,7 +394,7 @@ cd HyprPharch
 2. **Install base packages**
 
 ```bash
-sudo pacman -S --needed base base-devel linux linux-firmware linux-headers linux-zen linux-zen-headers efibootmgr dkms git wget nano vim neovim tree smartmontools networkmanager network-manager-applet iwd wireless_tools pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber libpulse gst-plugin-pipewire bluez bluez-utils bluetui brightnessctl grim slurp sof-firmware python-gobject qt5-wayland qt6-wayland zram-generator noto-fonts-emoji noto-fonts-cjk dosfstools bridge-utils iptables-nft dnsmasq sudo npm hyprland hypridle hyprlock hyprpicker hyprshot dunst rofi swww xdg-desktop-portal-hyprland xdg-desktop-portal-gnome polkit-gnome polkit-kde-agent xdg-utils uwsm quickshell kitty zsh starship fzf lsd htop fastfetch yazi ghostty tmux nwg-look sassc ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols woff2-font-awesome gtk-engine-murrine firefox pavucontrol mpv power-profiles-daemon ly xorg-server xorg-xinit intel-media-driver intel-ucode vulkan-intel lib32-vulkan-intel libva-intel-driver vulkan-tools nvidia-open-dkms lib32-nvidia-utils libva-nvidia-driver steam lib32-mesa docker docker-buildx docker-compose discord spotify-launcher libreoffice-fresh obs-studio proton-vpn-gtk-app bruno
+sudo pacman -S --needed base base-devel linux linux-firmware linux-headers linux-zen linux-zen-headers efibootmgr dkms git wget nano vim neovim tree smartmontools networkmanager network-manager-applet iwd pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber bluez bluez-utils bluetui brightnessctl grim slurp sof-firmware python-gobject qt5-wayland qt6-wayland zram-generator noto-fonts-emoji noto-fonts-cjk dosfstools bridge-utils dnsmasq sudo npm hyprland hypridle hyprlock hyprpicker hyprshot dunst rofi swww xdg-desktop-portal-hyprland xdg-desktop-portal-gnome polkit-gnome polkit-kde-agent xdg-utils uwsm quickshell kitty zsh starship fzf lsd btop htop fastfetch yazi ghostty tmux gtk3 gtk4 nwg-look sassc ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols woff2-font-awesome firefox pavucontrol mpv power-profiles-daemon ly xorg-server xorg-xinit intel-media-driver intel-ucode vulkan-intel lib32-vulkan-intel libva-intel-driver vulkan-tools nvidia-open-dkms lib32-nvidia-utils libva-nvidia-driver steam lib32-mesa docker docker-buildx docker-compose discord spotify-launcher libreoffice-fresh obs-studio proton-vpn-gtk-app
 ```
 
 3. **Install AUR helper and packages**
@@ -407,7 +407,7 @@ cd paru
 makepkg -si
 
 # Install AUR packages
-paru -S --needed bruno drm_info-git dwarfs-bin gearlever kotofetch opencode-bin paru paru-debug phinger-cursors python-desktop-entry-lib python-ftputil spicetify-cli vial-appimage visual-studio-code-bin
+paru -S --needed kotofetch phinger-cursors visual-studio-code-bin spicetify-cli gearlever opencode-bin
 ```
 
 4. **Copy configurations**
@@ -423,7 +423,7 @@ cp -r config/* ~/.config/
 5. **Enable services**
 
 ```bash
-sudo systemctl enable NetworkManager bluetooth ly
+sudo systemctl enable NetworkManager bluetooth
 ```
 
 6. **Reboot**
