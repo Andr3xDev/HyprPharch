@@ -12,8 +12,7 @@ paru -S --needed --noconfirm spicetify-cli
 
 # Configure Spicetify permissions
 print_message "Setting up Spicetify permissions..."
-sudo chmod a+wr /opt/spotify
-sudo chmod a+wr /opt/spotify/Apps -R
+spicetify config spotify_path "$HOME/.local/share/spotify-launcher/install/usr/share/spotify"
 
 # Run Spicetify for the first time
 print_message "Running Spicetify initial setup..."
