@@ -53,7 +53,7 @@ install_nvidia() {
     if ask "Install NVIDIA drivers (GPU)?"; then
         print_warning "Make sure you have an NVIDIA GPU!"
         print_message "Installing NVIDIA drivers..."
-        sudo pacman -S --needed --noconfirm nvidia-open-dkms lib32-nvidia-utils libva-nvidia-driver lib32-mesa
+        sudo pacman -S --needed --noconfirm nvidia-dkms lib32-nvidia-utils libva-nvidia-driver lib32-mesa
     fi
 }
 
