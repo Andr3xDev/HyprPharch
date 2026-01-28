@@ -25,3 +25,10 @@ print_banner() {
 
 # Utility functions
 command_exists() { command -v "$1" &> /dev/null; }
+
+# Ask function
+ask() {
+    read -p "$1 (y/N): " -n 1 -r
+    echo
+    [[ $REPLY =~ ^[Yy]$ ]]
+}

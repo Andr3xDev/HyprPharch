@@ -41,4 +41,28 @@ if [ -d "$CONFIG_SRC/wallpapers" ]; then
     cp -r "$CONFIG_SRC/wallpapers" "$HOME/.config/"
 fi
 
+# Enable services
+print_message "Enabling system services..."
+
+# NetworkManager
+if pacman -Q networkmanager &>/dev/null; then
+    sudo systemctl enable NetworkManager
+fi
+
+# Bluetooth
+if pacman -Q bluez &>/dev/null; then
+    sudo systemctl enable bluetooth
+fi
+
+# Ly display manager
+if pacman -Q ly &>/dev/null; then
+    sudo systemctl enable ly.service
+fi
+
+# Docker
+if pacman -Q docker &>/dev/null; then
+    sudo systemctl enable docker
+fi
+
+print_success "Services enabled"
 print_success "Dotfiles installed successfully"
