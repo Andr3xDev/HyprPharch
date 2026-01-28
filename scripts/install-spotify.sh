@@ -10,6 +10,20 @@ print_banner "Installing Spotify & Spicetify"
 sudo pacman -S --needed --noconfirm spotify-launcher
 paru -S --needed --noconfirm spicetify-cli
 
+# Launch Spotify to initialize installation
+print_message "Launching Spotify to initialize installation..."
+spotify-launcher &
+SPOTIFY_PID=$!
+
+# Wait for Spotify to initialize (10 seconds)
+print_message "Waiting for Spotify to initialize..."
+sleep 10
+
+# Close Spotify
+print_message "Closing Spotify..."
+kill $SPOTIFY_PID 2>/dev/null || killall spotify 2>/dev/null || true
+sleep 2
+
 # Configure Spicetify permissions
 print_message "Setting up Spicetify permissions..."
 spicetify config spotify_path "$HOME/.local/share/spotify-launcher/install/usr/share/spotify"
