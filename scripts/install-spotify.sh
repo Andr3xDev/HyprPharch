@@ -34,19 +34,21 @@ spicetify backup apply
 
 # Clone spicetify-themes and install Dribbblish and Onepunch themes
 print_message "Installing Spicetify themes (Dribbblish and Onepunch)..."
-TEMP_DIR=$(mktemp -d)
-git clone --depth 1 https://github.com/spicetify/spicetify-themes.git "$TEMP_DIR/spicetify-themes"
 
 # Get spicetify themes directory
 THEMES_DIR="$HOME/.config/spicetify/Themes"
 mkdir -p "$THEMES_DIR"
 
-# Copy Dribbblish and Onepunch themes
-cp -r "$TEMP_DIR/spicetify-themes/Dribbblish" "$THEMES_DIR/"
-cp -r "$TEMP_DIR/spicetify-themes/Onepunch" "$THEMES_DIR/"
+# Clone repo directly in themes directory
+cd "$THEMES_DIR"
+git clone --depth 1 https://github.com/spicetify/spicetify-themes.git
 
-# Clean up
-rm -rf "$TEMP_DIR"
+# Copy Dribbblish and Onepunch themes to parent directory
+cp -r spicetify-themes/Dribbblish ./
+cp -r spicetify-themes/Onepunch ./
+
+# Remove cloned repository
+rm -rf spicetify-themes
 
 spicetify config inject_css 1 replace_colors 1 overwrite_assets 1 inject_theme_js 1
 
