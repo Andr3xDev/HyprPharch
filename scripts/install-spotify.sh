@@ -48,6 +48,8 @@ cp -r "$TEMP_DIR/spicetify-themes/Onepunch" "$THEMES_DIR/"
 # Clean up
 rm -rf "$TEMP_DIR"
 
+spicetify config inject_css 1 replace_colors 1 overwrite_assets 1 inject_theme_js 1
+
 print_success "╔════════════════════════════════════════╗"
 print_success "║  Spotify & Spicetify installed!        ║"
 print_success "║  Themes: Dribbblish, Onepunch          ║"
