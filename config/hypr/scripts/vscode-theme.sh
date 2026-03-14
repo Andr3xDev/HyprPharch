@@ -4,10 +4,8 @@ FILE="$HOME/.config/Code/User/settings.json"
 THEME=""
 
 case "$1" in
-    gruvbox-material-d) THEME="Gruvbox Material Dark" ;;
-    gruvbox-material-l) THEME="Gruvbox Material Light" ;;
-    rose-pine-d)        THEME="Rosé Pine" ;;
-    rose-pine-l)        THEME="Rosé Pine Dawn" ;;
+    abysal-obsidian) THEME="Abysal Obsidian" ;;
+    abysal-marble) THEME="Abysal Marble" ;;
     *) 
         exit 1 
         ;;
