@@ -15,25 +15,70 @@ QtObject {
     // Current theme name, defaults to "abysal-obsidian" until the data file is read
     property string currentTheme: "abysal-obsidian"
     property var theme: currentPalette
+    property string _pendingSaveJson: ""
 
     readonly property string _dataDir: "/home/andrex/.config/quickshell/lucyna/data"
+    readonly property string _dataFilePath: _dataDir + "/theme.json"
+    readonly property string _loadScript: "import sys,json,pathlib; p=pathlib.Path(sys.argv[1]); d={'theme':'abysal-obsidian'};\ntry:\n s=p.read_text() if p.exists() else ''\n if s.strip():\n  raw=json.loads(s)\n  d['theme']=raw.get('theme','abysal-obsidian')\nexcept Exception:\n pass\nprint(json.dumps(d))"
+    readonly property string _saveScript: "import sys,os; p=sys.argv[1]; os.makedirs(os.path.dirname(p), exist_ok=True); open(p,'w').write(sys.argv[2])"
 
     // Read saved theme from data/theme.json on startup
-    property FileView _themeFile: FileView {
-        path: themeManager._dataDir + "/theme.json"
-        onTextChanged: {
-            if (!text.trim()) return
-            try {
-                const data = JSON.parse(text)
-                if (data.theme && themeManager.availableThemes.includes(data.theme))
-                    themeManager.currentTheme = data.theme
-            } catch(e) {}
+    property Process _loadProc: Process {
+        running: false
+        command: [
+            "python3", "-c",
+            themeManager._loadScript,
+            themeManager._dataFilePath
+        ]
+        stdout: SplitParser {
+            onRead: data => themeManager._loadPersistedTheme(data)
         }
     }
 
     // Process to persist theme changes to disk
     property Process _saveProc: Process {
         running: false
+        onExited: {
+            if (themeManager._pendingSaveJson.length > 0) {
+                const nextJson = themeManager._pendingSaveJson
+                themeManager._pendingSaveJson = ""
+                themeManager._writePersistedTheme(nextJson)
+            }
+        }
+    }
+
+    Component.onCompleted: {
+        themeManager._loadFromDisk()
+    }
+
+    function _loadFromDisk() {
+        if (_loadProc.running) return
+        _loadProc.running = true
+    }
+
+    function _loadPersistedTheme(text) {
+        if (!text || !text.trim()) return
+        try {
+            const data = JSON.parse(text)
+            const loadedTheme = data.theme
+            if (loadedTheme && availableThemes.includes(loadedTheme))
+                currentTheme = loadedTheme
+        } catch (e) {}
+    }
+
+    function _writePersistedTheme(payloadJson) {
+        if (_saveProc.running) {
+            _pendingSaveJson = payloadJson
+            return
+        }
+
+        _saveProc.command = [
+            "python3", "-c",
+            _saveScript,
+            _dataFilePath,
+            payloadJson
+        ]
+        _saveProc.running = true
     }
 
     // List of available themes
@@ -90,13 +135,7 @@ QtObject {
     function setTheme(themeName) {
         if (availableThemes.includes(themeName)) {
             currentTheme = themeName
-            _saveProc.command = [
-                "python3", "-c",
-                "import sys,os; p=sys.argv[1]; os.makedirs(os.path.dirname(p), exist_ok=True); open(p,'w').write(sys.argv[2])",
-                _dataDir + "/theme.json",
-                JSON.stringify({theme: themeName})
-            ]
-            _saveProc.running = true
+            _writePersistedTheme(JSON.stringify({ theme: themeName }))
             return true
         }
         return false
