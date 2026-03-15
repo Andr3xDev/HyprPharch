@@ -1,0 +1,39 @@
+# General stuff
+background = #dcdcdc
+foreground = #2f2f2f
+cursor-color = #2c9279
+cursor-text = #dcdcdc
+selection-background = #c4c4c4
+selection-foreground = #2f2f2f
+
+# Black / Dark Gray (Borders and Comments)
+palette = 0=#bcbcbc
+palette = 8=#737373
+
+# Red (Errors and Git Deletions)
+palette = 1=#a8474a
+palette = 9=#a8474a
+
+# Green (Turquoise - Main success indicator and valid strings)
+palette = 2=#2c9279
+palette = 10=#2c9279
+
+# Yellow (Sand - Warnings and secondary attributes)
+palette = 3=#947635
+palette = 4=#947635
+palette = 11=#947635
+
+# Blue (Orange - Replaced per user request for Folders/Directories)
+palette = 12=#b55b25
+
+# Magenta (Lavender - Keywords and syntax control)
+palette = 5=#824699
+palette = 13=#824699
+
+# Cyan (Steel Blue - Moved here to retain the blue hue for symlinks/special files)
+palette = 6=#365ca8
+palette = 14=#365ca8
+
+# White (Light Gray - Secondary and highlighted text)
+palette = 7=#555555
+palette = 15=#2f2f2f

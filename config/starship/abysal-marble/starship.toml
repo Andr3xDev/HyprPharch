@@ -1,0 +1,110 @@
+#-------------------------------------------------------------------------------------
+#                                                            
+#       ,---.   ,--.                        ,--.     ,--.        
+#     "   .-",-"  "-. ,--,--.,--.--. ,---. |  ,---. `--" ,---.  
+#     `.  `-."-.  .-"" ,-.  ||  .--"(  .-" |  .-.  |,--.| .-. | 
+#     .-"    | |  |  \ "-"  ||  |   .-"  `)|  | |  ||  || "-" " 
+#     `-----"  `--"   `--`--"`--"   `----" `--" `--"`--"|  |-"  
+#                                                       `--"    
+#           _______
+#　　　　　 /  ＞　　フ     
+#　　　　　| 　_　 _ l      RESUME: Custom pront for terminals and complement
+#　 　　　／` ミ＿xノ               because i use OhMyZsh.
+#　　 　 /　　　 　 |
+#　　　 /　 ヽ　　 ﾉ
+#　 　 │　　|　|　|         AUTHOR:  Andr3xDev
+#　／￣|　　 |　|　|        URL: https://github.com/Andr3xDev/HyprPharch
+#　| (￣ヽ＿_ヽ_)__)
+#　＼二つ
+#-------------------------------------------------------------------------------------
+
+
+#-------------------------------------------------------------------------------------
+#   Format
+#-------------------------------------------------------------------------------------
+
+format = """
+$line_break \
+$directory\
+$git_branch\
+$git_status\
+$cmd_duration\
+$docker\
+$aws\
+$status
+[ └─➤ ](blue)"""
+
+#--- properties ---#
+add_newline = true 
+continuation_prompt = "▶▶ "
+
+
+#-------------------------------------------------------------------------------------
+#   Palette
+#-------------------------------------------------------------------------------------
+
+palette = "abysal-obsidian"
+
+[palettes.abysal-obsidian]
+background = "#dcdcdc"
+overlay = "#cfcfcf"
+text = "#2f2f2f"
+blue = "#2c9279"
+orange = "#b55b25"
+yellow = "#947635"
+red = "#a8474a"
+
+
+#-------------------------------------------------------------------------------------
+#   Elements
+#-------------------------------------------------------------------------------------
+
+[directory]
+truncation_length = 3
+fish_style_pwd_dir_length = 3
+truncate_to_repo = true
+home_symbol = " ~"
+read_only = "  "
+format = "[](fg:blue)[◤](fg:blue bg:overlay)[  ](bold fg:text bg:overlay)[$path](bold fg:text bg:overlay)[$read_only ](bold fg:orange bg:overlay)[◤](fg:overlay)"
+
+[git_branch]
+format = "[](fg:blue)[◤](fg:blue bg:overlay)[  ](bold fg:text bg:overlay)[$branch](bold fg:text bg:overlay)"
+truncation_symbol = "…/"
+
+[git_status]
+format = "[ $all_status$ahead_behind ](bold fg:orange bg:overlay)[◤](fg:overlay)"
+stashed = " "
+ahead = " ↑"
+behind = " ↓"
+diverged = " ↕"
+conflicted = " "
+untracked = " ?"
+staged = " +"
+modified = " !"
+renamed = " »"
+deleted = " ✘"
+
+[cmd_duration]
+min_time = 0
+format = "[](fg:blue)[◤](fg:blue bg:overlay)[ ⏱  ](bold fg:text bg:overlay)[$duration ](bold fg:text bg:overlay)[◤](fg:overlay)"
+show_milliseconds = true
+
+[status]
+disabled = false
+format = "[](fg:red)[◤](fg:red bg:overlay)[ ✘ ](bold fg:red bg:overlay)[◤](fg:overlay)"
+
+
+#-------------------------------------------------------------------------------------
+#   Extra Elements
+#-------------------------------------------------------------------------------------
+
+[line_break]
+disabled = false
+
+[aws]
+symbol = " "
+format = "[](fg:blue)[◤](fg:blue bg:overlay)[ $symbol](bold fg:orange bg:overlay)[◤](bold fg:overlay)"
+
+[docker_context]
+symbol = " "
+format = "[](fg:blue)[◤](fg:blue bg:overlay)[ $symbol](bold fg:orange bg:overlay)[◤](bold fg:overlay)"
