@@ -1,0 +1,95 @@
+#--------------------------------------------------------------------------------
+#             _______
+#　　　　　 /  ＞　　フ     
+#　　　　　| 　_　 _ l      THEME: abysal-obsidian
+#　 　　　／` ミ＿xノ               
+#　　 　 /　　　 　 |
+#　　　 /　 ヽ　　 ﾉ
+#　 　 │　　|　|　|         AUTHOR:  Andr3xDev
+#　／￣|　　 |　|　|        URL: https://github.com/Andr3xDev/HyprPharch
+#　| (￣ヽ＿_ヽ_)__)
+#　＼二つ
+#--------------------------------------------------------------------------------
+
+
+# Main background
+theme[main_bg]="#1c1c1c"
+
+# Main text color
+theme[main_fg]="#d4d4d4"
+
+# Title color for boxes
+theme[title]="#d4d4d4"
+
+# Highlight color for keyboard shortcuts
+theme[hi_fg]="#52c9b0"
+
+# Background color of selected items
+theme[selected_bg]="#333333"
+
+# Foreground color of selected items
+theme[selected_fg]="#52c9b0"
+
+# Color of inactive/disabled text
+theme[inactive_fg]="#737373"
+
+# Color of text appearing on top of graphs
+theme[graph_text]="#8c8c8c"
+
+# Misc colors for processes box
+theme[proc_misc]="#6b92e3"
+
+# Cpu box outline color
+theme[cpu_box]="#2e2e2e"
+
+# Memory/disks box outline color
+theme[mem_box]="#2e2e2e"
+
+# Net up/down box outline color
+theme[net_box]="#2e2e2e"
+
+# Processes box outline color
+theme[proc_box]="#2e2e2e"
+
+# Box divider line and small boxes line color
+theme[div_line]="#2e2e2e"
+
+# Temperature graph colors
+theme[temp_start]="#52c9b0"
+theme[temp_mid]="#d1b171"
+theme[temp_end]="#d47779"
+
+# CPU graph colors
+theme[cpu_start]="#52c9b0"
+theme[cpu_mid]="#e28e5a"
+theme[cpu_end]="#d47779"
+
+# Mem/Disk free meter
+theme[free_start]="#52c9b0"
+theme[free_mid]=""
+theme[free_end]=""
+
+# Mem/Disk cached meter
+theme[cached_start]="#6b92e3"
+theme[cached_mid]=""
+theme[cached_end]=""
+
+# Mem/Disk available meter
+theme[available_start]="#d1b171"
+theme[available_mid]=""
+theme[available_end]=""
+
+# Mem/Disk used meter
+theme[used_start]="#e28e5a"
+theme[used_mid]=""
+theme[used_end]=""
+
+# Download graph colors
+theme[download_start]="#6b92e3"
+theme[download_mid]=""
+theme[download_end]=""
+
+# Upload graph colors
+theme[upload_start]="#e28e5a"
+theme[upload_mid]=""
+theme[upload_end]=""

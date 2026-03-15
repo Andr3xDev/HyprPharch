@@ -6,7 +6,7 @@
     <p align="center">
         <a href="https://archlinux.org/"><img src="https://img.shields.io/badge/Arch_Linux-282828?style=for-the-badge&logo=arch-linux&logoColor=45707" alt="Arch Linux"></a>
         <a href="https://hyprland.org/"><img src="https://img.shields.io/badge/Hyprland-282828?style=for-the-badge&logo=wayland&logoColor=89b482" alt="Hyprland"></a>
-        <a href="config/quickshell/lucy"><img src="https://img.shields.io/badge/Version-Lucy_1.0-1b1b1b?style=for-the-badge&labelColor=282828" alt="Version: Lucy"></a>
+        <a href="config/quickshell/lucy"><img src="https://img.shields.io/badge/Version-Lucyna_2.0-1b1b1b?style=for-the-badge&labelColor=282828" alt="Version: Lucyna"></a>
         <a href="https://github.com/Andr3xDev/HyprPharch/stargazers"><img src="https://img.shields.io/github/stars/Andr3xDev/HyprPharch?style=for-the-badge&color=1b1b1b&labelColor=282828" alt="Stars"></a>
     </p>
 </div>
@@ -14,9 +14,14 @@
 <br>
 <br>
 
-## Lucy config
+## Lucyna config
 
-This configuration is designed for **Arch Linux with Hyprland**, focusing on essential visual and practical elements that are lightweight and resource-efficient. It features a **minimalist style** that prioritizes productivity without sacrificing a clean and calm aesthetic.
+This configuration is designed for **Arch Linux with Hyprland** and introduces **Lucyna**, a theme focused on **minimalism, functionality, and elegance**. It is built for long sessions in front of the screen, prioritizing visual comfort and clarity while keeping the setup lightweight and practical.
+
+Lucyna is powered by **Abyssal Theme** — a personal color palette designed from scratch for this setup. It defines two variants:
+
+-   **Obsidian** — dark mode
+-   **Marble** — light mode
 
 <br>
 
@@ -27,7 +32,7 @@ This configuration is designed for **Arch Linux with Hyprland**, focusing on ess
 
 ### Key Features
 
--   **Four Beautiful Themes**: Gruvbox Material & Rose Pine (Dark/Light both)
+-   **Abyssal Theme**: Custom palette — Obsidian (Dark) & Marble (Light)
 -   **QuickShell Bar**: Modern, customizable, and performant status bar
 -   **Optimized Performance**: Minimal resource usage with maximum functionality
 -   **Easy Theme Switching**: Change themes on the fly with a simple keybind
@@ -38,6 +43,149 @@ This configuration is designed for **Arch Linux with Hyprland**, focusing on ess
 <br>
 
 ## Gallery
+
+### Abyssal Theme
+
+Lucyna is the first theme built on top of **Abyssal**, a personal color palette created from scratch. Preview images will be published here once the theme is ready.
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <!-- TODO: Add Obsidian preview image -->
+      <br><b>Obsidian (Dark)</b>
+    </td>
+    <td width="50%" align="center">
+      <!-- TODO: Add Marble preview image -->
+      <br><b>Marble (Light)</b>
+    </td>
+  </tr>
+</table>
+
+<details>
+<summary><b>More Preview Images (click to expand)</b></summary>
+
+### Apps
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <!-- TODO: Add Apps Obsidian image -->
+      <br><b>Obsidian (Dark)</b>
+    </td>
+    <td width="50%" align="center">
+      <!-- TODO: Add Apps Marble image -->
+      <br><b>Marble (Light)</b>
+    </td>
+  </tr>
+</table>
+
+### Apps 2
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <!-- TODO: Add Apps 2 Obsidian image -->
+      <br><b>Obsidian (Dark)</b>
+    </td>
+    <td width="50%" align="center">
+      <!-- TODO: Add Apps 2 Marble image -->
+      <br><b>Marble (Light)</b>
+    </td>
+  </tr>
+</table>
+
+### Launcher
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <!-- TODO: Add Launcher Obsidian image -->
+      <br><b>Obsidian (Dark)</b>
+    </td>
+    <td width="50%" align="center">
+      <!-- TODO: Add Launcher Marble image -->
+      <br><b>Marble (Light)</b>
+    </td>
+  </tr>
+</table>
+
+### Power Launcher
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <!-- TODO: Add Power Launcher Obsidian image -->
+      <br><b>Obsidian (Dark)</b>
+    </td>
+    <td width="50%" align="center">
+      <!-- TODO: Add Power Launcher Marble image -->
+      <br><b>Marble (Light)</b>
+    </td>
+  </tr>
+</table>
+
+### Spotify
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <!-- TODO: Add Spotify Obsidian image -->
+      <br><b>Obsidian (Dark)</b>
+    </td>
+    <td width="50%" align="center">
+      <!-- TODO: Add Spotify Marble image -->
+      <br><b>Marble (Light)</b>
+    </td>
+  </tr>
+</table>
+
+### Firefox
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <!-- TODO: Add Firefox Obsidian image -->
+      <br><b>Obsidian (Dark)</b>
+    </td>
+    <td width="50%" align="center">
+      <!-- TODO: Add Firefox Marble image -->
+      <br><b>Marble (Light)</b>
+    </td>
+  </tr>
+</table>
+
+### VS Code
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <!-- TODO: Add VS Code Obsidian image -->
+      <br><b>Obsidian (Dark)</b>
+    </td>
+    <td width="50%" align="center">
+      <!-- TODO: Add VS Code Marble image -->
+      <br><b>Marble (Light)</b>
+    </td>
+  </tr>
+</table>
+
+</details>
+
+<br>
+<br>
+
+## Lucy Version
+
+> **⚠️ Previous version** - Kept as screenshot archive for reference
+
+Lucy 1.0 includes the older theme set (**Gruvbox Material** and **Rose Pine** in dark/light variants). It is preserved below for comparison with the new theme generation.
+
+```bash
+git clone -b lucy https://github.com/Andr3xDev/HyprPharch.git
+```
+
+<details>
+<summary><b>View Lucy Screenshots</b></summary>
 
 ### Gruvbox Material
 
@@ -53,9 +201,6 @@ This configuration is designed for **Arch Linux with Hyprland**, focusing on ess
     </td>
   </tr>
 </table>
-
-<details>
-<summary><b>More Gruvbox Material Screenshots (click to expand)</b></summary>
 
 <table>
   <tr>
@@ -120,8 +265,6 @@ This configuration is designed for **Arch Linux with Hyprland**, focusing on ess
   </tr>
 </table>
 
-</details>
-
 <br>
 
 ### Rose Pine
@@ -138,9 +281,6 @@ This configuration is designed for **Arch Linux with Hyprland**, focusing on ess
     </td>
   </tr>
 </table>
-
-<details>
-<summary><b>More Rose Pine Screenshots (click to expand)</b></summary>
 
 <table>
   <tr>
@@ -282,7 +422,7 @@ git clone -b legacy https://github.com/Andr3xDev/HyprPharch.git
 | **Shell**         | [Zsh](https://www.zsh.org/) + [Oh My Zsh](https://ohmyz.sh/)                               |
 | **Editor**        | [Neovim](https://neovim.io/) / [VSCode](https://code.visualstudio.com/)                    |
 | **Notifications** | [Dunst](https://dunst-project.org/)                                                        |
-| **Launcher**      | [Rofi (Wayland)](https://github.com/lbonn/rofi)                                            |
+| **Launcher**      | QuickShell Launcher                                                                          |
 | **Wallpaper**     | [SWWW](https://github.com/LGFae/swww)                                                      |
 | **File Manager**  | [Yazi](https://github.com/sxyazi/yazi) / [Thunar](https://docs.xfce.org/xfce/thunar/start) |
 | **Browser**       | [Firefox](https://www.mozilla.org/firefox/)                                                |
@@ -394,7 +534,7 @@ cd HyprPharch
 2. **Install base packages**
 
 ```bash
-sudo pacman -S --needed base base-devel linux linux-firmware linux-headers linux-zen linux-zen-headers efibootmgr dkms git wget nano vim neovim tree smartmontools networkmanager network-manager-applet iwd pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber bluez bluez-utils bluetui brightnessctl grim slurp sof-firmware python-gobject qt5-wayland qt6-wayland zram-generator noto-fonts-emoji noto-fonts-cjk dosfstools bridge-utils dnsmasq sudo npm hyprland hypridle hyprlock hyprpicker hyprshot dunst rofi swww xdg-desktop-portal-hyprland xdg-desktop-portal-gnome polkit-gnome polkit-kde-agent xdg-utils uwsm quickshell kitty zsh starship fzf lsd btop htop fastfetch yazi ghostty tmux gtk3 gtk4 nwg-look sassc ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols woff2-font-awesome firefox pavucontrol mpv power-profiles-daemon ly xorg-server xorg-xinit intel-media-driver intel-ucode vulkan-intel lib32-vulkan-intel libva-intel-driver vulkan-tools nvidia-open-dkms lib32-nvidia-utils libva-nvidia-driver steam lib32-mesa docker docker-buildx docker-compose discord spotify-launcher libreoffice-fresh obs-studio proton-vpn-gtk-app
+sudo pacman -S --needed base base-devel linux linux-firmware linux-headers linux-zen linux-zen-headers efibootmgr dkms git wget nano vim neovim tree smartmontools networkmanager network-manager-applet iwd pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber bluez bluez-utils bluetui brightnessctl grim slurp sof-firmware python-gobject qt5-wayland qt6-wayland zram-generator noto-fonts-emoji noto-fonts-cjk dosfstools bridge-utils dnsmasq sudo npm hyprland hypridle hyprlock hyprpicker hyprshot dunst swww xdg-desktop-portal-hyprland xdg-desktop-portal-gnome polkit-gnome polkit-kde-agent xdg-utils uwsm quickshell kitty zsh starship fzf lsd btop htop fastfetch yazi ghostty gtk3 gtk4 nwg-look sassc ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols woff2-font-awesome firefox pavucontrol mpv power-profiles-daemon ly xorg-server xorg-xinit intel-media-driver intel-ucode vulkan-intel lib32-vulkan-intel libva-intel-driver vulkan-tools nvidia-open-dkms lib32-nvidia-utils libva-nvidia-driver steam lib32-mesa docker docker-buildx docker-compose discord spotify-launcher libreoffice-fresh obs-studio proton-vpn-gtk-app
 ```
 
 3. **Install AUR helper and packages**
@@ -448,7 +588,7 @@ sudo reboot
 | `SUPER + Q`             | Close window                |
 | `SUPER + SHIFT + F`     | Toggle fullscreen           |
 | `SUPER + V`             | Toggle floating             |
-| `SUPER + Space`         | Application launcher (Rofi) |
+| `SUPER + Space`         | QuickShell launcher         |
 | `SUPER + Backspace`     | Power menu                  |
 
 ### Applications
@@ -508,7 +648,7 @@ Theming requires changes in multiple locations:
 **Config files to edit:**
 
 -   QuickShell: [`config/quickshell/lucy/theme/Palettes.qml`](config/quickshell/lucy/theme/Palettes.qml)
--   Rofi: [`config/rofi/`](config/rofi/) (`.rasi` files)
+-   QuickShell: [`config/quickshell/lucy/`](config/quickshell/lucy/)
 -   Hyprland: [`config/hypr/configs/theme/`](config/hypr/configs/theme/)
 -   Kitty, Btop, Fastfetch, Starship: Respective config folders
 

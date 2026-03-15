@@ -1,0 +1,11 @@
+[Unit]
+Description=Micro Wallpaper Server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python -m http.server 9999 --directory %h/.config/startpage
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

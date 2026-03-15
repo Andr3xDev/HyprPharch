@@ -1,0 +1,157 @@
+#--------------------------------------------------------------------------------
+#             _______
+#　　　　　 /  ＞　　フ     
+#　　　　　| 　_　 _ l      THEME: abysal-obsidian
+#　 　　　／` ミ＿xノ               
+#　　 　 /　　　 　 |
+#　　　 /　 ヽ　　 ﾉ
+#　 　 │　　|　|　|         AUTHOR:  Andr3xDev
+#　／￣|　　 |　|　|        URL: https://github.com/Andr3xDev/HyprPharch
+#　| (￣ヽ＿_ヽ_)__)
+#　＼二つ
+#   
+#--------------------------------------------------------------------------------
+
+
+[app]
+overall = { bg = "#dcdcdc" }
+
+[manager]
+# Path superior en Naranja (Versión Marble)
+cwd = { fg = "#b55b25" }
+
+# Selección: Fondo Arena, Texto Oscuro
+hovered         = { fg = "#dcdcdc", bg = "#947635", bold = true }
+preview_hovered = { underline = true }
+
+find_keyword  = { fg = "#947635", bold = true, italic = true, underline = true }
+find_position = { fg = "#824699", bg = "reset", bold = true, italic = true }
+
+symlink_target = { italic = true }
+
+marker_copied   = { fg = "#365ca8", bg = "#365ca8" }
+marker_cut      = { fg = "#a8474a", bg = "#a8474a" }
+marker_marked   = { fg = "#b55b25", bg = "#b55b25" }
+marker_selected = { fg = "#947635", bg = "#947635" }
+
+count_copied   = { fg = "#dcdcdc", bg = "#365ca8" }
+count_cut      = { fg = "#dcdcdc", bg = "#a8474a" }
+count_selected = { fg = "#dcdcdc", bg = "#947635" }
+
+border_symbol = "│"
+border_style  = { fg = "#bcbcbc" }
+
+syntect_theme = ""
+
+[indicator]
+padding = { open = "█", close = "█" }
+
+[tabs]
+active   = { fg = "#dcdcdc", bg = "#365ca8", bold = true }
+inactive = { fg = "#365ca8", bg = "#dcdcdc" }
+
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "█", close = "" }
+
+[mode]
+normal_main = { fg = "#dcdcdc", bg = "#2c9279", bold = true }
+normal_alt  = { fg = "#2f2f2f", bg = "#c4c4c4", bold = true }
+
+select_main = { fg = "#dcdcdc", bg = "#947635", bold = true }
+select_alt  = { fg = "#2f2f2f", bg = "#c4c4c4", bold = true }
+
+unset_main = { fg = "#dcdcdc", bg = "#a8474a", bold = true }
+unset_alt  = { fg = "#2f2f2f", bg = "#c4c4c4", bold = true }
+
+[status]
+overall   = { bg = "#dcdcdc" }
+sep_left  = { open = "█", close = "" }
+sep_right = { open = "", close = "█" }
+
+perm_sep   = { fg = "#737373" }
+perm_type  = { fg = "#824699" }
+perm_read  = { fg = "#947635" }
+perm_write = { fg = "#a8474a" }
+perm_exec  = { fg = "#2c9279" }
+
+progress_label  = { fg = "#2f2f2f", bold = true }
+progress_normal = { fg = "#365ca8", bg = "#dcdcdc" }
+progress_error  = { fg = "#a8474a", bg = "#dcdcdc" }
+
+[which]
+cols            = 3
+mask            = { bg = "#dcdcdc" }
+cand            = { fg = "#2c9279" }
+rest            = { fg = "#737373" }
+desc            = { fg = "#947635" }
+separator       = "  "
+separator_style = { fg = "#737373" }
+
+[confirm]
+border     = { fg = "#bcbcbc" }
+title      = { fg = "#a8474a", bold = true }
+body       = { fg = "#2f2f2f" }
+list       = { fg = "#2f2f2f" }
+btn_yes    = { fg = "#dcdcdc", bg = "#365ca8", bold = true }
+btn_no     = { fg = "#2f2f2f", bg = "#c4c4c4", bold = true }
+btn_labels = [ "  [y]es  ", "  (n)o  " ]
+
+[spot]
+border = { fg = "#bcbcbc" }
+title  = { fg = "#2c9279", bold = true }
+
+tbl_col  = { fg = "#2c9279" }
+tbl_cell = { fg = "#dcdcdc", bg = "#947635", bold = true }
+
+[notify]
+title_info  = { fg = "#365ca8" }
+title_warn  = { fg = "#947635" }
+title_error = { fg = "#a8474a" }
+
+[pick]
+border   = { fg = "#365ca8" }
+active   = { fg = "#824699", bold = true }
+inactive = { fg = "#555555"}
+
+[input]
+border   = { fg = "#365ca8" }
+title    = { bold = true }
+value    = { fg = "#2f2f2f"}
+selected = { reversed = true }
+
+[cmp]
+border   = { fg = "#365ca8" }
+active   = { bg = "#c4c4c4", fg = "#2f2f2f", bold = true }
+inactive = { fg = "#555555" }
+
+[tasks]
+border  = { fg = "#365ca8" }
+title   = { bold = true}
+hovered = { fg = "#824699", bold = true, reversed = true }
+
+[help]
+on      = { fg = "#2c9279" }
+run     = { fg = "#824699" }
+desc    = { fg = "#947635"}
+hovered = { reversed = true, bold = true }
+footer  = { fg = "#2f2f2f", bg = "#c4c4c4" }
+
+[filetype]
+rules = [
+    { mime = "image/*", fg = "#824699" },
+    { mime = "{audio,video}/*", fg = "#947635" },
+    { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#a8474a" },
+    { mime = "application/{pdf,doc,rtf}", fg = "#b55b25" },
+
+    { name = "*", is = "orphan", fg = "#dcdcdc", bg = "#a8474a" },
+    { name = "*", is = "exec"  , fg = "#2c9279" },
+    { name = "*", is = "dummy",  fg = "#dcdcdc", bg = "#a8474a" },
+    { name = "*/", is = "dummy", fg = "#dcdcdc", bg = "#a8474a" },
+
+    # Carpetas en Turquesa Marble
+    { name = "*/", fg = "#2c9279" },
+
+    # Fallback
+    { name = "*",  fg = "#2f2f2f" }
+]
+

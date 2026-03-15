@@ -1,0 +1,157 @@
+#--------------------------------------------------------------------------------
+#             _______
+#　　　　　 /  ＞　　フ     
+#　　　　　| 　_　 _ l      THEME: abysal-obsidian
+#　 　　　／` ミ＿xノ               
+#　　 　 /　　　 　 |
+#　　　 /　 ヽ　　 ﾉ
+#　 　 │　　|　|　|         AUTHOR:  Andr3xDev
+#　／￣|　　 |　|　|        URL: https://github.com/Andr3xDev/HyprPharch
+#　| (￣ヽ＿_ヽ_)__)
+#　＼二つ
+#   
+#--------------------------------------------------------------------------------
+
+
+[app]
+overall = { bg = "#1c1c1c" }
+
+[manager]
+# Forced top path to Orange
+cwd = { fg = "#e28e5a" }
+
+# Selection: Sand background, Dark text (Overrides default reverse)
+hovered         = { fg = "#1c1c1c", bg = "#d1b171", bold = true }
+preview_hovered = { underline = true }
+
+find_keyword  = { fg = "#d1b171", bold = true, italic = true, underline = true }
+find_position = { fg = "#b87bce", bg = "reset", bold = true, italic = true }
+
+symlink_target = { italic = true }
+
+marker_copied   = { fg = "#6b92e3", bg = "#6b92e3" }
+marker_cut      = { fg = "#d47779", bg = "#d47779" }
+marker_marked   = { fg = "#e28e5a", bg = "#e28e5a" }
+marker_selected = { fg = "#d1b171", bg = "#d1b171" }
+
+count_copied   = { fg = "#1c1c1c", bg = "#6b92e3" }
+count_cut      = { fg = "#1c1c1c", bg = "#d47779" }
+count_selected = { fg = "#1c1c1c", bg = "#d1b171" }
+
+border_symbol = "│"
+border_style  = { fg = "#2e2e2e" }
+
+syntect_theme = ""
+
+[indicator]
+padding = { open = "█", close = "█" }
+
+[tabs]
+active   = { fg = "#1c1c1c", bg = "#6b92e3", bold = true }
+inactive = { fg = "#6b92e3", bg = "#1c1c1c" }
+
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "█", close = "" }
+
+[mode]
+normal_main = { fg = "#1c1c1c", bg = "#52c9b0", bold = true }
+normal_alt  = { fg = "#d4d4d4", bg = "#333333", bold = true }
+
+select_main = { fg = "#1c1c1c", bg = "#d1b171", bold = true }
+select_alt  = { fg = "#d4d4d4", bg = "#333333", bold = true }
+
+unset_main = { fg = "#1c1c1c", bg = "#d47779", bold = true }
+unset_alt  = { fg = "#d4d4d4", bg = "#333333", bold = true }
+
+[status]
+overall   = { bg = "#1c1c1c" }
+sep_left  = { open = "█", close = "" }
+sep_right = { open = "", close = "█" }
+
+perm_sep   = { fg = "#737373" }
+perm_type  = { fg = "#b87bce" }
+perm_read  = { fg = "#d1b171" }
+perm_write = { fg = "#d47779" }
+perm_exec  = { fg = "#52c9b0" }
+
+progress_label  = { fg = "#d4d4d4", bold = true }
+progress_normal = { fg = "#6b92e3", bg = "#1c1c1c" }
+progress_error  = { fg = "#d47779", bg = "#1c1c1c" }
+
+[which]
+cols            = 3
+mask            = { bg = "#1c1c1c" }
+cand            = { fg = "#52c9b0" }
+rest            = { fg = "#737373" }
+desc            = { fg = "#d1b171" }
+separator       = "  "
+separator_style = { fg = "#737373" }
+
+[confirm]
+border     = { fg = "#2e2e2e" }
+title      = { fg = "#d47779", bold = true }
+body       = { fg = "#d4d4d4" }
+list       = { fg = "#d4d4d4" }
+btn_yes    = { fg = "#1c1c1c", bg = "#6b92e3", bold = true }
+btn_no     = { fg = "#d4d4d4", bg = "#333333", bold = true }
+btn_labels = [ "  [y]es  ", "  (n)o  " ]
+
+[spot]
+border = { fg = "#2e2e2e" }
+title  = { fg = "#52c9b0", bold = true }
+
+tbl_col  = { fg = "#52c9b0" }
+tbl_cell = { fg = "#1c1c1c", bg = "#d1b171", bold = true }
+
+[notify]
+title_info  = { fg = "#6b92e3" }
+title_warn  = { fg = "#d1b171" }
+title_error = { fg = "#d47779" }
+
+[pick]
+border   = { fg = "#6b92e3" }
+active   = { fg = "#b87bce", bold = true }
+inactive = { fg = "#8c8c8c"}
+
+[input]
+border   = { fg = "#6b92e3" }
+title    = { bold = true }
+value    = { fg = "#d4d4d4"}
+selected = { reversed = true }
+
+[cmp]
+border   = { fg = "#6b92e3" }
+active   = { bg = "#333333", fg = "#d4d4d4", bold = true }
+inactive = { fg = "#8c8c8c" }
+
+[tasks]
+border  = { fg = "#6b92e3" }
+title   = { bold = true}
+hovered = { fg = "#b87bce", bold = true, reversed = true }
+
+[help]
+on      = { fg = "#52c9b0" }
+run     = { fg = "#b87bce" }
+desc    = { fg = "#d1b171"}
+hovered = { reversed = true, bold = true }
+footer  = { fg = "#d4d4d4", bg = "#333333" }
+
+[filetype]
+rules = [
+    { mime = "image/*", fg = "#b87bce" },
+    { mime = "{audio,video}/*", fg = "#d1b171" },
+    { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#d47779" },
+    { mime = "application/{pdf,doc,rtf}", fg = "#e28e5a" },
+
+    # Legacy syntax 'name' for older Yazi versions
+    { name = "*", is = "orphan", fg = "#1c1c1c", bg = "#d47779" },
+    { name = "*", is = "exec"  , fg = "#52c9b0" },
+    { name = "*", is = "dummy",  fg = "#1c1c1c", bg = "#d47779" },
+    { name = "*/", is = "dummy", fg = "#1c1c1c", bg = "#d47779" },
+
+    # Folders set to Turquoise (Icon and text must share the same color in this version)
+    { name = "*/", fg = "#52c9b0" },
+
+    # Fallback
+    { name = "*",  fg = "#d4d4d4" }
+]

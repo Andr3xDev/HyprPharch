@@ -2,20 +2,20 @@
 
 THEME="$1"
 WALLS_DIR="$HOME/.config/wallpapers"
-DEST="$HOME/.config/startpage/current_wallpaper.jpg"
+DEST="$HOME/.config/startpage/current_wallpaper.png"
 FILE=""
 
-if [[ "$THEME" == "rose-pine-d" ]]; then
-    FILE="frieren-god.jpeg"
+source "${HOME}/.config/scripts/logger.sh"
+log INFO "-------------------------------"
+log INFO "Applying theme: ${THEME}"
 
-elif [[ "$THEME" == "rose-pine-l" ]]; then
-    FILE="wall_freiren5.jpg"
+if [[ "${THEME}" == "abysal-obsidian" ]]; then
+    FILE="frieren-1.png"
 
-elif [[ "$THEME" == "gruvbox-material-d" ]]; then
-    FILE="frieren-w.jpg"
-
-elif [[ "$THEME" == "gruvbox-material-l" ]]; then
-    FILE="wall_freiren2.jpeg"
+elif [[ "${THEME}" == "abysal-marble" ]]; then
+    FILE="wall_CR.jpg"
 fi
 
-cp "$WALLS_DIR/$FILE" "$DEST"
+cp "${WALLS_DIR}/${FILE}" "${DEST}"
+
+log SUCCESS "Theme applied successfully: ${THEME}"

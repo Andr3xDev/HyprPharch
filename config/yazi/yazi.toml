@@ -5,7 +5,7 @@
 #                     '.    /' ,-.  |`-.  / ,--. 
 #                       |  | \ '-'  | /  `-.|  | 
 #                       `--'  `--`--'`-----'`--' 
-#             _______
+#           _______
 #　　　　　 /  ＞　　フ     
 #　　　　　| 　_　 _ l      RESUME: Config to file explorer with any
 #　 　　　／` ミ＿xノ               theme & config
@@ -52,8 +52,7 @@ edit = [
     { run = '${EDITOR:-nvim} "%s"', desc = "$EDITOR", for = "unix", block = true },
 ]
 play = [
-    { run = 'xdg-open "%s"', desc = "Play", for = "linux" },
-    { run = 'mediainfo "%s"; echo "Press enter to exit"; read _', block = true, desc = "Show media info", for = "unix" },
+    { run = 'mpv "$@"', orphan = true, for = "unix" },
 ]
 open = [
     { run = 'xdg-open "%s"', desc = "Open", for = "linux" },

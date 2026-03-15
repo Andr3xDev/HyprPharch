@@ -4,55 +4,37 @@ THEME="$1"
 WALLPAPER_DIR="$HOME/.config/wallpapers"
 MONITORS=$(hyprctl monitors | grep -oP 'Monitor \K[^\s]+')
 
-case "$THEME" in
-    "gruvbox-material-d")
+source "${HOME}/.config/scripts/logger.sh"
+log INFO "-------------------------------"
+log INFO "Applying theme: ${THEME}"
+
+case "${THEME}" in
+    "abysal-obsidian")
         for MONITOR in $MONITORS; do
-            swww img "$WALLPAPER_DIR/frieren-w.jpg" \
+            swww img "$WALLPAPER_DIR/frieren-1.png" \
                 --transition-type fade \
                 --transition-fps 60 \
-                --transition-duration 1 \
+                --transition-duration 2 \
                 --outputs "$MONITOR" &
         done
         wait
         ;;
         
-    "gruvbox-material-l")
+    "abysal-marble")
         for MONITOR in $MONITORS; do
-            swww img "$WALLPAPER_DIR/wall_freiren2.jpeg" \
+            swww img "$WALLPAPER_DIR/wall_CR.jpg" \
                 --transition-type fade \
                 --transition-fps 60 \
-                --transition-duration 1 \
-                --outputs "$MONITOR" &
-        done
-        wait
-        ;;
-        
-    "rose-pine-d")
-        for MONITOR in $MONITORS; do
-            swww img "$WALLPAPER_DIR/frieren-god.jpeg" \
-                --transition-type fade \
-                --transition-fps 60 \
-                --transition-duration 1 \
-                --outputs "$MONITOR" &
-        done
-        wait
-        ;;
-        
-    "rose-pine-l")
-        for MONITOR in $MONITORS; do
-            swww img "$WALLPAPER_DIR/wall_freiren5.jpg" \
-                --transition-type fade \
-                --transition-fps 60 \
-                --transition-duration 1 \
+                --transition-duration 2 \
                 --outputs "$MONITOR" &
         done
         wait
         ;;
         
     *)
-        echo "Usage: $0 {gruvbox-material-d|gruvbox-material-l|rose-pine-d|rose-pine-l}"
+        log ERROR "Invalid theme: ${THEME}"
         exit 1
         ;;
 esac
 
-echo "Wallpaper changed to: $THEME on all monitors"
+log SUCCESS "Theme applied successfully: ${THEME}"

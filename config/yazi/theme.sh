@@ -1,30 +1,25 @@
 #!/bin/bash
 
 THEME_FILE="$HOME/.config/yazi/theme.toml"
+THEME_NAME="${1}"
 
-case "$1" in
-    gruvbox-material-d)
-        cat > "$THEME_FILE" << 'EOF'
+source "${HOME}/.config/scripts/logger.sh"
+log INFO "-------------------------------"
+log INFO "Applying theme: ${THEME_NAME}"
+
+case "${THEME_NAME}" in
+    abysal-obsidian)
+        cat > "${THEME_FILE}" << 'EOF'
 [flavor]
-dark = "gruvbox-material-d"
+dark = "abysal-obsidian"
 EOF
         ;;
-    gruvbox-material-l)
-        cat > "$THEME_FILE" << 'EOF'
+    abysal-marble)
+        cat > "${THEME_FILE}" << 'EOF'
 [flavor]
-light = "gruvbox-material-l"
-EOF
-        ;;
-    rose-pine-d)
-        cat > "$THEME_FILE" << 'EOF'
-[flavor]
-dark = "rose-pine-d"
-EOF
-        ;;
-    rose-pine-l)
-        cat > "$THEME_FILE" << 'EOF'
-[flavor]
-light = "rose-pine-l"
+light = "abysal-marble"
 EOF
         ;;
 esac
+
+log SUCCESS "Theme applied successfully: ${THEME_NAME}"

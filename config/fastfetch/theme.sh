@@ -4,28 +4,22 @@ BASE_DIR="$HOME/.config/fastfetch"
 THEMES_DIR="$BASE_DIR/themes"
 TARGET="$BASE_DIR/config.jsonc"
 
-OPTS=("gruvbox-material-d" "gruvbox-material-l" "rose-pine-d" "rose-pine-l")
+source "${HOME}/.config/scripts/logger.sh"
+log INFO "-------------------------------"
+log INFO "Applying theme: ${THEME}"
 
-if [[ -z "$1" ]]; then
-    echo "Options: ${OPTS[*]}"
-    exit 1
-fi
-
-VALID=0
-for item in "${OPTS[@]}"; do
-    [[ "$item" == "$1" ]] && VALID=1 && break
-done
-
-if [[ $VALID -eq 0 ]]; then
-    echo "Options: ${OPTS[*]}"
+if [[ $# -ne 1 ]]; then
+    log ERROR "No theme specified"
     exit 1
 fi
 
 SRC="$THEMES_DIR/$1.jsonc"
 
-if [[ -f "$SRC" ]]; then
-    ln -sf "$SRC" "$TARGET"
-else
-    echo "Critical: File $SRC does not exist."
+if [[ ! -f "$SRC" ]]; then
+    log ERROR "Theme file not found: ${SRC}"
     exit 1
 fi
+
+ln -sfn "$SRC" "$TARGET"
+
+log SUCCESS "Theme applied successfully: ${1}"

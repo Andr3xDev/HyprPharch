@@ -1,19 +1,20 @@
 #!/bin/bash
 
-cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
-
-THEME_NAME="${1:-}"
-THEME_DIR="themes"
+THEME_NAME="${1}"
 CONFIG_FILE="config.toml"
 
-if [ -z "$THEME_NAME" ]; then
-    echo "Uso: ./theme.sh <nombre_tema>"
+source "${HOME}/.config/scripts/logger.sh"
+log INFO "-------------------------------"
+log INFO "Applying theme: ${THEME}"
+
+if [ -z "${THEME_NAME}" ]; then
+    log ERROR "No theme specified"
     exit 1
 fi
 
-[[ "$THEME_NAME" != *.toml ]] && FILE="${THEME_NAME}.toml" || FILE="$THEME_NAME"
+[[ "${THEME_NAME}" != *.toml ]] && FILE="${THEME_NAME}.toml" || FILE="${THEME_NAME}"
 TARGET="$THEME_DIR/$FILE"
 
-rm -f "$CONFIG_FILE"
+ln -sfn "$TARGET" "$CONFIG_FILE"
 
-ln -sf "$TARGET" "$CONFIG_FILE"
+log SUCCESS "Theme applied successfully: ${THEME}"
