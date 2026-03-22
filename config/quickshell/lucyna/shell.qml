@@ -27,6 +27,8 @@ import "modules/bar"
 import "modules/launchers/themeLauncher"
 import "modules/launchers/appsLauncher"
 import "modules/launchers/powerLauncher"
+import "modules/launchers/clipLauncher"
+import "widgets/calendar"
 
 /*!
     Root of the configuration, this is where components,
@@ -57,6 +59,16 @@ ShellRoot {
     // Power Launcher - Toggle with hyprctl dispatch, opens on screen under cursor
     PowerLauncher {
         id: powerLauncher
+    }
+
+    // Clip Launcher - Toggle via: qs -c lucyna ipc --call toggleClip
+    ClipLauncher {
+        id: clipLauncher
+    }
+
+    // Calendar - Toggle via: click on clock | quickshell ipc --config lucyna call toggleCalendar handle
+    CalendarWindow {
+        id: calendarWindow
     }
     
     /*!

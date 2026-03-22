@@ -107,10 +107,11 @@ QtObject {
         readonly property color highlight3: Local.Palettes.palettes[currentTheme].highlight3
 
         // Font sizes
-        readonly property int baseFontSize: 10
-        readonly property int titleFontSize: 13
-        readonly property int smallFontSize: 8
-        readonly property int iconFontSize: 12
+        readonly property int baseFontSize:     10
+        readonly property int subtitleFontSize: 11
+        readonly property int titleFontSize:    13
+        readonly property int smallFontSize:    8
+        readonly property int iconFontSize:     12
 
         // Spacing
         readonly property int spacing: 10

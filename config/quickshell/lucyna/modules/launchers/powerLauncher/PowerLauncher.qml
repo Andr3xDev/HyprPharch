@@ -27,6 +27,25 @@ PanelWindow {
     property int confirmIndex: -1
     // Index of the currently selected action for keyboard navigation
     property int selectedIndex: 0
+    // Uptime string shown in the confirmation text
+    property string uptimeText: ""
+
+    onConfirmIndexChanged: {
+        if (confirmIndex !== -1) uptimeProcess.running = true
+    }
+
+    Process {
+        id: uptimeProcess
+        command: ["cat", "/proc/uptime"]
+        stdout: SplitParser {
+            onRead: data => {
+                const secs = Math.floor(parseFloat(data.trim().split(" ")[0]))
+                const h = Math.floor(secs / 3600)
+                const m = Math.floor((secs % 3600) / 60)
+                root.uptimeText = h > 0 ? h + "h " + m + "m" : m + "m"
+            }
+        }
+    }
 
     // IPC handler to toggle the power launcher
     IpcHandler {
@@ -57,7 +76,12 @@ PanelWindow {
         root.confirmIndex = -1
     }
 
-    onVisibleChanged: if (visible) card.forceActiveFocus()
+    onVisibleChanged: {
+        if (visible) {
+            uptimeProcess.running = true
+            card.forceActiveFocus()
+        }
+    }
 
     // Available power actions with their properties
     readonly property var actions: [
@@ -122,7 +146,7 @@ PanelWindow {
 
         Column {
             anchors.centerIn: parent
-            spacing: 8
+            spacing: 12
 
             Row {
                 spacing: 12
@@ -139,7 +163,7 @@ PanelWindow {
 
                         width:  52
                         height: 52
-                        radius: Theme.ThemeManager.currentPalette.radiusInner + 2
+                        radius: Theme.ThemeManager.currentPalette.radiusInner 
 
                         color:        isConfirming 
                             ? Qt.rgba(Theme.ThemeManager.currentPalette.color1.r,
@@ -176,19 +200,19 @@ PanelWindow {
                 }
             }
 
-            // Confirmation message text (always takes up space to prevent layout shift)
+            // Dynamic text: uptime at rest, confirmation when an action is pending
             Text {
                 anchors.horizontalCenter: parent.horizontalCenter
-                height: implicitHeight
-                text:      root.confirmIndex !== -1
+                text: root.confirmIndex !== -1
                     ? "Press again to " + root.actions[root.confirmIndex].label.toLowerCase()
-                    : " "
-                color:     Theme.ThemeManager.currentPalette.color1
-                font.pixelSize: Theme.ThemeManager.currentPalette.smallFontSize + 3
-                font.letterSpacing: 0.3
+                    : (root.uptimeText ? "󱑎  Uptime: " + root.uptimeText : " ")
+                color: root.confirmIndex !== -1
+                    ? Theme.ThemeManager.currentPalette.color1
+                    : Theme.ThemeManager.currentPalette.text
+                font.pixelSize: Theme.ThemeManager.currentPalette.smallFontSize + 2
+                font.letterSpacing: 0.4
 
-                opacity: root.confirmIndex !== -1 ? 1.0 : 0.0
-                Behavior on opacity { NumberAnimation { duration: 100 } }
+                Behavior on color { ColorAnimation { duration: 120 } }
             }
         }
     }

@@ -123,7 +123,8 @@ PanelWindow {
                 RowLayout {
                     id: clockRow
                     anchors.centerIn: parent
-                    
+                    height: parent.height
+
                     Clock {}
                 }
             }

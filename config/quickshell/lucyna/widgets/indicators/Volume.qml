@@ -7,7 +7,6 @@ import Quickshell.Widgets
 Scope {
     id: root
 
-    // Bind the pipewire node so its volume will be tracked
     PwObjectTracker {
         objects: [Pipewire.defaultAudioSink]
     }
