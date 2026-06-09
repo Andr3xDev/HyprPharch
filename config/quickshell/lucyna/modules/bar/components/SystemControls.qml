@@ -8,18 +8,21 @@ import "../../../core/services" as Services
 */
 Item {
     id: root
-    implicitWidth: visible ? controlsRow.implicitWidth : 0
+    property bool expanded: false
+
+    implicitWidth: expanded ? controlsRow.implicitWidth : 0
     implicitHeight: parent.height
+    visible: expanded || implicitWidth > 0
     clip: true
     
     RowLayout {
         id: controlsRow
         anchors.centerIn: parent
         spacing: Theme.ThemeManager.spacing.xs
-        opacity: root.visible ? 1 : 0
+        opacity: root.expanded ? 1 : 0
         
         Behavior on opacity {
-            NumberAnimation { duration: 200 }
+            NumberAnimation { duration: Theme.ThemeManager.motion.duration.standard }
         }
         
         // Network
@@ -37,10 +40,10 @@ Item {
                     ? Theme.ThemeManager.colors.accent.primary
                     : Theme.ThemeManager.colors.status.error
                 font.pixelSize: Theme.ThemeManager.typography.iconSize
-                font.family: "Symbols Nerd Font"
+                font.family: Theme.ThemeManager.typography.family.icons
 
                 Behavior on scale {
-                    NumberAnimation { duration: 150; easing.type: Easing.OutCubic }
+                    NumberAnimation { duration: Theme.ThemeManager.motion.duration.fast; easing.type: Theme.ThemeManager.motion.easing.standard }
                 }
             }
 
@@ -67,10 +70,10 @@ Item {
                     ? Theme.ThemeManager.colors.accent.primary
                     : Theme.ThemeManager.colors.status.error
                 font.pixelSize: Theme.ThemeManager.typography.iconSize
-                font.family: "Symbols Nerd Font"
+                font.family: Theme.ThemeManager.typography.family.icons
 
                 Behavior on scale {
-                    NumberAnimation { duration: 150; easing.type: Easing.OutCubic }
+                    NumberAnimation { duration: Theme.ThemeManager.motion.duration.fast; easing.type: Theme.ThemeManager.motion.easing.standard }
                 }
             }
 
@@ -102,10 +105,10 @@ Item {
                         ? Theme.ThemeManager.colors.status.error
                         : Theme.ThemeManager.colors.accent.primary
                     font.pixelSize: Theme.ThemeManager.typography.iconSize
-                    font.family: "Symbols Nerd Font"
+                    font.family: Theme.ThemeManager.typography.family.icons
 
                     Behavior on scale {
-                        NumberAnimation { duration: 150; easing.type: Easing.OutCubic }
+                        NumberAnimation { duration: Theme.ThemeManager.motion.duration.fast; easing.type: Theme.ThemeManager.motion.easing.standard }
                     }
                 }
                 
@@ -145,9 +148,9 @@ Item {
     
     // Animation to toggle
     Behavior on implicitWidth {
-        NumberAnimation { 
-            duration: 200
-            easing.type: Easing.OutCubic
+        NumberAnimation {
+            duration: Theme.ThemeManager.motion.duration.standard
+            easing.type: Theme.ThemeManager.motion.easing.standard
         }
     }
 }

@@ -58,8 +58,8 @@ ListView {
                 rightMargin: row.isCurrent ? 40 : 12
             }
 
-            Behavior on anchors.rightMargin { NumberAnimation { duration: 100; easing.type: Easing.OutCubic } }
-            Behavior on anchors.leftMargin  { NumberAnimation { duration: 100; easing.type: Easing.OutCubic } }
+            Behavior on anchors.rightMargin { NumberAnimation { duration: Theme.ThemeManager.motion.duration.fast; easing.type: Theme.ThemeManager.motion.easing.standard } }
+            Behavior on anchors.leftMargin  { NumberAnimation { duration: Theme.ThemeManager.motion.duration.fast; easing.type: Theme.ThemeManager.motion.easing.standard } }
 
             // Text entry
             Text {
@@ -73,7 +73,7 @@ ListView {
                 elide:             Text.ElideRight
                 verticalAlignment: Text.AlignVCenter
 
-                Behavior on color { ColorAnimation { duration: 100 } }
+                Behavior on color { ColorAnimation { duration: Theme.ThemeManager.motion.duration.fast } }
             }
 
             // Image entry
@@ -114,8 +114,8 @@ ListView {
                 Text {
                     visible:           !_imgRow.ready
                     text:              "󰋩"
-                    font.family:       "Symbols Nerd Font"
-                    font.pixelSize:    18
+                    font.family:       Theme.ThemeManager.typography.family.icons
+                    font.pixelSize:    Theme.ThemeManager.typography.bigIconSize
                     color:             Theme.ThemeManager.colors.accent.tertiary
                     verticalAlignment: Text.AlignVCenter
                     height:            48
@@ -148,7 +148,7 @@ ListView {
                           Theme.ThemeManager.colors.accent.secondary.b, 0.15)
                 : "transparent"
 
-            Behavior on color { ColorAnimation { duration: 100 } }
+            Behavior on color { ColorAnimation { duration: Theme.ThemeManager.motion.duration.fast } }
 
             Text {
                 anchors.centerIn: parent

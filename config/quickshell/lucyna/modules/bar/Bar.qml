@@ -65,7 +65,7 @@ PanelWindow {
                 Layout.preferredHeight: parent.height * 0.7
                 Layout.alignment: Qt.AlignVCenter
                 color: Theme.ThemeManager.colors.on.surfaceMuted
-                radius: 10
+                radius: Theme.ThemeManager.radius.full
             }
 
             Item { Layout.preferredWidth: 6 }
@@ -116,7 +116,7 @@ PanelWindow {
 
             PowerProfile {
                 id: powerProfile
-                visible: powerToggle.expanded
+                expanded: powerToggle.expanded
             }
 
             ToggleIndicator {
@@ -128,7 +128,7 @@ PanelWindow {
 
             SystemControls {
                 id: systemControls
-                visible: controlsToggle.expanded
+                expanded: controlsToggle.expanded
             }
 
             ToggleIndicator {
@@ -140,7 +140,7 @@ PanelWindow {
 
             SystemTemperatures {
                 id: systemTemperatures
-                visible: tempToggle.expanded
+                expanded: tempToggle.expanded
             }
 
             ToggleIndicator {
@@ -152,7 +152,7 @@ PanelWindow {
 
             SystemMetrics {
                 id: systemMetrics
-                visible: metricsToggle.expanded
+                expanded: metricsToggle.expanded
             }
 
             ToggleIndicator {

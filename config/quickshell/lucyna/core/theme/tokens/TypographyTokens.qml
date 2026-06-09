@@ -26,7 +26,8 @@ QtObject {
     }
 
     // ── Icon sizes ────────────────────────────────────────
-    readonly property int iconSize: 12  // iconFontSize
+    readonly property int iconSize: 12
+    readonly property int bigIconSize: 20
 
     // ── Weights ───────────────────────────────────────────
     readonly property QtObject weight: QtObject {

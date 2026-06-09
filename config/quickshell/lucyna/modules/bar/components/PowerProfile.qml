@@ -8,8 +8,11 @@ import "../../../core/services" as Services
 */
 Item {
     id: root
-    implicitWidth: visible ? profileRow.implicitWidth : 0
+    property bool expanded: false
+
+    implicitWidth: expanded ? profileRow.implicitWidth : 0
     implicitHeight: parent.height
+    visible: expanded || implicitWidth > 0
     clip: true
     
     // Profile color mapping
@@ -46,17 +49,17 @@ Item {
                             ? profileButton.profileColor
                             : Theme.ThemeManager.colors.on.surface
                         font.pixelSize: Theme.ThemeManager.typography.iconSize
-                        font.family: "Symbols Nerd Font"
+                        font.family: Theme.ThemeManager.typography.family.icons
                         Layout.alignment: Qt.AlignHCenter
                         
                         Behavior on color {
-                            ColorAnimation { 
-                                duration: 200
-                                easing.type: Easing.OutCubic
+                            ColorAnimation {
+                                duration: Theme.ThemeManager.motion.duration.standard
+                                easing.type: Theme.ThemeManager.motion.easing.standard
                             }
                         }
                     }
-                    
+
                     // Underline indicator
                     Rectangle {
                         Layout.preferredWidth: iconText.implicitWidth
@@ -65,11 +68,11 @@ Item {
                         color: profileButton.profileColor
                         radius: 1
                         opacity: profileButton.isActive ? 1 : 0
-                        
+
                         Behavior on opacity {
-                            NumberAnimation { 
-                                duration: 200
-                                easing.type: Easing.OutCubic
+                            NumberAnimation {
+                                duration: Theme.ThemeManager.motion.duration.standard
+                                easing.type: Theme.ThemeManager.motion.easing.standard
                             }
                         }
                     }
@@ -91,9 +94,9 @@ Item {
     
     // Animation to toggle
     Behavior on implicitWidth {
-        NumberAnimation { 
-            duration: 250
-            easing.type: Easing.OutCubic
+        NumberAnimation {
+            duration: Theme.ThemeManager.motion.duration.standard
+            easing.type: Theme.ThemeManager.motion.easing.standard
         }
     }
 }

@@ -46,7 +46,7 @@ PanelWindow {
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 50
         color: Theme.ThemeManager.colors.surface.secondary
-        radius: 0
+        radius: Theme.ThemeManager.radius.none
         border.color: Theme.ThemeManager.colors.accent.primary
         border.width: 1
 
@@ -59,20 +59,20 @@ PanelWindow {
             id: contentColumn
             anchors {
                 fill: parent
-                margins: 16
+                margins: Theme.ThemeManager.spacing.lg
             }
-            spacing: 12
+            spacing: Theme.ThemeManager.spacing.md
 
             // Header
             RowLayout {
                 Layout.fillWidth: true
-                spacing: 8
+                spacing: Theme.ThemeManager.spacing.sm
 
                 Text {
                     text: "󰔎"
                     color: Theme.ThemeManager.colors.border
                     font.pixelSize: Theme.ThemeManager.typography.size.xl
-                    font.family: "Symbols Nerd Font"
+                    font.family: Theme.ThemeManager.typography.family.icons
                 }
 
                 Text {
@@ -98,7 +98,7 @@ PanelWindow {
                         text: "󰅖"
                         color: Theme.ThemeManager.colors.accent.secondary
                         font.pixelSize: Theme.ThemeManager.typography.size.sm
-                        font.family: "Symbols Nerd Font"
+                        font.family: Theme.ThemeManager.typography.family.icons
                     }
 
                     MouseArea {

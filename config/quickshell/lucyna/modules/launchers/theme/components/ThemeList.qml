@@ -36,14 +36,14 @@ Item {
                 color: isActive
                     ? Theme.ThemeManager.colors.accent.primary
                     : (isHovered ? Theme.ThemeManager.colors.highlight.medium : "transparent")
-                radius: 4
+                radius: Theme.ThemeManager.radius.sm
                 border.color: isActive
                     ? Theme.ThemeManager.colors.border
                     : "transparent"
                 border.width: isActive ? 1 : 0
 
                 Behavior on color {
-                    ColorAnimation { duration: 150; easing.type: Easing.OutCubic }
+                    ColorAnimation { duration: Theme.ThemeManager.motion.duration.fast; easing.type: Theme.ThemeManager.motion.easing.standard }
                 }
 
                 RowLayout {
@@ -63,7 +63,7 @@ Item {
                         opacity: themeItem.isActive ? 1 : 0
 
                         Behavior on opacity {
-                            NumberAnimation { duration: 150; easing.type: Easing.OutCubic }
+                            NumberAnimation { duration: Theme.ThemeManager.motion.duration.fast; easing.type: Theme.ThemeManager.motion.easing.standard }
                         }
                     }
 
@@ -79,7 +79,7 @@ Item {
                         elide: Text.ElideRight
 
                         Behavior on color {
-                            ColorAnimation { duration: 150; easing.type: Easing.OutCubic }
+                            ColorAnimation { duration: Theme.ThemeManager.motion.duration.fast; easing.type: Theme.ThemeManager.motion.easing.standard }
                         }
                     }
 
@@ -100,7 +100,7 @@ Item {
                                 scale: themeItem.isHovered ? 1.1 : 1.0
 
                                 Behavior on scale {
-                                    NumberAnimation { duration: 150; easing.type: Easing.OutCubic }
+                                    NumberAnimation { duration: Theme.ThemeManager.motion.duration.fast; easing.type: Theme.ThemeManager.motion.easing.standard }
                                 }
                             }
                         }
@@ -111,11 +111,11 @@ Item {
                         text: "󰄬"
                         color: Theme.ThemeManager.colors.on.surfaceMuted
                         font.pixelSize: Theme.ThemeManager.typography.iconSize
-                        font.family: "Symbols Nerd Font"
+                        font.family: Theme.ThemeManager.typography.family.icons
                         opacity: themeItem.isActive ? 1 : 0
 
                         Behavior on opacity {
-                            NumberAnimation { duration: 150; easing.type: Easing.OutCubic }
+                            NumberAnimation { duration: Theme.ThemeManager.motion.duration.fast; easing.type: Theme.ThemeManager.motion.easing.standard }
                         }
                     }
                 }

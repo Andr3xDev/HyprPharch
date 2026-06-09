@@ -67,7 +67,7 @@ Item {
         text: circularMetric.icon
         color: circularMetric.effectiveColor
         font.pixelSize: circularMetric.iconSize
-        font.family: "Symbols Nerd Font"
+        font.family: Theme.ThemeManager.typography.family.icons
         z: 1
     }
 }

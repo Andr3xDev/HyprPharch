@@ -50,7 +50,7 @@ Rectangle {
     Text {
         anchors { verticalCenter: parent.verticalCenter; left: parent.left; leftMargin: 10 }
         text:           " 󰅍 "
-        font.family:    "Symbols Nerd Font"
+        font.family:    Theme.ThemeManager.typography.family.icons
         font.pixelSize: Theme.ThemeManager.typography.size.xl
         color:          Theme.ThemeManager.colors.accent.primary
     }
@@ -109,16 +109,16 @@ Rectangle {
                       Theme.ThemeManager.colors.accent.secondary.b, 0.15)
             : "transparent"
 
-        Behavior on color { ColorAnimation { duration: 120 } }
+        Behavior on color { ColorAnimation { duration: Theme.ThemeManager.motion.duration.fast } }
 
         Text {
             anchors.centerIn: parent
             text:           root._confirmingClear ? "󰄬" : "󰩺"
-            font.family:    "Symbols Nerd Font"
+            font.family:    Theme.ThemeManager.typography.family.icons
             font.pixelSize: Theme.ThemeManager.typography.size.xl
             color:          Theme.ThemeManager.colors.accent.secondary
 
-            Behavior on color { ColorAnimation { duration: 120 } }
+            Behavior on color { ColorAnimation { duration: Theme.ThemeManager.motion.duration.fast } }
         }
 
         MouseArea {

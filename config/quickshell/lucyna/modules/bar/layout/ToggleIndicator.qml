@@ -30,8 +30,8 @@ Rectangle {
     // Animation to open
     Behavior on color {
         ColorAnimation {
-            duration: 200
-            easing.type: Easing.OutCubic
+            duration: Theme.ThemeManager.motion.duration.standard
+            easing.type: Theme.ThemeManager.motion.easing.standard
         }
     }
 
@@ -46,13 +46,13 @@ Rectangle {
                 ? Theme.ThemeManager.colors.accent.secondary
                 : Theme.ThemeManager.colors.on.surface
             font.pixelSize: Theme.ThemeManager.typography.iconSize
-            font.family: "Symbols Nerd Font"
+            font.family: Theme.ThemeManager.typography.family.icons
             Layout.alignment: Qt.AlignCenter
 
             Behavior on color {
                 ColorAnimation {
-                    duration: 200
-                    easing.type: Easing.OutCubic
+                    duration: Theme.ThemeManager.motion.duration.standard
+                    easing.type: Theme.ThemeManager.motion.easing.standard
                 }
             }
         }
@@ -68,8 +68,8 @@ Rectangle {
 
             Behavior on color {
                 ColorAnimation {
-                    duration: 200
-                    easing.type: Easing.OutCubic
+                    duration: Theme.ThemeManager.motion.duration.standard
+                    easing.type: Theme.ThemeManager.motion.easing.standard
                 }
             }
         }
@@ -91,8 +91,8 @@ Rectangle {
     // Animation to scale on hover
     Behavior on scale {
         NumberAnimation {
-            duration: 150
-            easing.type: Easing.OutCubic
+            duration: Theme.ThemeManager.motion.duration.fast
+            easing.type: Theme.ThemeManager.motion.easing.standard
         }
     }
 }

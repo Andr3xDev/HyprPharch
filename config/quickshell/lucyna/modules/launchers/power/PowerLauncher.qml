@@ -176,8 +176,8 @@ PanelWindow {
                             anchors.centerIn: parent
                             text: modelData.icon
                             color: Theme.ThemeManager.colors.on.surface
-                            font.pixelSize: Theme.ThemeManager.typography.iconSize
-                            font.family: "Symbols Nerd Font"
+                            font.pixelSize: Theme.ThemeManager.typography.bigIconSize
+                            font.family: Theme.ThemeManager.typography.family.icons
                         }
 
                         MouseArea {
@@ -189,8 +189,8 @@ PanelWindow {
                             onClicked: root.trigger(index)
                         }
 
-                        Behavior on color       { ColorAnimation { duration: 120 } }
-                        Behavior on border.color { ColorAnimation { duration: 120 } }
+                        Behavior on color        { ColorAnimation { duration: Theme.ThemeManager.motion.duration.fast } }
+                        Behavior on border.color { ColorAnimation { duration: Theme.ThemeManager.motion.duration.fast } }
                     }
                 }
             }
@@ -207,11 +207,11 @@ PanelWindow {
                 font.pixelSize: Theme.ThemeManager.typography.size.sm
                 font.letterSpacing: 0.4
 
-                Behavior on color { ColorAnimation { duration: 120 } }
+                Behavior on color { ColorAnimation { duration: Theme.ThemeManager.motion.duration.fast } }
             }
         }
 
-        Behavior on opacity { NumberAnimation { duration: 130; easing.type: Easing.OutCubic } }
-        Behavior on scale   { NumberAnimation { duration: 130; easing.type: Easing.OutCubic } }
+        Behavior on opacity { NumberAnimation { duration: Theme.ThemeManager.motion.duration.fast; easing.type: Theme.ThemeManager.motion.easing.standard } }
+        Behavior on scale   { NumberAnimation { duration: Theme.ThemeManager.motion.duration.fast; easing.type: Theme.ThemeManager.motion.easing.standard } }
     }
 }

@@ -6,14 +6,24 @@ import "./tokens" as Tokens
 import "./themes" as ThemeVariants
 
 /*!
-    ThemeManager — Singleton + Strategy pattern.
+    ThemeManager — Singleton facade for the design token system.
 
-    Manages the active theme, persists the selection to disk, and exposes
-    a single semantic token API:
+    Single import point for all consumers. Manages the active theme,
+    persists the selection to disk, and exposes the full token API:
 
-      colors.surface.primary / spacing.md / typography.size.sm …
+      ThemeManager.colors.surface.primary     ← dynamic, reacts to currentTheme
+      ThemeManager.spacing.md                 ← SpacingTokens.md
+      ThemeManager.typography.size.sm         ← TypographyTokens.size.sm
+      ThemeManager.radius.lg                  ← RadiusTokens.lg
+      ThemeManager.motion.duration.standard   ← MotionTokens.duration.standard
 
-    Switching ThemeManager.currentTheme propagates to all tokens via binding.
+    Static tokens (spacing, typography, radius, motion) are owned by their
+    respective singleton files under ./tokens/. ThemeManager exposes them
+    as pass-through references — no duplication.
+
+    Color tokens are resolved inline because they depend on _activePalette,
+    which changes at runtime. A pass-through reference cannot hold reactive
+    bindings to an external dynamic value without a circular dependency.
 */
 QtObject {
     id: themeManager
@@ -27,8 +37,9 @@ QtObject {
         "abysal-marble"
     ]
 
-    // ── Persistence path ──────────────────────────────────
-    readonly property string _dataFilePath: Quickshell.env("HOME") + "/.config/quickshell/lucyna/core/theme/data/theme.json"
+    // ── Persistence ───────────────────────────────────────
+    readonly property string _dataFilePath:
+        Quickshell.env("HOME") + "/.config/quickshell/lucyna/core/theme/data/theme.json"
 
     readonly property string _loadScript:
         "import sys,json,pathlib; p=pathlib.Path(sys.argv[1]); d={'theme':'abysal-obsidian'};\n" +
@@ -44,7 +55,6 @@ QtObject {
     readonly property string _saveScript:
         "import sys,os; p=sys.argv[1]; os.makedirs(os.path.dirname(p), exist_ok=True); open(p,'w').write(sys.argv[2])"
 
-    // ── I/O processes ─────────────────────────────────────
     property Process _loadProc: Process {
         running: false
         command: ["python3", "-c", themeManager._loadScript, themeManager._dataFilePath]
@@ -64,9 +74,7 @@ QtObject {
         }
     }
 
-    Component.onCompleted: {
-        _loadFromDisk()
-    }
+    Component.onCompleted: _loadFromDisk()
 
     function _loadFromDisk() {
         if (_loadProc.running) return
@@ -92,7 +100,7 @@ QtObject {
         _saveProc.running = true
     }
 
-    // ── Raw palette lookup ────────────────────────────────
+    // ── Palette resolution ────────────────────────────────
     readonly property var _palettes: ({
         "abysal-obsidian": ThemeVariants.AbyssalDark,
         "abysal-marble":   ThemeVariants.AbyssalLight
@@ -100,8 +108,7 @@ QtObject {
 
     readonly property var _activePalette: _palettes[currentTheme] ?? _palettes["abysal-obsidian"]
 
-    // ── SEMANTIC API ──────────────────────────────────────
-    // Colors — semantic grouping
+    // ── Color tokens (dynamic — inline bindings to _activePalette) ─
     readonly property QtObject colors: QtObject {
         readonly property QtObject surface: QtObject {
             readonly property color primary:   themeManager._activePalette.base
@@ -131,66 +138,18 @@ QtObject {
         readonly property real  barOpacity: themeManager._activePalette.barOpacity
     }
 
-    // Spacing scale
-    readonly property QtObject spacing: QtObject {
-        readonly property int xs:  4
-        readonly property int sm:  8
-        readonly property int md:  12
-        readonly property int lg:  16
-        readonly property int xl:  24
-        readonly property int xxl: 32
-    }
-
-    // Typography scale
-    readonly property QtObject typography: QtObject {
-        readonly property QtObject family: QtObject {
-            readonly property string sans:  "Sans Serif"
-            readonly property string mono:  "Monospace"
-            readonly property string icons: "Symbols Nerd Font"
-        }
-        readonly property QtObject size: QtObject {
-            readonly property int xs: 8
-            readonly property int sm: 10
-            readonly property int md: 11
-            readonly property int lg: 13
-            readonly property int xl: 16
-        }
-        readonly property int iconSize: 12
-    }
-
-    // Radius scale
-    readonly property QtObject radius: QtObject {
-        readonly property int none: 0
-        readonly property int sm:   4
-        readonly property int md:   6
-        readonly property int lg:   8
-        readonly property int xl:   12
-        readonly property int full: 9999
-    }
-
-    // Motion tokens
-    readonly property QtObject motion: QtObject {
-        readonly property QtObject duration: QtObject {
-            readonly property int fast:     100
-            readonly property int standard: 200
-            readonly property int slow:     350
-        }
-        readonly property QtObject easing: QtObject {
-            readonly property int standard:   Easing.OutCubic
-            readonly property int decelerate: Easing.OutQuart
-            readonly property int accelerate: Easing.InCubic
-        }
-    }
+    // ── Static token API (delegated — single source of truth in each file) ─
+    readonly property var spacing:    Tokens.SpacingTokens
+    readonly property var typography: Tokens.TypographyTokens
+    readonly property var radius:     Tokens.RadiusTokens
+    readonly property var motion:     Tokens.MotionTokens
 
     // ── Public API ────────────────────────────────────────
-
     function setTheme(themeName) {
-        if (availableThemes.includes(themeName)) {
-            currentTheme = themeName
-            _writePersistedTheme(JSON.stringify({ theme: themeName }))
-            return true
-        }
-        return false
+        if (!availableThemes.includes(themeName)) return false
+        currentTheme = themeName
+        _writePersistedTheme(JSON.stringify({ theme: themeName }))
+        return true
     }
 
     function getNextTheme() {

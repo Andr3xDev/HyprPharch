@@ -9,8 +9,11 @@ import "../layout"
 */
 Item {
     id: root
-    implicitWidth: visible ? metricsRow.implicitWidth : 0
+    property bool expanded: false
+
+    implicitWidth: expanded ? metricsRow.implicitWidth : 0
     implicitHeight: parent.height
+    visible: expanded || implicitWidth > 0
     clip: true
 
     readonly property real metricSize:      20
@@ -20,10 +23,10 @@ Item {
         id: metricsRow
         anchors.centerIn: parent
         spacing: 2
-        opacity: root.visible ? 1 : 0
+        opacity: root.expanded ? 1 : 0
 
         Behavior on opacity {
-            NumberAnimation { duration: 200 }
+            NumberAnimation { duration: Theme.ThemeManager.motion.duration.standard }
         }
 
         CircularMetric {
@@ -57,8 +60,8 @@ Item {
 
     Behavior on implicitWidth {
         NumberAnimation {
-            duration: 250
-            easing.type: Easing.OutCubic
+            duration: Theme.ThemeManager.motion.duration.standard
+            easing.type: Theme.ThemeManager.motion.easing.standard
         }
     }
 }

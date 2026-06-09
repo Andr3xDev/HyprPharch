@@ -19,7 +19,7 @@ RowLayout {
             ? Theme.ThemeManager.colors.status.error
             : Theme.ThemeManager.colors.on.surface
         font.pixelSize: Theme.ThemeManager.typography.iconSize
-        font.family: "Symbols Nerd Font"
+        font.family: Theme.ThemeManager.typography.family.icons
 
         // Animation for critical battery
         SequentialAnimation on opacity {

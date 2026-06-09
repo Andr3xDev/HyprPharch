@@ -15,6 +15,6 @@ Item {
         text: " 󰣇 "
         color: Theme.ThemeManager.colors.on.surface
         font.pixelSize: Theme.ThemeManager.typography.size.lg
-        font.family: "Symbols Nerd Font"
+        font.family: Theme.ThemeManager.typography.family.icons
     }
 }

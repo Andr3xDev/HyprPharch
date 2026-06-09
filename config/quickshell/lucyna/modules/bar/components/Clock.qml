@@ -47,7 +47,7 @@ Item {
             ? Theme.ThemeManager.colors.accent.primary
             : Theme.ThemeManager.colors.on.surface
 
-        Behavior on color { ColorAnimation { duration: 150 } }
+        Behavior on color { ColorAnimation { duration: Theme.ThemeManager.motion.duration.fast } }
     }
 
     MouseArea {

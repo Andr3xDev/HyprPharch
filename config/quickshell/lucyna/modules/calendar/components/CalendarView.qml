@@ -203,6 +203,6 @@ Item {
             onClicked: btn.activated()
         }
 
-        Behavior on color { ColorAnimation { duration: 120 } }
+        Behavior on color { ColorAnimation { duration: Theme.ThemeManager.motion.duration.fast } }
     }
 }

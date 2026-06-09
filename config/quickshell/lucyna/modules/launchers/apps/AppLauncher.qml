@@ -20,7 +20,7 @@ PanelWindow {
     readonly property int itemCount: 3
     readonly property int itemHeight: 48
     readonly property int searchH: 44
-    readonly property int pad: 12
+    readonly property int pad: Theme.ThemeManager.spacing.md
     readonly property int cardW: 380
     readonly property int cardH: searchH + (itemHeight * itemCount) + (pad * 3) + 8
 
@@ -130,7 +130,7 @@ PanelWindow {
 
                     Text {
                         text: " 󰍉 "
-                        font.family: "Symbols Nerd Font"
+                        font.family: Theme.ThemeManager.typography.family.icons
                         font.pixelSize: Theme.ThemeManager.typography.size.xl
                         color: Theme.ThemeManager.colors.accent.primary
 
@@ -176,8 +176,8 @@ PanelWindow {
 
                     Behavior on y {
                         NumberAnimation {
-                            duration: 150
-                            easing.type: Easing.OutCubic
+                            duration: Theme.ThemeManager.motion.duration.fast
+                            easing.type: Theme.ThemeManager.motion.easing.standard
                         }
                     }
                 }
@@ -218,14 +218,14 @@ PanelWindow {
                             verticalAlignment: Text.AlignVCenter
 
                             Behavior on color {
-                                ColorAnimation { duration: 150 }
+                                ColorAnimation { duration: Theme.ThemeManager.motion.duration.fast }
                             }
                         }
 
                         Behavior on scale {
                             NumberAnimation {
-                                duration: 150
-                                easing.type: Easing.OutCubic
+                                duration: Theme.ThemeManager.motion.duration.fast
+                                easing.type: Theme.ThemeManager.motion.easing.standard
                             }
                         }
                     }

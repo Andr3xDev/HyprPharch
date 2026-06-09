@@ -33,8 +33,8 @@
       "trigger": {
         "require": [
           "LG Display|0x0742",
-          "0x01010101",
-          "HCNR300296"
+          "HCNR300296",
+          "0x01010101"
         ],
         "absent": []
       },
@@ -50,20 +50,20 @@
           "cm": "srgb"
         },
         {
-          "identitySerial": "0x01010101",
-          "alias": "secondary",
-          "mode": "1280x720@60",
-          "position": "1816x143",
-          "scale": 0.83,
-          "transform": 0,
-          "enabled": true,
-          "cm": "auto"
-        },
-        {
           "identitySerial": "HCNR300296",
           "alias": "main",
           "mode": "1920x1080@74.973",
           "position": "-104x-120",
+          "scale": 1,
+          "transform": 0,
+          "enabled": true,
+          "cm": "srgb"
+        },
+        {
+          "identitySerial": "0x01010101",
+          "alias": "secondary",
+          "mode": "1280x720@60",
+          "position": "1816x143",
           "scale": 1,
           "transform": 0,
           "enabled": true,

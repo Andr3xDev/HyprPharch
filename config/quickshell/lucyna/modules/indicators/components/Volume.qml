@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Services.Pipewire
+import "../../../core/theme" as Theme
 
 Scope {
     id: root
@@ -58,9 +59,9 @@ Scope {
                         text: (Pipewire.defaultAudioSink?.audio?.muted ?? false) ? "󰖁"
                             : (root.pipelineVolume > 0.5)                        ? "󰕾"
                             :                                                       "󰖀"
-                        color: "white"
-                        font.pixelSize: 20
-                        font.family: "Symbols Nerd Font"
+                        color: Theme.ThemeManager.colors.on.surface
+                        font.pixelSize: Theme.ThemeManager.typography.bigIconSize
+                        font.family: Theme.ThemeManager.typography.family.icons
                     }
 
                     Rectangle {

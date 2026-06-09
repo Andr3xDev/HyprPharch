@@ -1,10 +1,10 @@
 import QtQuick
+import "../theme" as Theme
 
 /*!
     DarkOverlay — reusable backdrop for launchers, modals, and popups.
 
     Core primitive: no business logic, no service imports.
-    Only uses QtQuick for the animation.
 */
 Rectangle {
     id: root
@@ -13,10 +13,10 @@ Rectangle {
     property real overlayOpacity: 0.5
 
     // Duration of the fade animation in milliseconds
-    property int animationDuration: 130
+    property int animationDuration: Theme.ThemeManager.motion.duration.fast
 
     // Easing type for the animation
-    property int easingType: Easing.OutCubic
+    property int easingType: Theme.ThemeManager.motion.easing.standard
 
     // Emitted when the overlay is clicked
     signal clicked()

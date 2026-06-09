@@ -84,7 +84,7 @@ PanelWindow {
             Theme.ThemeManager.colors.surface.primary.b, 0.96)
 
         Behavior on opacity {
-            NumberAnimation { duration: 130; easing.type: Easing.OutCubic }
+            NumberAnimation { duration: Theme.ThemeManager.motion.duration.fast; easing.type: Theme.ThemeManager.motion.easing.standard }
         }
 
         MouseArea { anchors.fill: parent }
