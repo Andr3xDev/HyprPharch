@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
-import "../../../theme" as Theme
-import "../../../services" as Services
+import "../../../core/theme" as Theme
+import "../../../core/services" as Services
 
 /*!
     Group of controls to manage PC's components like network or volume
@@ -15,7 +15,7 @@ Item {
     RowLayout {
         id: controlsRow
         anchors.centerIn: parent
-        spacing: Theme.ThemeManager.currentPalette.spacing - 5
+        spacing: Theme.ThemeManager.spacing.xs
         opacity: root.visible ? 1 : 0
         
         Behavior on opacity {
@@ -30,25 +30,27 @@ Item {
             Text {
                 id: networkIconText
                 anchors.centerIn: parent
-                text: Services.NetworkService.ethernetEnabled ? "󰈀" : 
+                text: Services.NetworkService.ethernetEnabled ? "󰈀" :
                       (Services.NetworkService.wifiEnabled ? "󰖩" : "󰖪")
-                color: (Services.NetworkService.ethernetEnabled || 
+                color: (Services.NetworkService.ethernetEnabled ||
                         Services.NetworkService.wifiEnabled)
-                    ? Theme.ThemeManager.currentPalette.color1
-                    : Theme.ThemeManager.currentPalette.color4
-                font.pixelSize: Theme.ThemeManager.currentPalette.iconFontSize
+                    ? Theme.ThemeManager.colors.accent.primary
+                    : Theme.ThemeManager.colors.status.error
+                font.pixelSize: Theme.ThemeManager.typography.iconSize
                 font.family: "Symbols Nerd Font"
+
+                Behavior on scale {
+                    NumberAnimation { duration: 150; easing.type: Easing.OutCubic }
+                }
             }
-            
+
             MouseArea {
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
-                onClicked: Services.NetworkService.openNetworkManager()
-
-                // Hover animation each icon
                 hoverEnabled: true
+                onClicked: Services.NetworkService.openNetworkManager()
                 onEntered: networkIconText.scale = 1.1
-                onExited: networkIconText.scale = 1.0
+                onExited:  networkIconText.scale = 1.0
             }
         }
         
@@ -62,21 +64,23 @@ Item {
                 anchors.centerIn: parent
                 text: Services.BluetoothService.enabled ? "󰂯" : "󰂲"
                 color: Services.BluetoothService.enabled
-                    ? Theme.ThemeManager.currentPalette.color1
-                    : Theme.ThemeManager.currentPalette.color4
-                font.pixelSize: Theme.ThemeManager.currentPalette.iconFontSize
+                    ? Theme.ThemeManager.colors.accent.primary
+                    : Theme.ThemeManager.colors.status.error
+                font.pixelSize: Theme.ThemeManager.typography.iconSize
                 font.family: "Symbols Nerd Font"
+
+                Behavior on scale {
+                    NumberAnimation { duration: 150; easing.type: Easing.OutCubic }
+                }
             }
-            
+
             MouseArea {
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
-                onClicked: Services.BluetoothService.openBluetoothManager()
-                
-                // Hover animation each icon
                 hoverEnabled: true
+                onClicked: Services.BluetoothService.openBluetoothManager()
                 onEntered: bluetoothIconText.scale = 1.1
-                onExited: bluetoothIconText.scale = 1.0
+                onExited:  bluetoothIconText.scale = 1.0
             }
         }
         
@@ -88,34 +92,36 @@ Item {
             RowLayout {
                 id: audioRow
                 anchors.centerIn: parent
-                spacing: 4
+                spacing: Theme.ThemeManager.spacing.xs
                 
                 Text {
                     id: aIconText
-                    text: Services.AudioService.muted ? " 󰖁" : 
+                    text: Services.AudioService.muted ? " 󰖁" :
                           Services.AudioService.volume > 50 ? " 󰕾" : " 󰖀"
                     color: Services.AudioService.muted
-                        ? Theme.ThemeManager.currentPalette.color4
-                        : Theme.ThemeManager.currentPalette.color1
-                    font.pixelSize: Theme.ThemeManager.currentPalette.iconFontSize
+                        ? Theme.ThemeManager.colors.status.error
+                        : Theme.ThemeManager.colors.accent.primary
+                    font.pixelSize: Theme.ThemeManager.typography.iconSize
                     font.family: "Symbols Nerd Font"
+
+                    Behavior on scale {
+                        NumberAnimation { duration: 150; easing.type: Easing.OutCubic }
+                    }
                 }
                 
                 Text {
                     text: `${Services.AudioService.volume}%`
-                    color: Theme.ThemeManager.currentPalette.text
-                    font.pixelSize: Theme.ThemeManager.currentPalette.baseFontSize
+                    color: Theme.ThemeManager.colors.on.surface
+                    font.pixelSize: Theme.ThemeManager.typography.size.sm
                 }
             }
             
             MouseArea {
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
-
-                // Hover animation each icon
                 hoverEnabled: true
                 onEntered: aIconText.scale = 1.1
-                onExited: aIconText.scale = 1.0
+                onExited:  aIconText.scale = 1.0
                 
                 // Scroll set values
                 property int wheelAccumulator: 0

@@ -1,0 +1,5 @@
+[mgr]
+prepend_keymap = [
+  { on = ["E", "z"], run = "shell '~/.config/yazi/helpers/compress-zip.sh $@' --block", desc = "Compress to .zip" },
+  { on = ["E", "t"], run = "shell '~/.config/yazi/helpers/compress-tar.sh $@' --block", desc = "Compress to .tar.gz" },
+]

@@ -1,60 +1,62 @@
 import QtQuick
 import QtQuick.Layouts
-import "../../../theme" as Theme
-import "../../../services" as Services
+import "../../../core/theme" as Theme
+import "../../../core/services" as Services
 import "../layout"
 
+/*!
+    Group of circular indicators showing CPU, GPU, RAM and disk usage.
+*/
 Item {
     id: root
     implicitWidth: visible ? metricsRow.implicitWidth : 0
     implicitHeight: parent.height
     clip: true
-    
+
+    readonly property real metricSize:      20
+    readonly property real metricLineWidth: 1.5
+
     RowLayout {
         id: metricsRow
         anchors.centerIn: parent
         spacing: 2
         opacity: root.visible ? 1 : 0
-        
+
         Behavior on opacity {
             NumberAnimation { duration: 200 }
         }
-        
-        // CPU
+
         CircularMetric {
             value: Services.MetricsService.cpuUsage
             icon: "󰍛"
-            size: 20
-            lineWidth: 1.5
+            size: root.metricSize
+            lineWidth: root.metricLineWidth
         }
-        
-        // GPU
+
         CircularMetric {
             value: Services.MetricsService.gpuUsage
             icon: "󰢮"
-            size: 20
-            lineWidth: 1.5
+            size: root.metricSize
+            lineWidth: root.metricLineWidth
         }
 
-        // RAM
         CircularMetric {
             value: Services.MetricsService.ramUsage
             icon: "󰍜"
-            size: 20
-            lineWidth: 1.5
+            size: root.metricSize
+            lineWidth: root.metricLineWidth
         }
-        
-        // Disk Storage
+
         CircularMetric {
             value: Services.MetricsService.diskUsage
             icon: "󰋊"
-            size: 20
-            lineWidth: 1.5
+            size: root.metricSize
+            lineWidth: root.metricLineWidth
         }
     }
 
     Behavior on implicitWidth {
-        NumberAnimation { 
+        NumberAnimation {
             duration: 250
             easing.type: Easing.OutCubic
         }

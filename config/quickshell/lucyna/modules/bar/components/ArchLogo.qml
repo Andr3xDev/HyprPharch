@@ -1,5 +1,5 @@
 import QtQuick
-import "../../../theme" as Theme
+import "../../../core/theme" as Theme
 
 /*!
     Arch Linux logo icon
@@ -13,8 +13,8 @@ Item {
         id: logoText
         anchors.centerIn: parent
         text: " 󰣇 "
-        color: Theme.ThemeManager.currentPalette.text
-        font.pixelSize: Theme.ThemeManager.currentPalette.titleFontSize
+        color: Theme.ThemeManager.colors.on.surface
+        font.pixelSize: Theme.ThemeManager.typography.size.lg
         font.family: "Symbols Nerd Font"
     }
 }

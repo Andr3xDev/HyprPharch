@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "identities": [
+    {
+      "serial": "LG Display|0x0742",
+      "make": "LG Display",
+      "model": "0x0742",
+      "alias": "laptop",
+      "tags": []
+    },
+    {
+      "serial": "HCNR300296",
+      "make": "Samsung Electric Company",
+      "model": "LF24T35",
+      "alias": "main",
+      "tags": []
+    },
+    {
+      "serial": "0x01010101",
+      "make": "LG Electronics",
+      "model": "LG HD",
+      "alias": "secondary",
+      "tags": []
+    }
+  ]
+}

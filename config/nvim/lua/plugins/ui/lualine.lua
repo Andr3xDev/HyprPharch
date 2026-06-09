@@ -1,120 +1,169 @@
 ---------------------------------------------------------------------------
--- Botton bar config show everytime
--- Source: https://github.com/nvim-lualine/lualine.nvim
--- Config: Andr3xDev
+--- Botton bar config show everytime
 ---------------------------------------------------------------------------
 
-local gruvbox_material_custom = {
+local abyssal = require("palettes.abysal")
+
+-- definition of palette for lualine, using the abyssal theme
+local function get_abyssal_theme()
+  local p = abyssal.get_palette()
+
+  return {
     normal = {
-        a = { bg = '#b0b846', fg = '#1b1b1b', gui = 'bold' },
-        b = { bg = '#282828', fg = '#e2cca9' },
-        c = { bg = '#282828', fg = '#e2cca9' },
-        x = { bg = '#282828', fg = '#e2cca9' },
-        y = { bg = '#282828', fg = '#e2cca9' },
-        z = { bg = '#282828', fg = '#e2cca9', gui = 'bold' },
+      a = { bg = p.color1, fg = p.base, gui = "bold" },
+      b = { bg = p.surface, fg = p.text },
+      c = { bg = p.base, fg = p.text },
+      x = { bg = p.base, fg = p.text },
+      y = { bg = p.surface, fg = p.text },
+      z = { bg = p.color1, fg = p.base, gui = "bold" },
     },
     insert = {
-        a = { bg = '#e9b143', fg = '#1b1b1b', gui = 'bold' },
-        z = { bg = '#282828', fg = '#e2cca9', gui = 'bold' },
+      a = { bg = p.color2, fg = p.base, gui = "bold" },
     },
     visual = {
-        a = { bg = '#f2594b', fg = '#1b1b1b', gui = 'bold' },
-        z = { bg = '#282828', fg = '#e2cca9', gui = 'bold' },
+      a = { bg = p.color4, fg = p.base, gui = "bold" },
     },
     command = {
-        a = { bg = '#f28534', fg = '#1b1b1b', gui = 'bold' },
-        z = { bg = '#282828', fg = '#e2cca9', gui = 'bold' },
+      a = { bg = p.color3, fg = p.base, gui = "bold" },
     },
     inactive = {
-        a = { bg = '#282828', fg = '#e2cca9', gui = 'bold' },
-        z = { bg = '#282828', fg = '#e2cca9', gui = 'bold' },
-    }
-}
+      a = { bg = p.surface, fg = p.base, gui = "bold" },
+    },
+  }
+end
+
+-- helper function to create a separator component for lualine
+local function separator(icon, color_fg)
+  return {
+    function()
+      return icon
+    end,
+    color = { fg = color_fg },
+    padding = { left = 0, right = 0 },
+  }
+end
+
+-- helper function to determine the appropriate icon for the git branch component
+local function resolve_branch_icon()
+  local result = vim.fn.systemlist("git rev-parse --abbrev-ref @{upstream} 2>/dev/null")[1]
+  return (result and result ~= " ") and " " or "󱓊 "
+end
+
+-- function to get the git diff information for the current buffer, showing the number of commits ahead and behind the upstream branch
+local git_diff_cache = ""
+
+local function update_git_diff_cache()
+  local cwd = vim.fn.getcwd()
+  local ahead = tonumber(vim.fn.systemlist("git -C " .. cwd .. " rev-list --count @{upstream}..HEAD 2>/dev/null")[1])
+    or 0
+  local behind = tonumber(vim.fn.systemlist("git -C " .. cwd .. " rev-list --count HEAD..@{upstream} 2>/dev/null")[1])
+    or 0
+  local parts = {}
+  if ahead > 0 then
+    table.insert(parts, "󱖗 " .. ahead)
+  end
+  if behind > 0 then
+    table.insert(parts, "󱖙 " .. behind)
+  end
+  git_diff_cache = table.concat(parts, " ")
+end
+
+local function get_git_diff()
+  return git_diff_cache
+end
+
+vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained" }, {
+  callback = update_git_diff_cache,
+})
 
 return {
-	{
-		'nvim-lualine/lualine.nvim',
-		dependencies = { 'nvim-tree/nvim-web-devicons' },
-		opts = function()
-			return {
-				options = {
-					icons_enabled = true,
-					theme = gruvbox_material_custom,
-                    component_separators = '',
-					section_separators = '',
-					disabled_filetypes = {
-						statusline = {'alpha', 'neo-tree'},
-						winbar = {},
-					},
-					ignore_focus = {},
-					always_divide_middle = true,
-					always_show_tabline = true,
-					globalstatus = false,
-					refresh = {
-						statusline = 100,
-						tabline = 100,
-						winbar = 100,
-					}
-				},
-				sections = {
-					lualine_a = {'mode'},
-					lualine_b = {
-                        'filename'
-                    },
-					lualine_c = {
-                        {
-                            function()
-                                return '▊'
-                            end,
-                            color = { fg = '#80aa9e'},
-                            padding = { left = 0, right = 0 },
-                        },
-                        'branch', 'diff'},
-					lualine_x = {
-						{
-                            'diagnostics',
-							sources = { 'nvim_diagnostic' },
-							symbols = {error = ' ', warn = ' ', info = ' '},
-							diagnostics_color = {
-								error = {fg = '#EA6962'},
-								warn = {fg = '#D8A657'},
-								info = {fg = '#A9B665'},
-							},
-						}
-                    },
-					lualine_y = {
-                        {
-                            function()
-                                return '▊'
-                            end,
-                            color = { fg = '#80aa9e'},
-                            padding = { left = 0, right = 0 },
-                        },
-                        'filetype'
-                    },
-					lualine_z = {
-                        {
-                            function()
-                                return '▊'
-                            end,
-                            color = { fg = '#b0b846'},
-                            padding = { left = 0, right = 0 },
-                        },
-                        'location'}
-				},
-				inactive_sections = {
-					lualine_a = {'filename'},
-					lualine_b = {},
-					lualine_c = {},
-					lualine_x = {},
-					lualine_y = {},
-					lualine_z = {'fileformat'},
-                },
-				tabline = {},
-				winbar = {},
-				inactive_winbar = {},
-				extensions = {}
-			}
-		end
-	}
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = function()
+      local p = abyssal.get_palette()
+
+      return {
+        options = {
+          icons_enabled = true,
+          theme = get_abyssal_theme(),
+          component_separators = "",
+          section_separators = "",
+          disabled_filetypes = {
+            statusline = { "alpha" },
+            winbar = {},
+          },
+          ignore_focus = {},
+          always_divide_middle = true,
+          always_show_tabline = true,
+          globalstatus = false,
+          refresh = {
+            statusline = 100,
+            tabline = 100,
+            winbar = 100,
+          },
+        },
+        sections = {
+          lualine_a = {
+            "mode",
+            separator("", p.surface),
+          },
+          lualine_b = {
+            {
+              "filename",
+              symbols = {
+                modified = "󰣕 ",
+                readonly = "󰮕 ",
+                unnamed = "󰐙 ",
+                newfile = "󰐙 ",
+              },
+            },
+            separator("", p.base),
+          },
+          lualine_c = {
+            {
+              "branch",
+              icon = resolve_branch_icon(),
+            },
+            {
+              get_git_diff,
+              color = { fg = p.color2 },
+            },
+          },
+          lualine_x = {
+            {
+              "diagnostics",
+              sources = { "nvim_diagnostic" },
+              symbols = { error = "󰅚 ", warn = "󱡞 ", info = "󰗖 " },
+              diagnostics_color = {
+                error = { fg = p.color4 },
+                warn = { fg = p.color3 },
+                info = { fg = p.color1 },
+              },
+            },
+          },
+          lualine_y = {
+            separator("", p.base),
+            "filetype",
+          },
+          lualine_z = {
+            separator("", p.surface),
+            "location",
+          },
+        },
+        inactive_sections = {
+          lualine_a = { "filename" },
+          lualine_b = {},
+          lualine_c = {},
+          lualine_x = {},
+          lualine_y = {},
+          lualine_z = { "fileformat" },
+        },
+        tabline = {},
+        winbar = {},
+        inactive_winbar = {},
+        extensions = {},
+      }
+    end,
+  },
 }

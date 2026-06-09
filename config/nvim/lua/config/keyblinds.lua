@@ -1,47 +1,160 @@
--- LEADER --
+---------------------------------------------------------------------------
+-- Keybindings to each plugin or flow
+---------------------------------------------------------------------------
+
 vim.g.mapleader = " "
 
--- General Workflow --
-vim.keymap.set("n", "<leader>ch", ":Telescope command_history<CR>", { desc = "Command history", noremap = true, silent = true })
+-- save / close
 vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file", silent = true })
 vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>a", { desc = "Save file (insert)", silent = true })
-vim.keymap.set("n", "<C-w>", ":bd<CR>", { desc = "Close buffer", silent = true })
+vim.keymap.set("n", "<C-q>", "<cmd>bdelete<cr>", { desc = "Delete buffer" })
 
--- Buffers
-vim.keymap.set("n", "<leader>bd", ":bdelete<CR>", { noremap = true, silent = true, desc = "Delete buffer" })
-vim.keymap.set('n', '<leader>bl', ':bnext<CR>', { desc = "Next buffer", noremap = true })
-vim.keymap.set('n', '<leader>bj', ':bprev<CR>', { desc = "Prev buffer", noremap = true })
-vim.keymap.set("n", "<leader>bb", "<cmd>Telescope buffers<CR>", { desc = "List of buffers", noremap = true, silent = true })
+-- splits / windows
+vim.keymap.set("n", "<C-h>", "<Cmd>wincmd h<CR>", { desc = "Window left", noremap = true })
+vim.keymap.set("n", "<C-j>", "<Cmd>wincmd j<CR>", { desc = "Window down", noremap = true })
+vim.keymap.set("n", "<C-k>", "<Cmd>wincmd k<CR>", { desc = "Window up", noremap = true })
+vim.keymap.set("n", "<C-l>", "<Cmd>wincmd l<CR>", { desc = "Window right", noremap = true })
+vim.keymap.set("n", "<leader>=", "<Cmd>vertical resize +5<CR>", { desc = "Resize +5", noremap = true })
+vim.keymap.set("n", "<leader>-", "<Cmd>vertical resize -5<CR>", { desc = "Resize -5", noremap = true })
 
--- Neotree
-vim.keymap.set("n", "<Leader>e", "<Cmd>Neotree<CR>", {desc = "Flie Explorer", noremap = true })
-vim.keymap.set("n", "<Leader>ee", "<Cmd>Neotree toggle<CR>", {desc = "Close Explorer", noremap = true, silent = true })
+-- buffers
+vim.keymap.set("n", "<leader>bd", "<cmd>bd<cr>", { desc = "Delete buffer", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>bl", ":bnext<CR>", { desc = "Next buffer", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>bj", ":bprev<CR>", { desc = "Prev buffer", noremap = true, silent = true })
 
--- File Browser
-vim.keymap.set('n', '<leader>ff', ':Telescope find_files<CR>', { desc = "Find files", noremap = true, silent = true})
-vim.keymap.set('n', '<leader>fg', ':Telescope live_grep<CR>', { desc = "List of buffers", silent = true, noremap = true })
+-- harpoon
+vim.keymap.set("n", "<leader>aa", function()
+  require("harpoon"):list():add()
+end, { desc = "Add file" })
+vim.keymap.set("n", "<leader>ah", function()
+  require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
+end, { desc = "Toggle menu" })
+vim.keymap.set("n", "<leader>a1", function()
+  require("harpoon"):list():select(1)
+end, { desc = "File 1" })
+vim.keymap.set("n", "<leader>a2", function()
+  require("harpoon"):list():select(2)
+end, { desc = "File 2" })
+vim.keymap.set("n", "<leader>a3", function()
+  require("harpoon"):list():select(3)
+end, { desc = "File 3" })
+vim.keymap.set("n", "<leader>a4", function()
+  require("harpoon"):list():select(4)
+end, { desc = "File 4" })
 
--- Telescope --
-vim.keymap.set("n", "<leader>fb", ":Telescope file_browser<CR>", { noremap = true, silent = true, desc = "Browser files" })
-vim.keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics<CR>", { noremap = true, silent = true, desc = "Ver diagnósticos LSP" })
+-- file / find
+vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", {
+  desc = "Find files",
+  noremap = true,
+  silent = true,
+})
+vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>", {
+  desc = "Live grep",
+  noremap = true,
+  silent = true,
+})
+vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>", { desc = "Buffers", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fr", ":Telescope oldfiles<CR>", {
+  desc = "Recent files",
+  noremap = true,
+  silent = true,
+})
+vim.keymap.set("n", "<leader>fc", ":Telescope commands<CR>", {
+  desc = "Commands",
+  noremap = true,
+  silent = true,
+})
+vim.keymap.set(
+  "n",
+  "<leader>fH",
+  ":Telescope command_history<CR>",
+  { desc = "Command history", noremap = true, silent = true }
+)
+vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", {
+  desc = "Help tags",
+  noremap = true,
+  silent = true,
+})
+vim.keymap.set("n", "<leader>fy", "<cmd>Yazi<CR>", { desc = "Yazi", noremap = true, silent = true })
 
--- LSP --
-vim.keymap.set("n", "<leader>ls", ":Telescope lsp_document_symbols<CR>", { desc = "LSP docs symbols", noremap = true, silent = true })
-vim.keymap.set("n", "<leader>fa", function()
+-- oil
+vim.keymap.set("n", "<leader>oo", "<cmd>Oil<CR>", { desc = "Oil (current dir)", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>of", "<cmd>Oil --float<CR>", { desc = "Oil (float)", noremap = true, silent = true })
+
+-- code / LSP
+vim.keymap.set("n", "<leader>cf", function()
   require("conform").format({ async = true, lsp_fallback = true })
-end, { desc = "Format file" })
+end, { desc = "Format buffer" })
+vim.keymap.set(
+  "n",
+  "<leader>fd",
+  "<cmd>Telescope diagnostics<CR>",
+  { desc = "Diagnostics", noremap = true, silent = true }
+)
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover docs" })
 
--- GIT --
-vim.keymap.set("n", "<leader>gs", ":Telescope git_status<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>gc", ":Telescope git_commits<CR>", { noremap = true, silent = true })
+-- git
+vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { desc = "LazyGit", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>gt", ":Telescope git_status<CR>", { desc = "Git status", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>gC", ":Telescope git_commits<CR>", { desc = "Git commits", noremap = true, silent = true })
+-- trouble / diagnostics
+vim.keymap.set(
+  "n",
+  "<leader>xx",
+  "<cmd>Trouble diagnostics toggle<CR>",
+  { desc = "Diagnostics", noremap = true, silent = true }
+)
+vim.keymap.set(
+  "n",
+  "<leader>xb",
+  "<cmd>Trouble diagnostics toggle filter.buf=0<CR>",
+  { desc = "Buffer diagnostics", noremap = true, silent = true }
+)
+vim.keymap.set(
+  "n",
+  "<leader>cs",
+  "<cmd>Trouble symbols toggle focus=false<CR>",
+  { desc = "Symbols", noremap = true, silent = true }
+)
+vim.keymap.set(
+  "n",
+  "<leader>cl",
+  "<cmd>Trouble lsp toggle focus=false win.position=right<CR>",
+  { desc = "LSP panel", noremap = true, silent = true }
+)
+vim.keymap.set(
+  "n",
+  "<leader>xL",
+  "<cmd>Trouble loclist toggle<CR>",
+  { desc = "Location list", noremap = true, silent = true }
+)
+vim.keymap.set(
+  "n",
+  "<leader>xQ",
+  "<cmd>Trouble qflist toggle<CR>",
+  { desc = "Quickfix list", noremap = true, silent = true }
+)
 
--- Copy to clipboard --
-vim.keymap.set("v", "<C-c>", [["+y]])
-
--- Movement --
-vim.keymap.set("n", "<leader>h", "<Cmd>wincmd h<CR>", { desc = "Move cursor to left window", noremap = true })
-vim.keymap.set("n", "<leader>j", "<Cmd>wincmd j<CR>", { desc = "Move cursor to bottomw window", noremap = true })
-vim.keymap.set("n", "<leader>k", "<Cmd>wincmd k<CR>", { desc = "Move cursor to top window", noremap = true })
-vim.keymap.set("n", "<leader>l", "<Cmd>wincmd l<CR>", { desc = "Move cursor to right window", noremap = true })
-vim.keymap.set("n", "<leader>=", "<Cmd>vertical resize +5<CR>", { desc = "Resize window +5", noremap = true })
-vim.keymap.set("n", "<leader>-", "<Cmd>vertical resize -5<CR>", { desc = "Resize window -5", noremap = true })
+-- debug
+vim.keymap.set("n", "<leader>db", function()
+  require("dap").toggle_breakpoint()
+end, { desc = "Toggle breakpoint" })
+vim.keymap.set("n", "<leader>dc", function()
+  require("dap").continue()
+end, { desc = "Continue" })
+vim.keymap.set("n", "<leader>di", function()
+  require("dap").step_into()
+end, { desc = "Step into" })
+vim.keymap.set("n", "<leader>do", function()
+  require("dap").step_over()
+end, { desc = "Step over" })
+vim.keymap.set("n", "<leader>dO", function()
+  require("dap").step_out()
+end, { desc = "Step out" })
+vim.keymap.set("n", "<leader>du", function()
+  require("dapui").toggle()
+end, { desc = "Toggle UI" })
+vim.keymap.set("n", "<leader>dr", function()
+  require("dap").repl.open()
+end, { desc = "REPL" })

@@ -19,12 +19,12 @@ palette = 2=#2c9279
 palette = 10=#2c9279
 
 # Yellow (Sand - Warnings and secondary attributes)
-palette = 3=#947635
-palette = 4=#947635
-palette = 11=#947635
+palette = 3=#7a6020
+palette = 4=#7a6020
+palette = 11=#7a6020
 
 # Blue (Orange - Replaced per user request for Folders/Directories)
-palette = 12=#b55b25
+palette = 12=#a04e1e
 
 # Magenta (Lavender - Keywords and syntax control)
 palette = 5=#824699

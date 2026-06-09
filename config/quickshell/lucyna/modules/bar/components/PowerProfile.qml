@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
-import "../../../theme" as Theme
-import "../../../services" as Services
+import "../../../core/theme" as Theme
+import "../../../core/services" as Services
 
 /*!
     Power profile selector component to set different profiles
@@ -14,9 +14,9 @@ Item {
     
     // Profile color mapping
     readonly property var profileColors: ({
-        "power-saver": Theme.ThemeManager.currentPalette.color5,
-        "balanced": Theme.ThemeManager.currentPalette.color3,
-        "performance": Theme.ThemeManager.currentPalette.color4
+        "power-saver": Theme.ThemeManager.colors.accent.tertiary,
+        "balanced": Theme.ThemeManager.colors.status.warning,
+        "performance": Theme.ThemeManager.colors.status.error
     })
     
     RowLayout {
@@ -32,7 +32,7 @@ Item {
                 Layout.preferredHeight: buttonContent.implicitHeight
                 
                 property bool isActive: modelData.id === Services.PowerService.currentProfile
-                property color profileColor: root.profileColors[modelData.id] || Theme.ThemeManager.currentPalette.text
+                property color profileColor: root.profileColors[modelData.id] || Theme.ThemeManager.colors.on.surface
                 
                 ColumnLayout {
                     id: buttonContent
@@ -42,10 +42,10 @@ Item {
                     Text {
                         id: iconText
                         text: modelData.icon
-                        color: profileButton.isActive 
+                        color: profileButton.isActive
                             ? profileButton.profileColor
-                            : Theme.ThemeManager.currentPalette.text
-                        font.pixelSize: Theme.ThemeManager.currentPalette.iconFontSize
+                            : Theme.ThemeManager.colors.on.surface
+                        font.pixelSize: Theme.ThemeManager.typography.iconSize
                         font.family: "Symbols Nerd Font"
                         Layout.alignment: Qt.AlignHCenter
                         

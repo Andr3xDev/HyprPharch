@@ -1,27 +1,25 @@
 import QtQuick
-import QtQuick.Controls
-import "../../../theme" as Theme
+import "../../../core/theme" as Theme
 
 /*!
-    Visual component to support metrics by using a circle to represent persentages
+    Visual component to support metrics using a circle to represent percentages.
 */
 Item {
     id: circularMetric
     width: size
     height: size
-    
+
     // Base values
     property real value: 0
     property string icon: ""
-    property real iconSize: Theme.ThemeManager.currentPalette.smallFontSize
+    property real iconSize: Theme.ThemeManager.typography.size.xs
     property real size: 24
     property real lineWidth: 2
-    property string tooltip: ""
-    readonly property color effectiveColor: value >= 75 
-        ? Theme.ThemeManager.currentPalette.color4  // critical
-        : Theme.ThemeManager.currentPalette.color1  // normal
-    
-    // Cirlce with progress
+    readonly property color effectiveColor: value >= 75
+        ? Theme.ThemeManager.colors.status.error  // critical
+        : Theme.ThemeManager.colors.accent.primary  // normal
+
+    // Circle with progress
     Canvas {
         id: canvas
         anchors.fill: parent
@@ -29,12 +27,12 @@ Item {
         onPaint: {
             var ctx = getContext("2d")
             ctx.reset()
-            
+
             // Position
             var centerX = width / 2
             var centerY = height / 2
             var radius = width / 2 - circularMetric.lineWidth
-            
+
             // Background circle
             ctx.beginPath()
             ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI)
@@ -42,7 +40,7 @@ Item {
             ctx.strokeStyle = circularMetric.effectiveColor
             ctx.globalAlpha = 0.2
             ctx.stroke()
-            
+
             // Progress arc
             if (circularMetric.value > 0) {
                 ctx.beginPath()
@@ -55,15 +53,15 @@ Item {
                 ctx.stroke()
             }
         }
-        
+
         Connections {
             target: circularMetric
             function onValueChanged() { canvas.requestPaint() }
             function onEffectiveColorChanged() { canvas.requestPaint() }
         }
     }
-    
-    // Icon to show
+
+    // Icon
     Text {
         anchors.centerIn: parent
         text: circularMetric.icon
@@ -71,13 +69,5 @@ Item {
         font.pixelSize: circularMetric.iconSize
         font.family: "Symbols Nerd Font"
         z: 1
-    }
-    
-    // Tooltip by mouse hover
-    MouseArea {
-        anchors.fill: parent
-        hoverEnabled: true
-        acceptedButtons: Qt.NoButton
-        z: 2
     }
 }

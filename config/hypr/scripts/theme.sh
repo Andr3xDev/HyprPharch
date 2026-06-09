@@ -9,12 +9,16 @@ log INFO "Applying theme: ${THEME}"
 
 case "${THEME}" in
     abysal-obsidian)
+        # Hyprlock (conf)
         ln -sf abysal-obsidian.conf "$HYPR_DIR/colors.conf"
-        THEME="Gruvbox"
+        # Hyprland (lua)
+        echo 'return "abysal-obsidian"' > "$HYPR_DIR/state.lua"
         ;;
     abysal-marble)
+        # Hyprlock (conf)
         ln -sf abysal-marble.conf "$HYPR_DIR/colors.conf"
-        THEME="Gruvbox"
+        # Hyprland (lua)
+        echo 'return "abysal-marble"' > "$HYPR_DIR/state.lua"
         ;;
     *)
         log ERROR "Invalid theme: ${THEME}"

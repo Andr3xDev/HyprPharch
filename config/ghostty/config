@@ -45,8 +45,7 @@ copy-on-select = clipboard
 scrollback-limit = 50000
 shell-integration-features = no-cursor
 selection-clear-on-copy = true
-
-
+mouse-scroll-multiplier = 0.9
 #--------------------------------------------------------------------------------
 #  Keyblinds
 #--------------------------------------------------------------------------------

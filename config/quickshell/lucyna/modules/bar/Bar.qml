@@ -1,19 +1,12 @@
 import Quickshell
 import QtQuick
 import QtQuick.Layouts
-import "../../theme" as Theme
+import "../../core/theme" as Theme
 import "components"
 import "layout"
 
 /*!
-    Bar of the system, shows information, workspaces, power profiles, bateries
-    
-    TODO: Refactor section components for better maintainability
-          - Create reusable BarSection.qml component
-          - Extract common patterns from leftSection/centerSection/rightSection
-          - Move magic numbers (spacing, margins) to named properties
-          - Reduce code duplication in section layout logic
-          - This will make the bar more maintainable and easier to customize
+    Bar of the system. Shows workspaces, clock, power profiles, metrics and battery.
 */
 PanelWindow {
     id: bar
@@ -26,28 +19,27 @@ PanelWindow {
     implicitHeight: 32
     color: "transparent"
 
-
     property var modelData
     screen: modelData
-    
+
     Rectangle {
         anchors.fill: parent
         border.color: Qt.rgba(
-            Theme.ThemeManager.currentPalette.surface.r,
-            Theme.ThemeManager.currentPalette.surface.g,
-            Theme.ThemeManager.currentPalette.surface.b,
+            Theme.ThemeManager.colors.surface.secondary.r,
+            Theme.ThemeManager.colors.surface.secondary.g,
+            Theme.ThemeManager.colors.surface.secondary.b,
             0.8
         )
         color: Qt.rgba(
-            Theme.ThemeManager.currentPalette.base.r,
-            Theme.ThemeManager.currentPalette.base.g,
-            Theme.ThemeManager.currentPalette.base.b,
-            Theme.ThemeManager.currentPalette.barOpacity
+            Theme.ThemeManager.colors.surface.primary.r,
+            Theme.ThemeManager.colors.surface.primary.g,
+            Theme.ThemeManager.colors.surface.primary.b,
+            Theme.ThemeManager.colors.barOpacity
         )
-        radius: Theme.ThemeManager.currentPalette.radius
+        radius: Theme.ThemeManager.radius.md
         border.width: 2
     }
-    
+
     // Left section
     Item {
         id: leftSection
@@ -56,50 +48,36 @@ PanelWindow {
             top: parent.top
             bottom: parent.bottom
         }
-        width: leftRow.implicitWidth
-        
+        width: Math.max(100, leftContent.implicitWidth + Theme.ThemeManager.spacing.xxl)
+
         RowLayout {
-            id: leftRow
+            id: leftContent
             anchors.fill: parent
-            spacing: 0
-            
+            spacing: Theme.ThemeManager.spacing.sm
+
+            Item { Layout.preferredWidth: 4 }
+
+            ArchLogo {}
+
+            // Subtle separator
             Rectangle {
-                Layout.fillHeight: true
-                Layout.preferredWidth: Math.max(100, leftContent.implicitWidth + (Theme.ThemeManager.currentPalette.spacing * 4))
-                color: "transparent"
-                
-                RowLayout {
-                    id: leftContent
-                    anchors {
-                        fill: parent
-                        leftMargin: 0
-                        rightMargin: 0
-                    }
-                    spacing: Theme.ThemeManager.currentPalette.spacing
-
-                    Item { Layout.preferredWidth: 4 }
-
-                    ArchLogo {}
-
-                    // Subtle separator
-                    Rectangle {
-                        Layout.preferredWidth: 1
-                        Layout.preferredHeight: parent.height * 0.7
-                        Layout.alignment: Qt.AlignVCenter
-                        color: Theme.ThemeManager.currentPalette.muted
-                        radius: 10
-                    }
-
-                    Item { Layout.preferredWidth: 6 }
-
-                    Workspaces {}
-
-                    Item { Layout.preferredWidth: 10 }
-                }
+                Layout.preferredWidth: 1
+                Layout.preferredHeight: parent.height * 0.7
+                Layout.alignment: Qt.AlignVCenter
+                color: Theme.ThemeManager.colors.on.surfaceMuted
+                radius: 10
             }
+
+            Item { Layout.preferredWidth: 6 }
+
+            Workspaces {
+                screen: bar.screen
+            }
+
+            Item { Layout.preferredWidth: 10 }
         }
     }
-    
+
     // Center section - Clock
     Item {
         id: centerSection
@@ -108,29 +86,17 @@ PanelWindow {
             top: parent.top
             bottom: parent.bottom
         }
-        width: centerRow.implicitWidth
-        
+        width: clockContent.implicitWidth + Theme.ThemeManager.spacing.xxl
+
         RowLayout {
-            id: centerRow
-            anchors.fill: parent
-            spacing: 0
-            
-            Rectangle {
-                Layout.fillHeight: true
-                Layout.preferredWidth: clockRow.implicitWidth + (Theme.ThemeManager.currentPalette.spacing * 4)
-                color: "transparent"
+            id: clockContent
+            anchors.centerIn: parent
+            height: parent.height
 
-                RowLayout {
-                    id: clockRow
-                    anchors.centerIn: parent
-                    height: parent.height
-
-                    Clock {}
-                }
-            }
+            Clock {}
         }
     }
-    
+
     // Right section - Metrics, Controls and Battery
     Item {
         id: rightSection
@@ -139,84 +105,68 @@ PanelWindow {
             top: parent.top
             bottom: parent.bottom
         }
-        width: rightRow.implicitWidth
-        
+        width: rightContent.implicitWidth + 2
+
         RowLayout {
-            id: rightRow
-            anchors.fill: parent
-            spacing: 0
-            
-            Rectangle {
-                Layout.fillHeight: true
-                Layout.preferredWidth: rightContent.implicitWidth + (Theme.ThemeManager.currentPalette.margin * 2)
-                color: "transparent"
+            id: rightContent
+            anchors { fill: parent; rightMargin: 1 }
+            spacing: Theme.ThemeManager.spacing.sm
 
-                RowLayout {
-                    id: rightContent
-                    anchors {
-                        fill: parent
-                        leftMargin: 0
-                        rightMargin: Theme.ThemeManager.currentPalette.margin
-                    }
-                    spacing: Theme.ThemeManager.currentPalette.spacing
+            Item { Layout.preferredWidth: 4 }
 
-                    Item { Layout.preferredWidth: 4 }
-
-                    PowerProfile {
-                        id: powerProfile
-                        visible: powerToggle.expanded
-                    }
-            
-                    ToggleIndicator {
-                        id: powerToggle
-                        icon: "󱐋"
-                    }
-
-                    Item { Layout.preferredWidth: 4 }
-
-                    SystemControls {
-                        id: systemControls
-                        visible: controlsToggle.expanded
-                    }
-
-                    ToggleIndicator {
-                        id: controlsToggle
-                        icon: "󰒓"
-                    }
-                    
-                    Item { Layout.preferredWidth: 4 }
-
-                    SystemTemperatures {
-                        id: systemTemperatures
-                        visible: tempToggle.expanded
-                    }
-
-                    ToggleIndicator {
-                        id: tempToggle
-                        icon: "󰔏"
-                    }
-                    
-                    Item { Layout.preferredWidth: 4 }
-
-                    SystemMetrics {
-                        id: systemMetrics
-                        visible: metricsToggle.expanded
-                    }
-
-                    ToggleIndicator {
-                        id: metricsToggle
-                        icon: "󰕮"
-                    }
-
-                    Item { Layout.preferredWidth: 4 }
-
-                    Battery {
-                        id: batteryWidget
-                    }
-
-                    Item { Layout.preferredWidth: 10 }
-                }
+            PowerProfile {
+                id: powerProfile
+                visible: powerToggle.expanded
             }
+
+            ToggleIndicator {
+                id: powerToggle
+                icon: "󱐋"
+            }
+
+            Item { Layout.preferredWidth: 4 }
+
+            SystemControls {
+                id: systemControls
+                visible: controlsToggle.expanded
+            }
+
+            ToggleIndicator {
+                id: controlsToggle
+                icon: "󰒓"
+            }
+
+            Item { Layout.preferredWidth: 4 }
+
+            SystemTemperatures {
+                id: systemTemperatures
+                visible: tempToggle.expanded
+            }
+
+            ToggleIndicator {
+                id: tempToggle
+                icon: "󰔏"
+            }
+
+            Item { Layout.preferredWidth: 4 }
+
+            SystemMetrics {
+                id: systemMetrics
+                visible: metricsToggle.expanded
+            }
+
+            ToggleIndicator {
+                id: metricsToggle
+                icon: "󰕮"
+            }
+
+            Item { Layout.preferredWidth: 4 }
+
+            Battery {
+                id: batteryWidget
+            }
+
+            Item { Layout.preferredWidth: 10 }
         }
     }
 }

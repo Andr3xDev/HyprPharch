@@ -1,17 +1,27 @@
 import Quickshell
 import QtQuick
 import QtQuick.Layouts
-import "../../../theme" as Theme
-import "../../../services" as Services
+import "../../../core/theme" as Theme
+import "../../../core/ipc" as Ipc
 
 /*!
     Clock text to show current time & day of the week.
-    Clicking it toggles the floating calendar panel.
+    Clicking it toggles the floating calendar panel via EventBus
 */
 Item {
     id: clock
     implicitWidth: clockText.implicitWidth + 16
     Layout.fillHeight: true
+
+    // Tracks calendar open/close state via EventBus — no direct module coupling
+    property bool _calendarOpen: false
+
+    Connections {
+        target: Ipc.EventBus
+        function onCalendarVisibilityChanged(visible) {
+            clock._calendarOpen = visible
+        }
+    }
 
     Timer {
         interval: 60000
@@ -32,10 +42,10 @@ Item {
         id: clockText
         anchors.centerIn: parent
         font.bold:       true
-        font.pixelSize:  Theme.ThemeManager.currentPalette.baseFontSize
-        color: Services.CalendarState.isVisible
-            ? Theme.ThemeManager.currentPalette.color1
-            : Theme.ThemeManager.currentPalette.text
+        font.pixelSize:  Theme.ThemeManager.typography.size.sm
+        color: clock._calendarOpen
+            ? Theme.ThemeManager.colors.accent.primary
+            : Theme.ThemeManager.colors.on.surface
 
         Behavior on color { ColorAnimation { duration: 150 } }
     }
@@ -44,6 +54,6 @@ Item {
         anchors.fill: parent
         hoverEnabled: true
         cursorShape:  Qt.PointingHandCursor
-        onClicked:    Services.CalendarState.toggle()
+        onClicked:    Ipc.EventBus.calendarToggleRequested()
     }
 }

@@ -1,35 +1,39 @@
-return {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    config = function()
-        local config = require("nvim-treesitter.configs")
-        config.setup({
-            auto_install = true,
-            ensure_installed = {
-                "html",
-                "css",
-                "scss",
-                "javascript",
-                "typescript",
-                "astro",
-                "json",
-                "jsonc",
-                "markdown",
-                "markdown_inline",
-                "java",
-                "python",
-                "sql",
-                "bash",
-                "lua",
-                "dockerfile",
-                "tsx",
-                "yaml",
-                "toml",
-            },
+---------------------------------------------------------------------------
+--- code highlighting and indentation
+---------------------------------------------------------------------------
 
-            highlight = { enable = true },
-            indent = { enable = true },
-            autotag = { enable = true },
-        })
-    end
+return {
+  "nvim-treesitter/nvim-treesitter",
+  branch = "main",
+  build = ":TSUpdate",
+  lazy = false,
+  config = function()
+    require("nvim-treesitter").setup({
+      ensure_installed = {
+        "html",
+        "css",
+        "scss",
+        "javascript",
+        "typescript",
+        "tsx",
+        "astro",
+        "json",
+        "jsonc",
+        "markdown",
+        "markdown_inline",
+        "java",
+        "python",
+        "sql",
+        "bash",
+        "lua",
+        "dockerfile",
+        "yaml",
+        "toml",
+        "rust",
+        "terraform",
+      },
+      indent = { enable = true },
+      auto_install = true,
+    })
+  end,
 }

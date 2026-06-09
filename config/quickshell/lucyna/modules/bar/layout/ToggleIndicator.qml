@@ -1,6 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
-import "../../../theme" as Theme
+import "../../../core/theme" as Theme
 
 /*!
     Toogle sistem to hide information & show it by clicking the square with an icon
@@ -8,15 +8,16 @@ import "../../../theme" as Theme
 Rectangle {
     id: toggleIndicator
     implicitWidth: label !== ""
-    ? contentRow.implicitWidth + (spacing * 2)
-    : implicitHeight
+        ? buttonRow.implicitWidth + (hPad * 2)
+        : implicitHeight
     implicitHeight: 20
+    readonly property real hPad: Theme.ThemeManager.spacing.xs
     // Visuals
     color: expanded
-        ? Theme.ThemeManager.currentPalette.highlight3
+        ? Theme.ThemeManager.colors.highlight.strong
         : "transparent"
-    radius: 4
-    border.color: Theme.ThemeManager.currentPalette.highlight3
+    radius: Theme.ThemeManager.radius.sm
+    border.color: Theme.ThemeManager.colors.highlight.strong
     border.width: 1
 
     // Values to show
@@ -37,14 +38,14 @@ Rectangle {
     RowLayout {
         id: buttonRow
         anchors.centerIn: parent
-        spacing: 4
+        spacing: Theme.ThemeManager.spacing.xs
 
         Text {
             text: icon
             color: expanded
-                ? Theme.ThemeManager.currentPalette.color2
-                : Theme.ThemeManager.currentPalette.text
-            font.pixelSize: Theme.ThemeManager.currentPalette.iconFontSize
+                ? Theme.ThemeManager.colors.accent.secondary
+                : Theme.ThemeManager.colors.on.surface
+            font.pixelSize: Theme.ThemeManager.typography.iconSize
             font.family: "Symbols Nerd Font"
             Layout.alignment: Qt.AlignCenter
 
@@ -60,9 +61,9 @@ Rectangle {
             visible: label !== ""
             text: label
             color: expanded
-                ? Theme.ThemeManager.currentPalette.base
-                : Theme.ThemeManager.currentPalette.text
-            font.pixelSize: Theme.ThemeManager.currentPalette.baseFontSize
+                ? Theme.ThemeManager.colors.surface.primary
+                : Theme.ThemeManager.colors.on.surface
+            font.pixelSize: Theme.ThemeManager.typography.size.sm
             Layout.alignment: Qt.AlignCenter
 
             Behavior on color {
@@ -87,7 +88,7 @@ Rectangle {
         onExited: toggleIndicator.scale = 1.0
     }
 
-    // Animation to open
+    // Animation to scale on hover
     Behavior on scale {
         NumberAnimation {
             duration: 150
