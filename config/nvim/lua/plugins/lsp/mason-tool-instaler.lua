@@ -10,6 +10,7 @@ return {
   opts = {
     ensure_installed = {
       -- Formatters
+      "gofumpt",
       "stylua",
       "prettier",
       "ruff",
@@ -18,6 +19,7 @@ return {
       "shfmt",
       "taplo",
       -- Linters
+      "golangci-lint",
       "eslint_d",
       "luacheck",
       "shellcheck",

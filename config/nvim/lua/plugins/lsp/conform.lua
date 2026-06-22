@@ -37,6 +37,7 @@ return {
       toml = { "taplo" },
       terraform = { "terraform_fmt" },
       qml = { "qmllint" },
+      go = { "gofumpt" },
     },
 
     notify_on_error = true,

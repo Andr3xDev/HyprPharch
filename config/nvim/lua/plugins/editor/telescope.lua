@@ -13,7 +13,8 @@ return {
   },
   cmd = "Telescope",
   keys = {
-    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+    { "<leader>fF", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+    { "<leader>ff", "<cmd>Telescope git_files show_untracked=true<cr>", desc = "Find Files (git based)" },
     { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
     { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
     { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help Tags" },
@@ -31,7 +32,7 @@ return {
         path_display = { "filename_first" },
         prompt_prefix = "   ",
         selection_caret = "󰥭 ",
-        file_ignore_patterns = { "node_modules", "dist/", ".cache/" },
+        file_ignore_patterns = { "node_modules", "dist/", "%.cache/", "^%.git/" },
         sorting_strategy = "ascending",
         layout_strategy = "horizontal",
         layout_config = {

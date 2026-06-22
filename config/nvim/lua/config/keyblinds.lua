@@ -3,6 +3,7 @@
 ---------------------------------------------------------------------------
 
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 -- save / close
 vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file", silent = true })
@@ -20,11 +21,14 @@ vim.keymap.set("n", "<leader>-", "<Cmd>vertical resize -5<CR>", { desc = "Resize
 -- buffers
 vim.keymap.set("n", "<leader>bd", "<cmd>bd<cr>", { desc = "Delete buffer", noremap = true, silent = true })
 vim.keymap.set("n", "<leader>bl", ":bnext<CR>", { desc = "Next buffer", noremap = true, silent = true })
-vim.keymap.set("n", "<leader>bj", ":bprev<CR>", { desc = "Prev buffer", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>bh", ":bprev<CR>", { desc = "Prev buffer", noremap = true, silent = true })
 
 -- harpoon
 vim.keymap.set("n", "<leader>aa", function()
   require("harpoon"):list():add()
+end, { desc = "Add file" })
+vim.keymap.set("n", "<leader>ad", function()
+  require("harpoon"):list():remove()
 end, { desc = "Add file" })
 vim.keymap.set("n", "<leader>ah", function()
   require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
@@ -76,10 +80,6 @@ vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", {
   silent = true,
 })
 vim.keymap.set("n", "<leader>fy", "<cmd>Yazi<CR>", { desc = "Yazi", noremap = true, silent = true })
-
--- oil
-vim.keymap.set("n", "<leader>oo", "<cmd>Oil<CR>", { desc = "Oil (current dir)", noremap = true, silent = true })
-vim.keymap.set("n", "<leader>of", "<cmd>Oil --float<CR>", { desc = "Oil (float)", noremap = true, silent = true })
 
 -- code / LSP
 vim.keymap.set("n", "<leader>cf", function()
@@ -158,3 +158,14 @@ end, { desc = "Toggle UI" })
 vim.keymap.set("n", "<leader>dr", function()
   require("dap").repl.open()
 end, { desc = "REPL" })
+
+-- search / replace
+vim.keymap.set("n", "<leader>sR", function()
+  require("grug-far").open({ prefills = { search = vim.fn.expand("<cword>") } })
+end, { desc = "Search & Replace" })
+vim.keymap.set("n", "<leader>sr", function()
+  require("grug-far").open({ prefills = { paths = vim.fn.expand("%") } })
+end, { desc = "Search & Replace (current file)" })
+vim.keymap.set("v", "<leader>sr", function()
+  require("grug-far").with_visual_selection()
+end, { desc = "Search & Replace (visual)" })

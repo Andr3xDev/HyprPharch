@@ -11,37 +11,32 @@ return {
   },
   cmd = "Octo",
   keys = {
-    -- PRs
+    -- PRs: open
     { "<leader>opl", "<cmd>Octo pr list<cr>", desc = "PR List" },
-    { "<leader>ops", "<cmd>Octo review submit<cr>", desc = "PR Review Submit" },
-    { "<leader>opr", "<cmd>Octo review start<cr>", desc = "PR Review Start" },
-    { "<leader>opc", "<cmd>Octo pr close<cr>", desc = "PR Close" },
-    { "<leader>opa", "<cmd>Octo review approve<cr>", desc = "PR Approve" },
-    { "<leader>opx", "<cmd>Octo review request_changes<cr>", desc = "PR Request Changes" },
-    { "<leader>opm", "<cmd>Octo pr merge<cr>", desc = "PR Merge" },
     { "<leader>opv", "<cmd>Octo pr browser<cr>", desc = "PR Open in Browser" },
 
+    -- PRs: inspect
+    { "<leader>opd", "<cmd>Octo pr diff<cr>", desc = "PR Show Diff" },
+    { "<leader>opf", "<cmd>Octo pr changes<cr>", desc = "PR Changed Files" },
+    { "<leader>opC", "<cmd>Octo pr commits<cr>", desc = "PR List Commits" },
+    { "<leader>opo", "<cmd>Octo pr checkout<cr>", desc = "PR Checkout" },
+
+    -- review: start, submit, approve, request changes
+    { "<leader>opr", "<cmd>Octo review start<cr>", desc = "PR Review Start" },
+    { "<leader>opR", "<cmd>Octo review resume<cr>", desc = "PR Review Resume (pending)" },
+    { "<leader>opX", "<cmd>Octo review discard<cr>", desc = "PR Review Discard (pending)" },
+    { "<leader>ops", "<cmd>Octo review submit<cr>", desc = "PR Review Submit" },
+    { "<leader>opa", "<cmd>Octo review approve<cr>", desc = "PR Approve" },
+    { "<leader>opx", "<cmd>Octo review request_changes<cr>", desc = "PR Request Changes" },
+
     -- comments
-    { "<leader>ocr", "<cmd>Octo comment add<cr>", desc = "Comment Add" },
+    { "<leader>ocr", "<cmd>Octo comment add<cr>", desc = "Comment Add", mode = { "n", "v" } },
     { "<leader>oce", "<cmd>Octo comment delete<cr>", desc = "Comment Delete" },
-
-    -- reactions
-    { "<leader>ore", "<cmd>Octo reaction add<cr>", desc = "Reaction Add" },
-
-    -- issues
-    { "<leader>oil", "<cmd>Octo issue list<cr>", desc = "Issue List" },
-    { "<leader>oic", "<cmd>Octo issue create<cr>", desc = "Issue Create" },
-    { "<leader>oib", "<cmd>Octo issue browser<cr>", desc = "Issue Open in Browser" },
-
-    -- labels / assignees
-    { "<leader>ola", "<cmd>Octo label add<cr>", desc = "Label Add" },
-    { "<leader>oaa", "<cmd>Octo assignee add<cr>", desc = "Assignee Add" },
   },
   opts = {
     use_local_fs = false,
     enable_builtin = true,
     default_remote = { "upstream", "origin" },
-    ssh_aliases = {},
     picker = "telescope",
     picker_config = {
       use_emojis = true,
@@ -55,24 +50,13 @@ return {
     timeline_indent = 2,
     right_bubble_delimiter = "",
     left_bubble_delimiter = "",
-    github_hostname = "",
     snippet_context_lines = 4,
-    gh_env = {},
     timeout = 5000,
     ui = {
       use_signcolumn = true,
     },
-    issues = {
-      order_by = {
-        field = "CREATED_AT",
-        direction = "DESC",
-      },
-    },
     pull_requests = {
-      order_by = {
-        field = "CREATED_AT",
-        direction = "DESC",
-      },
+      order_by = { field = "CREATED_AT", direction = "DESC" },
       always_select_remote_on_delete = false,
     },
     file_panel = {
@@ -80,64 +64,9 @@ return {
       use_icons = true,
     },
     mappings = {
-      issue = {
-        close_issue = { lhs = "<leader>oic", desc = "Close issue" },
-        reopen_issue = { lhs = "<leader>oio", desc = "Reopen issue" },
-        list_issues = { lhs = "<leader>oil", desc = "List issues" },
-        reload = { lhs = "<C-r>", desc = "Reload" },
-        open_in_browser = { lhs = "<leader>oib", desc = "Open in browser" },
-        copy_url = { lhs = "<leader>oiu", desc = "Copy URL" },
-        add_assignee = { lhs = "<leader>oaa", desc = "Add assignee" },
-        remove_assignee = { lhs = "<leader>oad", desc = "Remove assignee" },
-        add_label = { lhs = "<leader>ola", desc = "Add label" },
-        remove_label = { lhs = "<leader>old", desc = "Remove label" },
-        add_comment = { lhs = "<leader>ocr", desc = "Add comment" },
-        delete_comment = { lhs = "<leader>oce", desc = "Delete comment" },
-        react_hooray = { lhs = "<leader>orh", desc = "React hooray" },
-        react_heart = { lhs = "<leader>orH", desc = "React heart" },
-        react_eyes = { lhs = "<leader>ore", desc = "React eyes" },
-        react_thumbs_up = { lhs = "<leader>or+", desc = "React +1" },
-        react_thumbs_down = { lhs = "<leader>or-", desc = "React -1" },
-        react_rocket = { lhs = "<leader>orr", desc = "React rocket" },
-        react_laugh = { lhs = "<leader>orl", desc = "React laugh" },
-        react_confused = { lhs = "<leader>orc", desc = "React confused" },
-      },
-      pull_request = {
-        checkout_pr = { lhs = "<leader>opo", desc = "Checkout PR" },
-        merge_pr = { lhs = "<leader>opm", desc = "Merge PR" },
-        squash_and_merge_pr = { lhs = "<leader>opM", desc = "Squash and merge PR" },
-        list_commits = { lhs = "<leader>opC", desc = "List commits" },
-        list_changed_files = { lhs = "<leader>opf", desc = "List changed files" },
-        show_pr_diff = { lhs = "<leader>opd", desc = "Show PR diff" },
-        add_reviewer = { lhs = "<leader>opR", desc = "Add reviewer" },
-        remove_reviewer = { lhs = "<leader>opD", desc = "Remove reviewer" },
-        close_pr = { lhs = "<leader>opc", desc = "Close PR" },
-        reopen_pr = { lhs = "<leader>opp", desc = "Reopen PR" },
-        list_prs = { lhs = "<leader>opl", desc = "List PRs" },
-        reload = { lhs = "<C-r>", desc = "Reload" },
-        open_in_browser = { lhs = "<leader>opv", desc = "Open in browser" },
-        copy_url = { lhs = "<leader>opu", desc = "Copy URL" },
-        add_comment = { lhs = "<leader>ocr", desc = "Add comment" },
-        delete_comment = { lhs = "<leader>oce", desc = "Delete comment" },
-        start_review = { lhs = "<leader>opr", desc = "Start review" },
-        submit_review = { lhs = "<leader>ops", desc = "Submit review" },
-        discard_review = { lhs = "<leader>opX", desc = "Discard review" },
-        add_suggestion = { lhs = "<leader>opS", desc = "Add suggestion" },
-        approve_review = { lhs = "<leader>opa", desc = "Approve review" },
-        request_changes = { lhs = "<leader>opx", desc = "Request changes" },
-        react_hooray = { lhs = "<leader>orh", desc = "React hooray" },
-        react_heart = { lhs = "<leader>orH", desc = "React heart" },
-        react_eyes = { lhs = "<leader>ore", desc = "React eyes" },
-        react_thumbs_up = { lhs = "<leader>or+", desc = "React +1" },
-        react_thumbs_down = { lhs = "<leader>or-", desc = "React -1" },
-        react_rocket = { lhs = "<leader>orr", desc = "React rocket" },
-        react_laugh = { lhs = "<leader>orl", desc = "React laugh" },
-        react_confused = { lhs = "<leader>orc", desc = "React confused" },
-      },
       review_thread = {
         goto_issue = { lhs = "<leader>ogi", desc = "Go to issue" },
         add_comment = { lhs = "<leader>ocr", desc = "Add comment" },
-        add_suggestion = { lhs = "<leader>opS", desc = "Add suggestion" },
         delete_comment = { lhs = "<leader>oce", desc = "Delete comment" },
         next_comment = { lhs = "]c", desc = "Next comment" },
         prev_comment = { lhs = "[c", desc = "Prev comment" },
@@ -146,14 +75,6 @@ return {
         select_first_entry = { lhs = "[Q", desc = "First changed file" },
         select_last_entry = { lhs = "]Q", desc = "Last changed file" },
         close_review_tab = { lhs = "<C-c>", desc = "Close review tab" },
-        react_hooray = { lhs = "<leader>orh", desc = "React hooray" },
-        react_heart = { lhs = "<leader>orH", desc = "React heart" },
-        react_eyes = { lhs = "<leader>ore", desc = "React eyes" },
-        react_thumbs_up = { lhs = "<leader>or+", desc = "React +1" },
-        react_thumbs_down = { lhs = "<leader>or-", desc = "React -1" },
-        react_rocket = { lhs = "<leader>orr", desc = "React rocket" },
-        react_laugh = { lhs = "<leader>orl", desc = "React laugh" },
-        react_confused = { lhs = "<leader>orc", desc = "React confused" },
       },
       submit_win = {
         approve_review = { lhs = "<C-a>", desc = "Approve" },

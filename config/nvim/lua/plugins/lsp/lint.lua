@@ -26,6 +26,7 @@ return {
       html = { "htmlhint" },
       json = { "jsonlint" },
       jsonc = { "jsonlint" },
+      go = { "golangci_lint" },
     },
 
     linters = {

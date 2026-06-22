@@ -13,10 +13,37 @@ return {
     "DiffviewRefresh",
   },
   keys = {
-    { "<leader>gdo", "<cmd>DiffviewOpen origin/main<cr>", desc = "Diff vs main" },
-    { "<leader>gdO", "<cmd>DiffviewOpen origin/master<cr>", desc = "Diff vs master" },
+    {
+      "<leader>gd",
+      function()
+        local handle = io.popen("git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null")
+        local result = handle and handle:read("*a") or ""
+        if handle then
+          handle:close()
+        end
+        local default_branch = result:match("origin/([%w%-%_%.]+)")
+        if not default_branch then
+          vim.notify("No se pudo detectar el branch por defecto", vim.log.levels.WARN)
+          return
+        end
+        vim.cmd("DiffviewOpen origin/" .. default_branch)
+      end,
+      desc = "Diff vs default branch",
+    },
+    {
+      "<leader>gdb",
+      function()
+        vim.ui.input({ prompt = "Diff vs branch: " }, function(branch)
+          if branch and branch ~= "" then
+            vim.cmd("DiffviewOpen " .. branch)
+          end
+        end)
+      end,
+      desc = "Diff vs branch (prompt)",
+    },
     { "<leader>gdc", "<cmd>DiffviewClose<cr>", desc = "Diff Close" },
     { "<leader>gdf", "<cmd>DiffviewToggleFiles<cr>", desc = "Diff Toggle Files" },
+    { "<leader>gM", "<cmd>DiffviewOpen<cr>", desc = "Diff / Merge conflicts" },
   },
   opts = {
     enhanced_diff_hl = true,

@@ -43,6 +43,7 @@ return {
         },
       },
       qmlls = {},
+      gopls = {},
     }
     for server, server_config in pairs(servers) do
       server_config.capabilities = capabilities

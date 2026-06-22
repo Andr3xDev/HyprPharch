@@ -16,3 +16,22 @@ vim.api.nvim_create_autocmd("BufDelete", {
     end)
   end,
 })
+
+-- When entering a buffer, check if it's an empty buffer (no name, not modified, and not a special buffer). If it is, and there are other buffers open, delete it to avoid clutter.
+vim.api.nvim_create_autocmd("User", {
+  pattern = "AlphaReady",
+  once = true,
+  callback = function()
+    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+      -- nvim_list_bufs() ya solo devuelve listed, pero por si acaso
+      if vim.api.nvim_buf_get_name(buf) == ""
+        and vim.api.nvim_buf_get_option(buf, "buftype") == ""
+        and vim.api.nvim_buf_get_option(buf, "buflisted")
+        and not vim.api.nvim_buf_get_option(buf, "modified")
+        and buf ~= vim.api.nvim_get_current_buf()
+      then
+        vim.api.nvim_buf_delete(buf, {})
+      end
+    end
+  end,
+})

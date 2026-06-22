@@ -25,6 +25,7 @@ return {
       "taplo",
       "terraformls",
       "marksman",
+      "gopls",
     },
     automatic_installation = true,
   },

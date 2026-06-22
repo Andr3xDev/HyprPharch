@@ -76,6 +76,29 @@ vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained" }, {
   callback = update_git_diff_cache,
 })
 
+-- get the current git branch name for the current buffer, prefixed with the appropriate icon
+local git_branch_cache = ""
+
+local function update_git_branch_cache()
+  local branch = vim.fn.systemlist("git rev-parse --abbrev-ref HEAD 2>/dev/null")[1]
+  if not branch or branch == "" then
+    git_branch_cache = ""
+    return
+  end
+  git_branch_cache = resolve_branch_icon() .. branch
+end
+
+local function get_branch_with_icon()
+  return git_branch_cache
+end
+
+vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained" }, {
+  callback = function()
+    update_git_diff_cache()
+    update_git_branch_cache()
+  end,
+})
+
 return {
   {
     "nvim-lualine/lualine.nvim",
@@ -122,8 +145,8 @@ return {
           },
           lualine_c = {
             {
-              "branch",
-              icon = resolve_branch_icon(),
+              get_branch_with_icon,
+              color = { fg = p.text },
             },
             {
               get_git_diff,
